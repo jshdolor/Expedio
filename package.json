@@ -5,11 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "script": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack.config.js  --mode=production  --args",
-    "html": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack-html.config.js  --mode=production  --args",
     "sass": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack-sass.config.js  --mode=production  --args",
-    "watch": "node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.config.js --mode=development  --args NODE_ENV=development",
+    "watch": "NODE_ENV=development node  node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.config.js --mode=development  --args",
     "swatch": "NODE_ENV=development node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack-sass.config.js --mode=development  --args",
     "bundle": "npm run script; npm run sass;"
   },
@@ -17,6 +15,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-root-import": "^6.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.5.0",
     "css-loader": "^2.0.1",
     "html-loader": "^0.5.5",
     "mini-css-extract-plugin": "^0.5.0",

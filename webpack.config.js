@@ -8,7 +8,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const minifyHTML = !isDev;
 
 module.exports = {
-    entry: './resources/js/app.js',
+    entry: './resources/app.js',
     output: {
         path: path.resolve(__dirname, folderPath),
         filename: 'main.js',
@@ -16,13 +16,27 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                // use: [
+                    // {
+                    //     loader:  path.resolve('./loaders/resources-asset-loader.js')
+                    // },
+                    // {
+                    //     loader: 'babel-loader'
+                    // }
+                // ]
+            },
+
+            {
                 test: /\.css$/,
                 use: [
                     'style-loader',
                     'css-loader'
                 ]
             }
-        ]
+        ],
+
     },
     plugins: [
         new HtmlWebpackPlugin({
