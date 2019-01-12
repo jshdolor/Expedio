@@ -3,10 +3,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 
+
+const folderPath = 'dist/src/css';
+
 module.exports = {
     entry: './resources/scss/app.scss',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, folderPath),
         filename: 'sass.js',
         chunkFilename: '[name].js',
 
