@@ -1,10 +1,7 @@
-import _ from 'lodash';
-function component() {
-    let element = document.createElement('div');
+import Boot from './Framework/Bootstrap';
+import Config from './Application/Config';
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+window.App = null;
+window[Config.global_variable] = {}
 
-    return element;
-}
-
-document.body.appendChild(component());
+export default new Boot();
