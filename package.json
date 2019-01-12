@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "script": "node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack.config.js --args",
-    "sass": "node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack-sass.config.js --args",
-    "watch": "node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.config.js --args",
-    "swatch": "node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack-sass.config.js --args",
+    "script": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack.config.js --args",
+    "sass": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack-sass.config.js --args",
+    "watch": "node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.config.js --args",
+    "swatch": "node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack-sass.config.js --args",
     "bundle": "npm run script; npm run sass;"
   },
   "keywords": [],
