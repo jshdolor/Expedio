@@ -1,1 +1,1 @@
-.test #hello{font-size:35px;color:red}.first p{color:#ff0}.first #anna{font-size:72px;width:100%}
+.test #hello{font-size:35px;color:red}.triangle{width:0;height:0}.triangle.triangle-left{border-top:25px solid transparent;border-left:50px solid #555;border-bottom:25px solid transparent}.triangle.triangle-up{border-bottom:50px solid #555}.triangle.triangle-down,.triangle.triangle-up{border-left:25px solid transparent;border-right:25px solid transparent}.triangle.triangle-down{border-top:50px solid #555}
