@@ -1,0 +1,19 @@
+//container 
+$body-margin: 0;
+
+// color
+$primary : rgb(6, 89, 144) !default; //blue
+$secondary :  rgb(100, 182, 70) !default; //green
+
+
+// triangle
+$triangle-x-y : 100px;
+$triangle-size1: 100px;
+$triangle-size2: 50px;
+
+$triangle-left-size : 0 0, 0 $triangle-size1, $triangle-size2 $triangle-size2 !default;
+$triangle-up-size : $triangle-size2 $triangle-size2, 0 $triangle-size1, $triangle-size1 $triangle-size1 !default;
+$triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !default;
+
+
+

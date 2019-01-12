@@ -5,11 +5,12 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "script": "node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack.config.js  --mode=production  --args",
-    "html": "node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack-html.config.js  --mode=production  --args",
-    "sass": "node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack-sass.config.js  --mode=production  --args",
-    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.config.js --mode=development --args",
-    "swatch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack-sass.config.js --mode=development  --args",
+
+    "script": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack.config.js  --mode=production  --args",
+    "html": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack-html.config.js  --mode=production  --args",
+    "sass": "node node_modules/webpack/bin/webpack.js --progress --hide-modules --config=webpack-sass.config.js  --mode=production  --args",
+    "watch": "node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.config.js --mode=development  --args NODE_ENV=development",
+    "swatch": "NODE_ENV=development node node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack-sass.config.js --mode=development  --args",
     "bundle": "npm run script; npm run sass;"
   },
   "keywords": [],
@@ -26,6 +27,7 @@
   "dependencies": {
     "autoprefixer": "^9.4.2",
     "axios": "^0.18.0",
+    "bootstrap-sass": "^3.4.0",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
