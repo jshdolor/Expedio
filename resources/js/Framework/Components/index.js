@@ -1,6 +1,4 @@
-// import IComponents from './IComponents';
-
-class Components {//implements IComponents{
+class Components {
     constructor() {
         this._elements = [];
         this._selectors = [];
@@ -32,7 +30,9 @@ class Components {//implements IComponents{
             initial.selector = selector;
             this.elements = new this.model(initial);
         }
+
     }
+
 }
 
 export default Components;

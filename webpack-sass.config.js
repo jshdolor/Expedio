@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const folderPath = 'dist/src/css';
 
@@ -64,6 +64,10 @@ module.exports = {
             filename: 'main.css',
             chunkFilename: '[id].css'
         }),
+
+        new CopyWebpackPlugin([
+            { from: path.resolve(__dirname, 'resources/assets'), to: path.resolve(__dirname, 'dist/src/assets') }
+        ]),
     ],
     optimization: {
         minimizer: [

@@ -6,8 +6,13 @@ class ExpedioElements extends Components{
     constructor() {
         super();
         this.model = ExpedioElement;
-        this.selectors = [];
+        this.selectors = [
+            '.expedio-element1',
+            '.expedio-element2'
+        ];
     }
+
+    
 }
 
 export default ExpedioElements;

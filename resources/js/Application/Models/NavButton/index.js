@@ -18,7 +18,8 @@ class NavButton extends ElementModel{
         return this._direction || 'left';
     }
 
-    clickEvent(self) {
+    clickEvent(e) {
+        let self = this.context;
         console.log(self.direction);
     }
 

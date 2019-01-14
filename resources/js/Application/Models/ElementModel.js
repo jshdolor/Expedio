@@ -16,9 +16,11 @@ class ElementModel {
     }
 
     attachEvents() {
-        let self = this;
-        for(var action of self.actions) {
-            document.querySelector(this.selector)[action['event']] = () => action.attach(self);
+        let elemSelected = null;
+        for(var action of this.actions) {
+            elemSelected = document.querySelector(this.selector);
+            elemSelected.context = this;
+            elemSelected[action['event']] = action.attach;
         }
     }
 }
