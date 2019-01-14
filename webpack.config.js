@@ -19,12 +19,12 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 // use: [
-                    // {
-                    //     loader:  path.resolve('./loaders/resources-asset-loader.js')
-                    // },
-                    // {
-                    //     loader: 'babel-loader'
-                    // }
+                //     {
+                //         loader:  path.resolve('./loaders/resources-asset-loader.js')
+                //     },
+                //     {
+                //         loader: 'babel-loader'
+                //     }
                 // ]
             },
 

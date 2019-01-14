@@ -4,6 +4,7 @@ import ExpedioElements from '../Components/ExpedioElements/';
 import Navigations from '../Components/Navigations/';
 
 import {setWindowVar} from '../Helpers/';
+// import {setWindowVar} from '~/Framework/Helpers';
 
 class Bootstrap {
     constructor() {
@@ -18,7 +19,6 @@ class Bootstrap {
         Essentials();
 
         this.initComponents();
-
     }
 
     initComponents() {
