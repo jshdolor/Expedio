@@ -28,13 +28,22 @@ module.exports = {
                 //     }
                 // ]
             },
-
             {
                 test: /\.css$/,
                 use: [
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.ejs$/,
+                loader: 'compile-ejs-loader',
+                options: {
+                    'htmlmin': !isDev,
+                    'htmlminOptions': {
+                        removeComments: true
+                    }
+                }
             }
         ],
 
@@ -42,7 +51,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: path.resolve(__dirname, htmlFolderPath+'/index.html'),
-            template: path.resolve(__dirname, 'resources/index.html'),
+            template: path.resolve(__dirname, 'resources/index.ejs'),
             templateParameters: {
                 '__ASSETS_PATH__': './src/assets/'
             },
