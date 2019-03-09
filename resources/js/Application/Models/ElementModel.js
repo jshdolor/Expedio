@@ -19,8 +19,12 @@ class ElementModel {
         let elemSelected = null;
         for(var action of this.actions) {
             elemSelected = document.querySelector(this.selector);
-            elemSelected.context = this;
-            elemSelected[action['event']] = action.attach;
+            if(elemSelected) {
+                elemSelected.context = this;
+                elemSelected[action['event']] = action.attach;
+            } else {
+                console.log('Error:', 'No element to be used for event attachments');
+            }
         }
     }
 }

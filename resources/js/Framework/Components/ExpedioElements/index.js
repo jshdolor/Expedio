@@ -12,7 +12,6 @@ class ExpedioElements extends Components{
         ];
     }
 
-    
 }
 
 export default ExpedioElements;

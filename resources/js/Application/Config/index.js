@@ -1,3 +1,6 @@
 export default {
-    global_variable: 'expedio'
+    global_variable: 'expedio',
+    initializeArray: [
+        'expedioClick'
+    ]
 }

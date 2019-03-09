@@ -4,22 +4,29 @@
     <title>Expedio</title>
     <link rel="stylesheet"  href="./src/css/main.css">
 </head>
-<body>
-    <div class="test" style="background: #000;width: 100%">
-        <img src="./src/assets/service1.png" class="expedio expedio-element1" style="position: absolute;">
-        <img src="./src/assets/service3.png" class="expedio expedio-element2">
-    </div>
-    <div class="container-fluid main-page">
-        <div id="nav-center">
-            <div class="triangle">
-                <div class="down" data-direction="down"></div>
-                <div class="left" data-direction="left"></div>
-                <div class="up" data-direction="up"></div>
+<body bgcolor="#000">
+    <div class="whole-page">
+        <div class="expedio-elements-container" style="background: #000;width: 100%;">
+
+            <img src="<%= __ASSETS_PATH__ %>images/WATTAH.png" class="expedio expedio-element1" style="position: absolute;">
+            <img src="<%= __ASSETS_PATH__ %>images/WATTAH.png" class="expedio expedio-element2" style="z-index:1;position: absolute;left:200px">
+            
+        </div>
+        <div class="container-fluid navigation-page">
+            <div id="nav-center">
+                <div class="triangle">
+                    <div class="down" data-direction="down"></div>
+                    <div class="left" data-direction="left"></div>
+                    <div class="up" data-direction="up"></div>
+                </div>
             </div>
         </div>
+        <div class="main-page"></div>
+        <div class="main-page"></div>
+        <div class="contact-page">
+            
+            
+        </div>
     </div>
-    <div class="main-page"></div>
-    <div class="main-page"></div>
-    <div class="main-page"></div>
 </body>
 </html>
