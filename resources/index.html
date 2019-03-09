@@ -4,15 +4,16 @@
     <title>Expedio</title>
     <link rel="stylesheet"  href="./src/css/main.css">
 </head>
-<body bgcolor="#000">
+<body bgcolor="">
     <div class="whole-page">
+
         <div class="expedio-elements-container" style="background: #000;width: 100%;display:none">
 
             <img src="<%= __ASSETS_PATH__ %>images/WATTAH.png" class="expedio expedio-element1" style="position: absolute;">
             <img src="<%= __ASSETS_PATH__ %>images/WATTAH.png" class="expedio expedio-element2" style="z-index:1;position: absolute;left:200px">
             
         </div>
-        <div class="container-fluid navigation-page">
+        <div class="container-fluid navigation-page" style="display:none">
             <div id="nav-center">
                 <div class="triangle">
                     <div class="down" data-direction="down"></div>
@@ -24,9 +25,77 @@
         <div class="main-page"></div>
         <div class="main-page"></div>
         <div class="contact-page">
-            
+            <div class="col-md-6">
+                <h1 tobereplaced>logo here</h1>
+                <img src="<%= __ASSETS_PATH__ %>images/contact-us/submit.png">
+                <div class="col-md-12">
+                    <h2>6/F the Community Bldg.</h2>
+                </div>
+                <div class="col-md-12">
+                    Metropoli Dr., Metropoli Residenza
+                </div>
+                <div class="col-md-12">
+                    Brgy. Bagumbayan, (libis) Q.C
+                </div>
+                <div class="col-md-12">
+                    1110 Philippines
+                </div>
+                <div class="col-md-12">
+                    <b>Give us a Call :</b> (632) 7219761 / 7219758
+                </div>
+                <div class="col-md-12">
+                    <b>Send us a Fax  :</b> (632) 4611935
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h2>Collaborate with us!</h2>
+                    <div class="col-md-12">
+                        At Expedio, we start collaboration with by brewing ideas.
+                    </div>
+                    <div class="col-md-12">
+                        Share us your ideas or concerns.
+                    </div>
+                    <div class="col-md-12">
+                        We'd love to know your cup of tea - or coffee!
+                    </div>
+                </div>
 
+                    <div class="form-group col-md-12">
+                        <input class="form-control" placeholder="Tell us your name">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input class="form-control" placeholder="How should we call you?">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input class="form-control" placeholder="Where can we send you an e-mail?">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>
+                            <input type=radio name="topic" class="form-control">
+                            Client Inquiry
+                        </label>
+                        <label>
+                            <input type=radio name="topic" class="form-control">
+                            Supplier Inquiry
+                        </label>
+                        <label>
+                            <input type=radio name="topic" class="form-control">
+                            Jobs and Internship
+                        </label>
+                        <label>
+                            <input type=radio name="topic" class="form-control">
+                            Projects Inquiry
+                        </label>
+                        <textarea></textarea>
+                    </div>
+                    <div class="form-group col-md-12 text-center">
+                        <img src="<%= __ASSETS_PATH__ %>images/contact-us/submit.png"><button>Send us your brew!</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </div>
 </body>
 </html>
