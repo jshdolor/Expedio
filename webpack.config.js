@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const folderPath = 'dist/src/js';
 const htmlFolderPath = 'dist';
@@ -42,6 +43,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: path.resolve(__dirname, htmlFolderPath+'/index.html'),
             template: path.resolve(__dirname, 'resources/index.html'),
+            templateParameters: {
+                '__ASSETS_PATH__': './src/assets/'
+            },
             chunks: ['main'],
             minify   : {
                 html5                          : minifyHTML,
@@ -59,5 +63,11 @@ module.exports = {
                 useShortDoctype                : minifyHTML
               }
         }),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'resources/assets'),
+                to: path.resolve(__dirname, htmlFolderPath+'/src/assets')
+            } 
+        ]), 
     ]
 };

@@ -7,18 +7,32 @@ class ExpedioElement extends ElementModel{
             {
                 event: 'onclick',
                 attach: this.clickEvent
-            }
+            },
         ];
         this.initializeCanvas();
         this.attachEvents();
+        this.id = Math.floor(Math.random()*100/2);
 
     }
 
     initializeCanvas() {
+        this.createCanvas();
+
+        let image = document.querySelector(this.selector);
+        // image.style.display = 'none';
+
+        this.canvas.height = image.height;
+        this.canvas.width = image.width;
+        this.canvas.style.left = image.style.left;
+        this.canvas.style.top = image.style.top;
+        this.canvas.getContext("2d").drawImage(image, 0, 0, image.width, image.height);
+    }
+
+    createCanvas() {
         let canvasObj = document.createElement("canvas");
-        document.body.appendChild(canvasObj);
+        // canvasObj.style.position = 'absolute';
+        // document.body.appendChild(canvasObj);
         this.canvas = canvasObj;
-        this.canvas.id = 'canvas-'+this.selector.replace('.','');
     }
 
     set canvas(canvas) {
@@ -30,23 +44,31 @@ class ExpedioElement extends ElementModel{
     }
 
     clickEvent(event) {
-        let self = this.context, canvasContext = self.canvas.getContext("2d");
-        // Get click coordinates
-        let x = event.pageX - this.offsetLeft,
-          y = event.pageY - this.offsetTop,
-          w = canvasContext.canvas.width = this.width,
-          h = canvasContext.canvas.height = this.height,
-          alpha;
-
+        let self = this.context,
+            x = event.pageX - this.offsetLeft,
+            y = event.pageY - this.offsetTop,
+            alpha;
         // Draw image to canvas
         // and read Alpha channel value
-        canvasContext.drawImage(this, 0, 0, w, h);
+        alpha = self.canvas.getContext("2d").getImageData(x, y, 1, 1).data[3]; // [0]R [1]G [2]B [3]A
 
-        alpha = canvasContext.getImageData(x, y, 1, 1).data[3]; // [0]R [1]G [2]B [3]A
-        // If pixel is transparent,
-        // retrieve the element underneath and trigger it's click event
         if( alpha > 0 ) {
-            console.log(canvasContext);
+            //show animation...
+            console.log(self.id)
+        } else {
+
+            //transparent
+            let x = event.pageX, y = event.pageY;
+            this.style.pointerEvents = 'none';
+            var evt = new MouseEvent("click", {
+                shiftKey: true,
+                clientX: x - this.offsetLeft,
+                clientY: y - this.offsetTop,
+            });
+            console.log(evt);
+            document.dispatchEvent(evt);
+
+            this.style.pointerEvents = 'auto';
         }
     };
 }
