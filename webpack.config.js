@@ -51,7 +51,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: path.resolve(__dirname, htmlFolderPath+'/index.html'),
-            template: path.resolve(__dirname, 'resources/index.ejs'),
+            template: '!!ejs-compiled-loader!'+path.resolve(__dirname, 'resources/index.ejs'),
             templateParameters: {
                 '__ASSETS_PATH__': './src/assets/'
             },
