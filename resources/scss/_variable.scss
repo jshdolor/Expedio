@@ -1,8 +1,11 @@
+//content
+$scroll-width: 17px;
+
+
 // color
 $primary: #191919; //black
 $secondary: #64b646; //green
 $tertiary: #065990; //bluen
-
 
 // triangle
 $triangle-x-y : 100px;
@@ -13,5 +16,5 @@ $triangle-left-size : 0 0, 0 $triangle-size1, $triangle-size2 $triangle-size2 !d
 $triangle-up-size : $triangle-size2 $triangle-size2, 0 $triangle-size1, $triangle-size1 $triangle-size1 !default;
 $triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !default;
 
-
-
+// background
+// $activate-bg: '<%= __ASSETS_PATH__ %>images/logo.png';
