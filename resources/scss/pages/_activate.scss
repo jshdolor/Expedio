@@ -1,7 +1,57 @@
+.an-activate-page {
+  @include an-main-container;
+}
+
+.an-activate-content {
+  @include an-child-container;
+  background-image: url('../assets/images/activate/floating-line-art.png');
+  background-size: 100%; 
+  
+  > div {
+    padding-top: 5em;
+    padding-bottom: 5em; 
+  }
+}
+
 .opening {
-  text-align: center;
+  @extend .container;
+  top: 0;
+  height: calc(100vh - 5em);
+
+  h1 {
+    // margin: 10vh 0;
+  }
+  .bottom-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    h3 {
+      margin-top: 2.5em; 
+      margin-bottom: 2.5em; 
+      text-align: center;
+    }
+  }
+}
+
+.services {
+  .row > div{
+    h3 {
+      display:list-item;
+      font-weight: bold;
+    }
+  }
 }
 
 .midway {
-  @extend .opening;
+  @extend .container;
+  text-align: center;
+}
+
+.major-projects {
+  @extend .container;
+  h3{
+    font-weight:bold;
+    text-transform: uppercase;
+    padding-bottom: 1.5em;
+  }
 }
