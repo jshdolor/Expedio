@@ -5,15 +5,10 @@ $icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
 
 
 // @import "mixins";
-@import "utilities";
-@import "content";
 @import "container";
+
 @import "buttons";
 @import "shapes";
 @import "nav";
 @import "pages/activate";
-
-$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
-
+@import "typography";
