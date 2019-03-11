@@ -27,6 +27,7 @@
     "babel-preset-minify": "^0.5.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.0.1",
+    "ejs-compiled-loader": "^2.2.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-loader": "^0.5.5",
     "mini-css-extract-plugin": "^0.5.0",
