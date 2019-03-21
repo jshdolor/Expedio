@@ -1,0 +1,50 @@
+// nav 
+nav {
+  @extend .mx-3;
+  @extend .py-2;
+
+  img {
+    width: auto;
+    height: 2em;
+  }
+  
+}
+
+
+// FORMS
+form {
+  display: flex;
+  flex-direction: column;
+
+  > input, textarea, select {
+    flex: 1;
+    @extend .py-1;
+    @extend .px-3;
+    @extend .mb-1;
+    background-color: lighten($color: $color-dark, $amount: 75%);
+    border: 0;
+    // font-size: 1.25em;
+  }
+
+  button {
+    align-self: center;
+  }
+  ::placeholder {
+    color: $color-dark;
+  }
+
+}
+
+
+//CARDS
+.card {
+  .card-title {
+    font-weight: bold;
+    font-size: 1.37em;
+    margin-block-end: 0.5em;
+  }
+  .card-content {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+  }
+}
