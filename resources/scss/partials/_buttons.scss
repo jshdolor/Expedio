@@ -1,0 +1,19 @@
+button {
+  @extend .px-3;
+  @extend .py-1;
+  background: #fff;
+  display: inline-flex;
+  align-items: center; 
+  border: 0;
+
+  img {
+    max-height: 3em;
+    width: auto;
+  }
+
+}
+
+.btn-secondary {
+  background-color: $color-secondary;
+  color: lighten($color: $color-secondary, $amount: 90%);
+}

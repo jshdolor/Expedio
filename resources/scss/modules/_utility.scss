@@ -1,0 +1,20 @@
+// image
+img {
+  width: 100%;
+
+  &.img-auto {
+    width: initial;
+  }
+}
+
+.floating-bg {
+  position: absolute;
+  
+  &img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+  }
+}
