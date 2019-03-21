@@ -1,16 +1,34 @@
-<div class="engage-page">
-    <section class="page">
-        <h1 tobereplaced>logo here</h1>
-        <h1 class="thisisbig thisneedsclass">Engage</h1>
-        <p>Experiences are most powerful when
-they are valued and remembered.</p>
-    </section>
-    <section class="page container">
-        <h2>Testimonials</h2>
-        <div class="" tohavebluebg>
-            <img src="<%= __ASSETS_PATH__ %>images/engage/astronaut.png">
-            <img src="<%= __ASSETS_PATH__ %>images/engage/crater.png">
-        </div>
-    </section>
+<div class="engage-container">
+    <%- include headnav.html -%>
+    <main class="engage-page">
+        <section class="opening">
+            <h1>ENGAGE</h1>
+            <div class="bottom-content">
+                <h4>Experiences are most powerful when they are valued, remembered and shared.</h4>
+            </div>
+        </section>
     
+        <section class="testimonials">
+            <h3>Testimonials</h3>
+            <div class="space-testimony">
+                <img class="space-stars" src="<%= __ASSETS_PATH__ %>images/engage/stars.png">
+                <img class="space-astronaut" src="<%= __ASSETS_PATH__ %>images/engage/astronaut.png">
+                <img class="space-crater"src="<%= __ASSETS_PATH__ %>images/engage/crater.png">
+            </div>
+        </section>
+    
+        <section class="midway">
+            <h4>We make sure to create wonderful engagements through experiences that stay with our audience.</h4>
+        </section>
+    
+        <section class="live-stream">
+            <h3>Live Stream</h3>
+            <video width="100%" height="auto" controls>
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        
+    </main>
 </div>

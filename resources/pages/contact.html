@@ -1,71 +1,44 @@
-<div class="contact-page">
-    <div class="col-md-6">
-        <h1 tobereplaced>logo here</h1>
-        <img src="<%= __ASSETS_PATH__ %>images/contact-us/submit.png">
-        <div class="col-md-12">
-            <h2>6/F the Community Bldg.</h2>
-        </div>
-        <div class="col-md-12">
-            Metropoli Dr., Metropoli Residenza
-        </div>
-        <div class="col-md-12">
-            Brgy. Bagumbayan, (libis) Q.C
-        </div>
-        <div class="col-md-12">
-            1110 Philippines
-        </div>
-        <div class="col-md-12">
-            <b>Give us a Call :</b> (632) 7219761 / 7219758
-        </div>
-        <div class="col-md-12">
-            <b>Send us a Fax  :</b> (632) 4611935
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="text-center">
-            <h2>Collaborate with us!</h2>
-            <div class="col-md-12">
-                At Expedio, we start collaboration with by brewing ideas.
+<div class="contact-container">
+   
+    <%- include headnav.html -%>
+    <main class="contact-page">
+        <section class="col">
+            <img src="<%= __ASSETS_PATH__ %>images/contact-us/bldg.png">
+        <div class="address">
+            <h3>6/F the Community Bldg.</h3>
+            <p>Metropoli Dr., Metropoli Residenza <br />
+                Brgy. Bagumbayan, (libis) Q.C<br />
+                1110 Philippines</p>
+                <p><b>Give us a Call :</b> (632) 7219761 / 7219758</p>
+                <p><b>Send us a Fax  :</b> (632) 4611935</p>
+                <button><img src="<%= __ASSETS_PATH__ %>images/contact-us/download.png" class="mr-1">Download our kit</button>
             </div>
-            <div class="col-md-12">
-                Share us your ideas or concerns.
+        </section>
+        <section class="col">
+            <div class="collab-text">
+                <h2>Collaborate with us!</h2>
+                <p>At Expedio, we start collaboration with by brewing ideas.<br />
+                    Share us your ideas or concerns.<br />
+                    We'd love to know your cup of tea - or coffee!</p>
             </div>
-            <div class="col-md-12">
-                We'd love to know your cup of tea - or coffee!
-            </div>
-        </div>
+            <!--contact form -->
+            <form>
+                <input placeholder="Tell us your name">
+                <input placeholder="How should we call you?">
+                <input placeholder="Where can we send you an e-mail?">
+                <select name="cars">
+                    <option selected disabled>What do you want to talk about?</option>
+                    <option value="Client Inquiry">Client Inquiry</option>
+                    <option value="Supplier Inquiry">Supplier Inquiry</option>
+                    <option value="Jobs and Internship">Jobs and Internship</option>
+                    <option value="Projects Inquiry">Projects Inquiry</option>
+                </select>
+                <textarea placeholder="Please write your message here" rows="8"></textarea>
+                <button><img src="<%= __ASSETS_PATH__ %>images/contact-us/submit.png" class="mr-1">Send us your brew!</button>
+            </form>
+            <button class="btn-secondary messenger">Chat with us <img src="<%= __ASSETS_PATH__ %>images/contact-us/messenger.png" class="ml-1"></button>
+        </section>
+        
+    </main>
 
-            <div class="form-group col-md-12">
-                <input class="form-control" placeholder="Tell us your name">
-            </div>
-            <div class="form-group col-md-12">
-                <input class="form-control" placeholder="How should we call you?">
-            </div>
-            <div class="form-group col-md-12">
-                <input class="form-control" placeholder="Where can we send you an e-mail?">
-            </div>
-            <div class="form-group col-md-12">
-                <label>
-                    <input type=radio name="topic" class="form-control">
-                    Client Inquiry
-                </label>
-                <label>
-                    <input type=radio name="topic" class="form-control">
-                    Supplier Inquiry
-                </label>
-                <label>
-                    <input type=radio name="topic" class="form-control">
-                    Jobs and Internship
-                </label>
-                <label>
-                    <input type=radio name="topic" class="form-control">
-                    Projects Inquiry
-                </label>
-                <textarea></textarea>
-            </div>
-            <div class="form-group col-md-12 text-center">
-                <img src="<%= __ASSETS_PATH__ %>images/contact-us/submit.png"><button>Send us your brew!</button>
-            </div>
-        </div>
-    </div>
 </div>

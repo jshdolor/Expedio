@@ -1,0 +1,85 @@
+// TYPOGRAPHY
+@font-face {
+  font-family: 'Gotham';
+  src: url('../assets/font/Gotham-Black/Gotham-Black.eot'); /* IE9 Compat Modes */
+  src: url('../assets/font/Gotham-Black/Gotham-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/font/Gotham-Black/Gotham-Black.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/font/Gotham-Black/Gotham-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/font/Gotham-Black/Gotham-Black.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Brandon';
+  src: url('../assets/font/Brandon/BrandonText-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../assets/font/Brandon/BrandonText-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/font/Brandon/BrandonText-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/font/Brandon/BrandonText-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/font/Brandon/BrandonText-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+$pf: Brandon;
+p {
+  font-size: 1.15em;
+}
+
+h1 {
+  font-size: 4.5em;
+}
+
+h2 {
+  font-size: 2.8em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.75em;
+}
+
+h5 {
+  font-size: 1.5em;
+}
+
+h6 {
+  font-size: 1.15em;
+}
+
+
+// SPACING
+$spacer: 16px;
+$padding: 0.5em;
+$margin: 1em;
+
+@for $i from 0 through 5 {
+  .p-#{$i} { padding: $padding * $i; }
+  .pt-#{$i} { padding-top: $padding * $i; }
+  .pb-#{$i} { padding-bottom: $padding * $i; }
+  .pl-#{$i} { padding-left: $padding * $i; }
+  .pr-#{$i} { padding-right: $padding * $i; }
+  .px-#{$i} { padding-left: $padding * $i; padding-right: $padding * $i; }
+  .py-#{$i} { padding-top: $padding * $i; padding-bottom: $padding * $i; }
+}
+
+@for $i from 0 through 5 {
+  .m-#{$i} { margin: $margin * $i; }
+  .mt-#{$i} { margin-top: $margin * $i; }
+  .mb-#{$i} { margin-bottom: $margin * $i; }
+  .ml-#{$i} { margin-left: $margin * $i; }
+  .mr-#{$i} { margin-right: $margin * $i; }
+  .mx-#{$i} { margin-left: $margin * $i; margin-right: $margin * $i; }
+  .my-#{$i} { margin-top: $margin * $i; margin-bottom: $margin * $i; }
+}
+
+* {
+  font-family: $pf;
+}
+
+body {
+  @extend .m-0;
+}
+
+main {
+  display: flex;
+}

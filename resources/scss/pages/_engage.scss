@@ -1,0 +1,63 @@
+.engage-container {
+  background : url('../assets/images/engage/floating-line-art.png');
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.engage-page {
+  section {
+    min-height: calc(100vh - 69px);
+
+    h4 {
+      font-weight:initial;
+      text-align: center;
+      @extend .px-3;
+      @extend .mb-1;
+    }
+
+    &.opening {
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      > * {
+        flex: 1;
+      }
+    }
+
+    &.midway {
+      position: relative;
+      h4 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%); 
+      }
+    }
+
+    &.testimonials{
+      .space-testimony{
+        background : url('../assets/images/engage/blue-background.png');  
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        min-height: 100vh; 
+
+        img {
+          position: absolute;
+          &.space-astronaut {
+            width: auto;
+          }
+          &.space-crater {
+            bottom: 0;
+          }
+
+        }
+        
+      }
+      
+    }
+  }
+ 
+}
