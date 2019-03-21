@@ -1,57 +1,48 @@
-.an-activate-page {
-  @include an-main-container;
+.activate-container {
+  background : url('../assets/images/activate/floating-line-art.png');
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 
-.an-activate-content {
-  @include an-child-container;
-  background-image: url('../assets/images/activate/floating-line-art.png');
-  background-size: 100%; 
-  
-  > div {
-    padding-top: 5em;
-    padding-bottom: 5em; 
-  }
-}
+.activate-page {
 
-.opening {
-  @extend .container;
-  top: 0;
-  height: calc(100vh - 5em);
+  section {
+    @extend .mb-5;
+    
 
-  h1 {
-    // margin: 10vh 0;
-  }
-  .bottom-content {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    h3 {
-      margin-top: 2.5em; 
-      margin-bottom: 2.5em; 
+    &.services {
+      display: flex;
+      flex-wrap: wrap;
+
+      div {
+        flex-basis: 50%;
+        box-sizing: border-box;
+        flex-grow: 1;
+        
+      }
+    }
+
+    &.major-projects {
+      h2 {
+        // text-transform: uppercase;
+      }
+    }
+
+    h4 {
+      font-weight:initial;
       text-align: center;
+      @extend .px-3;
+      @extend .mt-3;
+    }
+
+    .carousel {
+      position: absolute;
+      left: 0;
+      img {
+        filter: gray;
+        filter: grayscale(100%);
+      }
     }
   }
-}
-
-.services {
-  .row > div{
-    h3 {
-      display:list-item;
-      font-weight: bold;
-    }
-  }
-}
-
-.midway {
-  @extend .container;
-  text-align: center;
-}
-
-.major-projects {
-  @extend .container;
-  h3{
-    font-weight:bold;
-    text-transform: uppercase;
-    padding-bottom: 1.5em;
-  }
+  
 }

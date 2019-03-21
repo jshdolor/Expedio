@@ -1,3 +1,12 @@
+// triangle
+$triangle-x-y : 100px;
+$triangle-size1: 100px;
+$triangle-size2: 50px;
+
+$triangle-left-size : 0 0, 0 $triangle-size1, $triangle-size2 $triangle-size2 !default;
+$triangle-up-size : $triangle-size2 $triangle-size2, 0 $triangle-size1, $triangle-size1 $triangle-size1 !default;
+$triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !default;
+
 
 .triangle {
 	position: relative;
@@ -34,5 +43,16 @@
 	top: -2.5px;
 	left: 2.5px;
 	
-	
+}
+
+#nav-center{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .triangle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
