@@ -78,5 +78,15 @@ module.exports = {
                 to: path.resolve(__dirname, htmlFolderPath+'/src/assets')
             } 
         ]), 
-    ]
+    ],
+    resolve: {
+        modules: [
+            path.resolve('./resources/js'),
+            path.resolve('./node_modules'),
+        ],
+        alias: {
+            '~': path.join(__dirname, 'resources/js') ,
+        },
+        extensions: ['.js', '.vue', '.json'],
+    }
 };
