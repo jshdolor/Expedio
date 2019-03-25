@@ -46,5 +46,11 @@ export default {
                 direction:'bottom'   
             }
         },
-    ]
+    ],
+    partnerSlide: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    }
 }
