@@ -1,0 +1,187 @@
+.experience-container {
+  background : url('../assets/images/experience/floating-line-art.png');
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.experience-page {
+  section {
+
+    h4 {
+      font-weight:initial;
+      text-align: center;
+      @extend .px-3;
+      @extend .mb-1;
+    }
+
+    &.opening {
+      min-height: calc(100vh - 69px);
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      > * {
+        flex: 1;
+      }
+    }
+
+    &.midway {
+      min-height: calc(100vh - 69px);
+      position: relative;
+      h4 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%); 
+      }
+    }
+
+    &.acct-prod{
+      @include img-en-desc;
+      box-sizing: border-box;
+      img{
+        transition: 1s ease-in-out;
+        height: 100%;
+      }
+      .desc-con {
+        position: relative;
+        overflow: hidden;
+        .details-con {
+          text-align: left;
+          transition: 1s ease-in-out;
+          // animation-delay: 2s;
+          background-color: $color-primary;
+          position: absolute;
+          bottom: -100%;
+          height: 100%;
+          width: 100%;
+          @extend .p-3;
+          box-sizing: border-box;
+          > * {
+            color: lighten($color: $color-secondary, $amount: 90%);
+          }
+        }
+      }
+    }
+
+    &.creatives{
+      @include img-en-desc;
+      flex-direction: row-reverse;
+      box-sizing: border-box;
+      img{
+        transition: 1s ease-in-out;
+        height: 100%;
+      }
+      .desc-con {
+        position: relative;
+        overflow: hidden;
+        .details-con {
+          text-align: left;
+          transition: 1s ease-in-out;
+          // animation-delay: 2s;
+          background-color: $color-primary;
+          position: absolute;
+          bottom: -100%;
+          height: 100%;
+          width: 100%;
+          @extend .p-3;
+          box-sizing: border-box;
+          > * {
+            color: lighten($color: $color-secondary, $amount: 90%);
+          }
+        }
+      }
+    }
+
+    &.administration{
+      @include img-en-desc;
+      box-sizing: border-box;
+      img{
+        transition: 1s ease-in-out;
+        height: 100%;
+      }
+      .desc-con {
+        position: relative;
+        overflow: hidden;
+        .details-con {
+          text-align: left;
+          transition: 1s ease-in-out;
+          // animation-delay: 2s;
+          background-color: $color-primary;
+          position: absolute;
+          bottom: -100%;
+          height: 100%;
+          width: 100%;
+          @extend .p-3;
+          box-sizing: border-box;
+          > * {
+            color: lighten($color: $color-secondary, $amount: 90%);
+          }
+        }
+      }
+    }
+  }
+ 
+}
+
+//thumbnail [partners]
+.experience-page { 
+  .partners{
+    .thumbnails {
+      display: flex;        
+      justify-content: space-between;
+      box-sizing: border-box;
+    
+      > div {      
+        @include box-size(3); 
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+
+        img {
+          height: calc(100% + 24px);
+          filter: grayscale(100%);
+          transition: 1s ease-in-out;
+        }
+
+        .invisi-cover {
+          position: absolute;
+          width: 100%;
+          height: 100%;;
+          top: 0;
+          z-index: 2;
+
+          &:hover {
+            + .thumb-details {
+              bottom: 0;
+            }
+            ~ img {
+              filter: grayscale(0);
+              transition: 1s ease-in-out;
+            }
+          }
+        }
+
+        .thumb-details {
+          position: absolute;
+          bottom: -50%;
+          // transition: bottom 0.5s;
+          transition: 1s ease-in-out;
+          // animation-delay: 2s;
+          z-index: 1;
+          width: 100%;
+          box-sizing: border-box;
+          background-color: fade-out($color-secondary, .5);
+          @extend .p-3;
+          @extend .pb-5;
+
+          > * {
+            color: lighten($color: $color-secondary, $amount: 90%);
+            margin-block-start: 0;
+            margin-block-end: 0;
+          }
+        }
+      }
+
+    }
+  }
+}
