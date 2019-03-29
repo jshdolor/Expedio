@@ -4,10 +4,6 @@
   background-size: cover;
 }
 
-@mixin box-size($n) {
-  flex-basis: ((100% / $n ) - (10% / $n));
-}
-
 .contact-page {
   justify-content: space-between;
   flex-direction: row;
