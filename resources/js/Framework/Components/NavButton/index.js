@@ -4,6 +4,7 @@ class NavButton{
 
         this.selector = el;
         this.el = $(el);
+        this.activeClass = 'active';
         this.target = config.target;
         this.direction = config.direction;
 
@@ -27,7 +28,8 @@ class NavButton{
     }
 
     pageCallback() {
-        console.log('loaded', this);
+        $('.expedio-page').removeClass('active');
+        $('.'+this.target +'-container').addClass(this.activeClass);
     }
 
 }

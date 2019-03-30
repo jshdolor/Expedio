@@ -1,0 +1,99 @@
+.toolbar {
+    background-color: $color-bg-toolbar;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+    overflow: hidden;
+
+    &::after {
+        content: '';   
+        width: 400px;
+        height:10px;
+        position:absolute;
+        bottom:-10px;
+        left:0;
+        background-color: $color-toolbar-bottom-shadow;
+        -webkit-transform:skew(45deg);
+        -webkit-transform-origin:top;
+        
+        -moz-transform:skew(45deg);
+        -moz-transform-origin:top;
+        
+        -ms-transform:skew(45deg);
+        -ms-transform-origin:top;
+        
+        -o-transform:skew(45deg);
+        -o-transform-origin:top;
+        
+        transform:skew(45deg);
+        transform-origin:top;    
+    }
+
+    &::before {
+        content: '';
+        width: 10px;
+        height: $toolbar-height - 5;
+        position: absolute;
+        top: 5px;
+        right: -10px;
+        background-color:  $color-toolbar-right-shadow;
+        -webkit-transform: skewY(45deg);
+        -webkit-transform-origin: top;
+        
+        -moz-transform: skewY(45deg);
+        -moz-transform-origin: top;
+        
+        -ms-transform: skewY(45deg);
+        -ms-transform-origin: top;    
+        
+        -o-transform: skewY(45deg);
+        -o-transform-origin: top;     
+        
+        transform: skewY(45deg);
+        transform-origin: top;     
+    }
+
+    .toolbar-header {
+        padding-left: 2em;
+        padding-top: 1.5em;
+        .brand {
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .toolbar-body {
+        padding-left: 2em;
+
+        a {
+            display: block;
+            font-size: 1.8em;
+            padding-bottom: 3px;
+            padding-top: 3px;
+            cursor: pointer;
+            letter-spacing: 3px;
+            color: #fff;
+            opacity: 0;
+            -webkit-transform: translate(-20px);
+            -moz-transform: translate(-20px);
+            -ms-transform: translate(-20px);
+            -o-transform: translate(-20px);
+            transform: translate(-20px);
+    
+        }
+    }
+
+    .toolbar-footer{
+        padding-left: 2em;
+
+        a{
+            display: inline-block;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+    }
+}

@@ -21,6 +21,8 @@ class Page{
             'overflow':'auto'
         });
 
+        this.el.addClass('expedio-page');
+
         pageManager.add(this.name, this.el);
     }
 

@@ -34,10 +34,19 @@ class Hooks {
 
     movePage(e) {
         let el = $(e.target);
-
+        el = el.data('direction') ? el:$(this);
         let direction = el.data('direction');
         let page = el.data('page');
-        pageManager[page][direction]();
+
+        if($('.'+page +'-container').hasClass('active')){
+            return;
+        }
+
+        $('.expedio-page').removeClass('active');
+
+        pageManager[page][direction](()=>{
+            $('.'+page +'-container').addClass('active');
+        });
     }
 
     slider(el, config) {

@@ -1,11 +1,37 @@
 <!-- ref: http://weecom.com.br/ -->
-<nav>
-    <ul>
-        <li>
-            <a data-hook="move-page" 
-                data-page='mainpage' 
-                data-direction="right">Home</a>
-        </li>
-        <li>Contact Page</li>
-    </ul>
-</nav>
+<div class="toolbar">
+    <div class="toolbar-header">
+        <a data-hook="move-page" 
+            data-page='mainpage' 
+            data-direction="right">
+            <img alt="Brand" src="<%= __ASSETS_PATH__ %>images/logo.svg" class="brand">
+        </a>
+    </div>
+    <div class="toolbar-body">
+        <a data-hook="move-page" 
+            data-page='activate' 
+            data-direction="bottom">Activate</a>
+        <a data-hook="move-page" 
+            data-page='engage' 
+            data-direction="left">Engage</a>
+        <a data-hook="move-page" 
+            data-page='experience' 
+            data-direction="top">Experience</a>
+    </div>
+    <div class="toolbar-footer">
+        <a 
+            data-hook="move-page"
+            data-direction="right">
+            <img alt="" src="<%= __ASSETS_PATH__ %>images/nav/contact-us.png" class="">
+        </a>
+        <a>
+            <img alt="" src="<%= __ASSETS_PATH__ %>images/nav/fb.png" class="">
+        </a>
+        <a>
+            <img alt="" src="<%= __ASSETS_PATH__ %>images/nav/youtube.png" class="">
+        </a>
+        <a>
+            <img alt="" src="<%= __ASSETS_PATH__ %>images/nav/download-kit.png" class="">
+        </a>
+    </div>
+</div>

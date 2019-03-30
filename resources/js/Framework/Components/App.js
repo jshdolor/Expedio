@@ -1,6 +1,7 @@
 import Config from '~/Application/Config';
 import Page from '~/Framework/Components/Page';
 import NavBtn from '~/Framework/Components/NavButton';
+import Toolbar from '~/Framework/Components/Toolbar';
 
 import Hooks from '~/Framework/Helpers/hooks';
 class App {
@@ -18,6 +19,7 @@ class App {
         this.initPages();
         this.initNavigations();
         this.initHooks();
+        this.initToolbar();
 
         //last function
         this.removePreloader();
@@ -33,6 +35,8 @@ class App {
     getInitialDimensions() {
         wHeight = $(window).height();
         wWidth = $(window).width();
+
+        $('[data-js="width"]').css('width', wWidth);
     }
 
     initHooks() {
@@ -51,22 +55,15 @@ class App {
         
         pageManager.add('mainpage',$('#main-page'));
         pageManager.mainpage.show();
-        // this.mainPage.css({
-        //     'height': wHeight,
-        //     'width': wWidth,
-        //     'position': 'fixed',
-        // });
-
-        // let PosMapping = {
-        //     left: { left: wWidth * -1},
-        //     top: {top: wHeight * -1},
-        //     bottom: {top: wHeight * 2}
-        // };
 
         Config.pages.forEach(page => {
             this.pages.push(new Page(page.id, page.config ));
         });
 
+    }
+
+    initToolbar() {
+        this.toolbar = new Toolbar('.navbar-brand', '.toolbar');
     }
 
     removePreloader() {
