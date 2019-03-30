@@ -17,13 +17,14 @@ $triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !d
 	position: absolute;	
 	height: $triangle-x-y;
 	width: $triangle-x-y;
+	cursor: pointer;
 }
 
 .left {	
 	@extend %triangle-shared;
 	shape-outside: polygon($triangle-left-size);
 	clip-path: polygon($triangle-left-size);
-	background: $primary;
+	background: $color-primary;
 	left: -2.5px;
 
 }
@@ -31,7 +32,7 @@ $triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !d
 	@extend %triangle-shared;	
 	shape-outside: polygon($triangle-up-size);
 	clip-path: polygon($triangle-up-size);
-	background: $secondary;
+	background: $color-secondary;
 	top: 2.5px;
 	left: 2.5px;
 }
@@ -39,7 +40,7 @@ $triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !d
 	@extend %triangle-shared;
 	shape-outside: polygon($triangle-down-size);
 	clip-path: polygon($triangle-down-size);
-	background: $secondary;
+	background: $color-secondary;
 	top: -2.5px;
 	left: 2.5px;
 	
@@ -51,8 +52,7 @@ $triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !d
   height: 100vh;
   .triangle{
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: calc(50% - #{$triangle-x-y}/2);
+    top: calc(50% - #{$triangle-x-y}/2);
   }
 }

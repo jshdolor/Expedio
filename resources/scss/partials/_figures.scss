@@ -2,10 +2,12 @@
 nav {
   @extend .mx-3;
   @extend .py-2;
+  margin-left: 6em;
+  margin-top: 1.5em;
 
   img {
     width: auto;
-    height: 2em;
+    height: 3em;
   }
   
 }
