@@ -21,6 +21,12 @@ export default {
             config: {
                 position: 'bottom'
             }
+        },
+        {
+            id:'#expedio_contact',
+            config: {
+                position: 'right'
+            }
         }
     ],
     navButtons: [

@@ -18,9 +18,8 @@ class Toolbar {
         $('body').off('mouseleave',this.el);
 
         showToolbar('.active '+this.el, () => {
-            console.log('done');
-            $('body').on('mouseleave', this.el, this.leaveToolbar.bind(this));
 
+            $('body').on('mouseleave', this.el, this.leaveToolbar.bind(this));
             $('body').addClass('toolbar-active');
 
         });
