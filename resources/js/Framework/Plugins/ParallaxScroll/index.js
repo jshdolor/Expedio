@@ -53,7 +53,7 @@ let parallaxPage = function(name, pageHtml){
 		},
 
 		slide : function(css, callback){
-			this.page.css("display", "block");
+			this.page.css("display", "flex");
 			this.page.stop().animate(css, parallax.speed, parallax.easing,
 				function(){if(typeof callback === "function"){callback();}
 			});
