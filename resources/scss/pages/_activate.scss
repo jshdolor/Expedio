@@ -1,48 +1,33 @@
+
 .activate-container {
-  background : url('../assets/images/activate/floating-line-art.png');
-  background-repeat: repeat-y;
-  background-size: cover;
-}
+  background-image: url('../assets/images/activate/FLOATING-LINE-ART.png');
 
-.activate-page {
+  .opening {
+    @include opening-section;
+  }
 
-  section {
-    @extend .mb-5;
-    
+  .midway {
+    @include midway-section;
 
-    &.services {
-      display: flex;
-      flex-wrap: wrap;
+  }
 
-      div {
-        flex-basis: 50%;
-        box-sizing: border-box;
-        flex-grow: 1;
-        
-      }
-    }
+  
+  .services {
+    display: flex;
+    flex-wrap: wrap;
 
-    &.major-projects {
-      h2 {
-        // text-transform: uppercase;
-      }
-    }
-
-    h4 {
-      font-weight:initial;
-      text-align: center;
-      @extend .px-3;
-      @extend .mt-3;
-    }
-
-    .carousel {
-      position: absolute;
-      left: 0;
-      img {
-        filter: gray;
-        filter: grayscale(100%);
-      }
+    div {
+      min-height: 30vh;
+      flex-basis: 50%;
+      flex-grow: 1;
+      
     }
   }
-  
+
+  .major-projects {
+    > * {
+      text-transform: uppercase;
+    }
+  }
+ 
 }

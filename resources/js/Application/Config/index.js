@@ -54,7 +54,7 @@ export default {
         },
     ],
     partnerSlide: {
-        slidesToShow: 3,
+        slidesToShow: 3, // kuya josh change this to 1 when screen size is less than 768.
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,

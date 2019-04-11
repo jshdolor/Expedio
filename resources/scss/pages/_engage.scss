@@ -1,62 +1,53 @@
 .engage-container {
-  background : url('../assets/images/engage/floating-line-art.png');
-  background-repeat: repeat-y;
-  background-size: cover;
-}
-
+  background-image: url('../assets/images/engage/FLOATING-LINE-ART.png');
+  max-width: 100vw;
+  overflow-x: hidden; 
 .engage-page {
-  section {
-    min-height: calc(100vh - 69px);
+  overflow-x: visible;
+  .opening {
+    @include opening-section;
+  }
+  .midway {
+    @include midway-section;
 
-    h4 {
-      font-weight:initial;
-      text-align: center;
-      @extend .px-3;
-      @extend .mb-1;
+  }
+  
+  .testimonials{
+    > * {
+      text-transform: uppercase;
     }
-
-    &.opening {
-      display: flex;
-      flex-direction: column;
-      align-content: space-between;
-      > * {
-        flex: 1;
-      }
-    }
-
-    &.midway {
+    .space-testimony{
+      background : url('../assets/images/engage/blue-background.png');  
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      min-height: 100vh; 
       position: relative;
-      h4 {
+      img {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%); 
-      }
-    }
-
-    &.testimonials{
-      .space-testimony{
-        background : url('../assets/images/engage/blue-background.png');  
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        min-height: 100vh; 
-
-        img {
-          position: absolute;
-          &.space-astronaut {
-            width: auto;
-          }
-          &.space-crater {
-            bottom: 0;
-          }
-
+        &.space-stars {
+          height: 100%;
+          object-fit: cover;
         }
-        
+        &.space-astronaut {
+          width: auto;
+          max-height: 50vh;
+          transform: translate(10px, 50px); 
+        }
+        &.space-crater {
+          bottom: 0;
+        }
+
       }
       
+    }
+      
+    }
+
+    .live-stream {
+      @extend .mb-3;
+      > * {
+        text-transform: uppercase;
+      }
     }
   }
  
