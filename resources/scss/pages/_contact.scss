@@ -1,36 +1,73 @@
+
 .contact-container {
-  background : url('../assets/images/contact-us/floating-line-art.png');
-  background-repeat: repeat-y;
-  background-size: cover;
-}
-
-.contact-page {
-  justify-content: space-between;
-  flex-direction: row;
-
-  section {
-    flex: unset;
-    @include box-size(2);
+  background-image: url('../assets/images/contact-us/FLOATING-LINE-ART.png');
+   .address {
+      > *:first-child {
+        text-align: center;
+      }
+    }
 
     .collab-text {
-      text-align:center;
-      @extend .mb-3;
-
-      h2 {
-        margin-block-end: 0.25em;
+      > *:first-child {
+        text-align: center;
       }
-
     }
+  > div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  section {
+    flex-basis: (((100% / 5 ) * 2)- (10% / 5) * 2);
+  }
+  section:first-child {
+    flex-basis: (((100% / 5 ) * 3 )- (10% / 5) * 3);
+  }
+} 
+
+@media only screen and (orientation: portrait) {
+  .contact-container {
+    > div {
+      flex-direction: column;
+      section {
+        flex: 1;
+      }
+    }
+   
   }
 
-  .address {
-    width: max-content;
-    margin: 0 auto;
-  }
-
-  .messenger {
-    position: fixed;
-    right: 0;
-  }
 }
+// .contact-container {
+//   background : url('../assets/images/contact-us/floating-line-art.png');
+//   background-repeat: repeat-y;
+//   background-size: cover;
+// }
+
+// .contact-page {
+//   justify-content: space-between;
+//   flex-direction: row;
+
+//   section {
+//     flex: unset;
+//     @include box-size(2);
+
+//     .collab-text {
+//       text-align:center;
+//       @extend .mb-3;
+
+//       h2 {
+//         margin-block-end: 0.25em;
+
+//     }
+//   }
+
+//   .address {
+//     width: max-content;
+//     margin: 0 auto;
+//   }
+
+//   .messenger {
+//     position: fixed;
+//     right: 0;
+//   }
+// }
 

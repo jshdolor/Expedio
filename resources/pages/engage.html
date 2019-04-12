@@ -1,15 +1,17 @@
-<div id="expedio_engage" class="engage-container">
-    <%- include headnav.html -%>
-    <main class="engage-page">
+<main id="expedio_engage" class="engage-container">
+    <div class="engage-page">
         <section class="opening">
-            <h1>ENGAGE</h1>
+            <%- include headnav.html -%>
+            <div class="title"> 
+                <h1>Engage</h1>
+            </div>
             <div class="bottom-content">
                 <h4>Experiences are most powerful when they are valued, remembered and shared.</h4>
             </div>
         </section>
     
         <section class="testimonials">
-            <h3>Testimonials</h3>
+            <h4>Testimonials</h4>
             <div class="space-testimony">
                 <img class="space-stars" src="<%= __ASSETS_PATH__ %>images/engage/stars.png">
                 <img class="space-astronaut" src="<%= __ASSETS_PATH__ %>images/engage/astronaut.png">
@@ -22,7 +24,7 @@
         </section>
     
         <section class="live-stream">
-            <h3>Live Stream</h3>
+            <h4>Live Stream</h4>
             <video width="100%" height="auto" controls>
                 <source src="movie.mp4" type="video/mp4">
                 <source src="movie.ogg" type="video/ogg">
@@ -30,5 +32,5 @@
             </video>
         </section>
         
-    </main>
-</div>
+    </div>
+</main>

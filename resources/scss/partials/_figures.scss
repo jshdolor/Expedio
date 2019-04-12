@@ -1,15 +1,11 @@
 // nav 
 nav {
-  @extend .mx-3;
+  text-align: left;
   @extend .py-2;
-  margin-left: 6em;
-  margin-top: 1.5em;
-
   img {
     width: auto;
     height: 3em;
-  }
-  
+  }  
 }
 
 
@@ -25,7 +21,6 @@ form {
     @extend .mb-1;
     background-color: lighten($color: $color-dark, $amount: 75%);
     border: 0;
-    // font-size: 1.25em;
   }
 
   button {
