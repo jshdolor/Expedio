@@ -60,6 +60,11 @@ class App {
             this.pages.push(new Page(page.id, page.config ));
         });
 
+        // pageManager.preload = function(){
+        //     pageManager.background = $(".experience-container.expedio-page.active");
+        //     pageManager.scaling = 0.4; //background moves 40% with the pages
+        // };
+
     }
 
     initToolbar() {

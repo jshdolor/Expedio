@@ -1,5 +1,6 @@
 import 'slick-carousel';
 import Config from '~/Application/Config';
+import Modal from 'jquery-modal/jquery.modal.min.js';
 
 class Hooks {
 
@@ -9,6 +10,11 @@ class Hooks {
                 selector: '[data-hook=move-page]',
                 event: 'click',
                 fn: 'movePage'
+            },
+            {
+                selector: '[data-hook=open-modal]',
+                event: 'click',
+                fn: 'openModal'
             },
             
         ]
@@ -47,6 +53,19 @@ class Hooks {
         pageManager[page][direction](()=>{
             $('.'+page +'-container').addClass('active');
         });
+    }
+
+    openModal(e) {
+        let el = $(this);
+        let modal = el.data('target');
+
+        if(!modal) {
+            alert('no target');
+            return;
+        }
+
+        $('[data-modal=' + modal + ']').modal();
+
     }
 
     slider(el, config) {
