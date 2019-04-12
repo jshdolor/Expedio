@@ -7,14 +7,152 @@ img {
   }
 }
 
-.floating-bg {
-  position: absolute;
-  
-  &img {
+main {
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+
+}
+
+@mixin opening-section {
+  min-height: calc(100vh - 2rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  > *:not(:first-child) {
+      flex: 1;
+  }
+  .title {
+    position: relative;
+    flex-grow: 2;
+  }
+  h1 {
     position: absolute;
-    width: 100%;
-    height: auto;
-    z-index: -1;
-    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @extend .mt-2;
+  }
+  h4 {
+    font-weight: normal;
+  }
+}
+
+@mixin midway-section {
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  > * {
+    font-weight: normal;
+  }
+}
+
+
+@mixin img-en-desc {
+  @media only screen and (min-width: 768px) {
+      min-height: 100vh;
+  }
+  > element {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    .details-con {
+      display: none;
+    }
+    .img-con{
+      position: relative;
+      img {
+      }
+      .img-dept {
+        background-image: url('../assets/images/experience/department/accounts-and-prod.jpg');
+        filter: grayscale(100%);
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0
+      }
+    }
+    &:hover {
+      .img-dept {
+        filter: grayscale(0);
+        transition: filter 1s ease-in-out;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    element {
+      flex-direction: row;
+      margin-bottom: 2rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      > div {
+        &:first-child {
+          flex: 1;
+          position: relative;
+          text-align: center;
+          > * {
+            text-transform: uppercase;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        &:nth-child(2) {
+          flex: 2;
+        }
+      }
+    }
+  }
+}
+
+// center content vertical & horizontal
+@mixin center-hr-vr {
+  position: relative;
+  > *:first-child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+// carousel
+.partners-carousel {
+  img {
+   opacity: 0;
+  }
+  .slick-slide {  
+    > div > div {
+      filter: grayscale(100%);
+      transition: filter 1s ease-in-out;
+
+      &:hover {
+        filter: grayscale(0);
+        transition: filter 1s ease-in-out;
+
+      }
+    }
+  }
+  .partner-mike {
+    background-image: url('../assets/images/experience/partners/mike.jpg');
+    background-size: cover;
+  }
+  .partner-oman {
+    background-image: url('../assets/images/experience/partners/oman.jpg');
+    background-size: cover;
+  }
+  .partner-jelen {
+    background-image: url('../assets/images/experience/partners/jelen.jpg');
+    background-size: cover;
   }
 }

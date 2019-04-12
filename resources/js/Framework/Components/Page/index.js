@@ -16,9 +16,10 @@ class Page{
             // 'position': 'fixed',
             // 'left': this.left,
             // 'top': this.top,
-            'width': '100%',
-            'max-height': $(window).height(),
-            'overflow':'auto'
+            'width': '100vw',
+            'max-height': '100vh',
+            'overflow-y':'auto',
+            'overflow-x':'hidden'
         });
 
         this.el.addClass('expedio-page');

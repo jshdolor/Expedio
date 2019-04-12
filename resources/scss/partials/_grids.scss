@@ -1,13 +1,49 @@
 main {
-  @extend .mt-5;
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  @extend .pb-5;
-  flex-direction: column;
-
-  section {
-    flex:1;
-    box-sizing: border-box; 
+  display: flex;
+  > div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+    @extend .p-5;
+    section {
+    }
   }
+}
+
+@media (min-width: 768px){
+
+  main {
+    > div {
+      width: 750px;
+      margin: auto;
+    }
+  }
+
+}
+
+
+@media (min-width: 992px){
+
+  main {
+    > div {
+      width: 970px;
+      margin: auto;
+    }
+  }
+
+}
+
+
+@media (min-width: 1200px){
+
+  main {
+    > div {
+        width: 1170px;
+        margin: auto;
+    }
+  }
+
 }
