@@ -1,5 +1,6 @@
 <main id="expedio_engage" class="engage-container">
-    <div class="engage-page">
+  <div id="engage_scene" class="parallax-scene">
+    <div class="engage-page page" data-depth="0.0">
         <section class="opening">
             <%- include headnav.html -%>
             <div class="title"> 
@@ -10,7 +11,7 @@
             </div>
         </section>
     
-        <section class="testimonials">
+      <!--   <section class="testimonials">
             <h4>Testimonials</h4>
             <div class="space-testimony">
                 <img class="space-stars" src="<%= __ASSETS_PATH__ %>images/engage/stars.png">
@@ -18,7 +19,7 @@
                 <img class="space-crater"src="<%= __ASSETS_PATH__ %>images/engage/crater.png">
             </div>
         </section>
-    
+     -->
         <section class="midway">
             <h4>We make sure to create wonderful engagements through experiences that stay with our audience.</h4>
         </section>
@@ -31,6 +32,15 @@
                 Your browser does not support the video tag.
             </video>
         </section>
-        
+      </div>
+
+      <div class="floating-bg floating-bg-right" data-depth="0.4">
+        <img class="wave-right" src="<%= __ASSETS_PATH__ %>images/engage/floating-line-art-right.png" class="floating-img">
+      </div>
+
+      <div class="floating-bg floating-bg-left" data-depth="0.8">
+        <img class="wave-left" src="<%= __ASSETS_PATH__ %>images/engage/floating-line-art-left.png" class="floating-img">
+      </div>
+
     </div>
 </main>

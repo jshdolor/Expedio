@@ -1,54 +1,10 @@
 .engage-container {
-  background-image: url('../assets/images/engage/FLOATING-LINE-ART.png');
-  max-width: 100vw;
-  overflow-x: hidden; 
-.engage-page {
-  overflow-x: visible;
-  .opening {
+   .opening {
     @include opening-section;
   }
+
   .midway {
     @include midway-section;
 
   }
-  
-  .testimonials{
-    > * {
-      text-transform: uppercase;
-    }
-    .space-testimony{
-      background : url('../assets/images/engage/blue-background.png');  
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      min-height: 100vh; 
-      position: relative;
-      img {
-        position: absolute;
-        &.space-stars {
-          height: 100%;
-          object-fit: cover;
-        }
-        &.space-astronaut {
-          width: auto;
-          max-height: 50vh;
-          transform: translate(10px, 50px); 
-        }
-        &.space-crater {
-          bottom: 0;
-        }
-
-      }
-      
-    }
-      
-    }
-
-    .live-stream {
-      @extend .mb-3;
-      > * {
-        text-transform: uppercase;
-      }
-    }
-  }
- 
 }
