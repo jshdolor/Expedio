@@ -24,6 +24,15 @@ class App {
         //last function
         this.removePreloader();
 
+        $('main').scroll(function(){
+            var wScroll = $(this).scrollTop();
+            
+            $(this).css({
+                'background-position-y' : -(wScroll / 10) + 'px'
+            });
+            
+        });
+
     }
 
     onResize() {
