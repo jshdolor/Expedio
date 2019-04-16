@@ -1,6 +1,6 @@
 
 .experience-container {
-	background-image: url('../assets/images/experience/FLOATING-LINE-ART.png');
+	// background-image: url('../assets/images/experience/FLOATING-LINE-ART.png');
 	.opening {
 		@include opening-section;
 	}
@@ -15,10 +15,15 @@
 .experience-page {
 	.acct-prod {
 		@include img-en-desc; 
+		.img-dept {
+        	background-image: url('../assets/images/experience/department/accounts-and-prod.jpg');
+		}
 	}
 	.creatives {
 		@include img-en-desc;       
-	
+		.img-dept {
+        	background-image: url('../assets/images/experience/department/creatives.jpg');
+		}
 		@media only screen and (min-width: 768px) {
 			element {
 				flex-direction: row-reverse;
@@ -27,6 +32,9 @@
 	}
 	.administration {
 		@include img-en-desc; 
+		.img-dept {
+        	background-image: url('../assets/images/experience/department/admin.jpg');
+		}
 	}
 }
 
