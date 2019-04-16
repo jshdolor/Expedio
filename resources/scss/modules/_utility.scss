@@ -7,11 +7,56 @@ img {
   }
 }
 
-main {
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-
+@keyframes parallax-bg{
+  0% {background-position-x: 0;}
+  50% {background-position-x: 100%;} 
+  0% {background-position-x: 0;} 
 }
+@keyframes tilt {
+  0% {
+    -webkit-transform: rotateX(-30deg);
+    -moz-transform: rotateX(-30deg);
+    transform: rotateX(-30deg); }
+  25% {
+    -webkit-transform: rotateX( 30deg);
+    -moz-transform: rotateX( 30deg);
+    transform: rotateX( 30deg); }
+  50% {
+    -webkit-transform: rotateY(-30deg);
+    -moz-transform: rotateY(-30deg);
+    transform: rotateY(-30deg); }
+  75% {
+    -webkit-transform: rotateY( 30deg);
+    -moz-transform: rotateY( 30deg);
+    transform: rotateY( 30deg); }
+  100% {
+    -webkit-transform: rotateZ( 20deg);
+    -moz-transform: rotateZ( 20deg);
+    transform: rotateZ( 20deg); } 
+  }
+@keyframes waveLeft {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0,1.3em,0) rotateZ(0deg);
+    -moz-transform: rotateZ(0deg) translate3d(0,1.3em,0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0,1.3em,0) rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateZ(-360deg) translate3d(0,1.3em,0) rotateZ(360deg);
+    -moz-transform: rotateZ(-360deg) translate3d(0,1.3em,0) rotateZ(360deg);
+    transform: rotateZ(-360deg) translate3d(0,1.3em,0) rotateZ(360deg); }
+}
+
+@keyframes waveRight {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0,3em,0) rotateZ(0deg);
+    -moz-transform: rotateZ(0deg) translate3d(0,3em,0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0,3em,0) rotateZ(0deg); }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0,3em,0) rotateZ(-360deg);
+    -moz-transform: rotateZ(360deg) translate3d(0,3em,0) rotateZ(-360deg);
+    transform: rotateZ(360deg) translate3d(0,3em,0) rotateZ(-360deg); }
+  }
+
+
 
 @mixin opening-section {
   min-height: calc(100vh - 2rem);
@@ -67,7 +112,6 @@ main {
       img {
       }
       .img-dept {
-        background-image: url('../assets/images/experience/department/accounts-and-prod.jpg');
         filter: grayscale(100%);
         background-size: cover;
         position: absolute;
