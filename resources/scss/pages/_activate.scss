@@ -1,8 +1,6 @@
 
 .activate-container {
-  background-image: url('../assets/images/activate/FLOATING-LINE-ART.png');
-
-  .opening {
+   .opening {
     @include opening-section;
   }
 

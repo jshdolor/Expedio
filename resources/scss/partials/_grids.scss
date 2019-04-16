@@ -1,49 +1,94 @@
+// main {
+//   display: flex;
+//   > div{
+//     // height: 100%;
+//     // width: 100%;
+//     // display: flex;
+//     // flex-direction: column;
+//     // overflow-x: hidden;
+//     // position: relative;
+//     // @extend .p-5;
+//     section {
+//     }
+//   }
+// }
+
+// @media (min-width: 768px){
+
+//   main {
+//     > div {
+//       width: 750px;
+//       margin: auto;
+//     }
+//   }
+
+// }
+
+
+// @media (min-width: 992px){
+
+//   main {
+//     > div {
+//       width: 970px;
+//       margin: auto;
+//     }
+//   }
+
+// }
+
+
+// @media (min-width: 1200px){
+
+//   main {
+//     > div {
+//         width: 1170px;
+//         margin: auto;
+//     }
+//   }
+
+// }
+
+.parallax-scene {
+  pointer-events: auto !important;
+  // overflow: hidden;
+}
 main {
   display: flex;
-  > div{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    position: relative;
-    @extend .p-5;
-    section {
+  overflow: hidden !important;
+  div {
+    &.page{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+      @extend .p-5;
     }
   }
 }
 
-@media (min-width: 768px){
-
-  main {
-    > div {
-      width: 750px;
-      margin: auto;
+.floating-bg {
+  position: absolute;
+  z-index: -10;
+  width: 115%;
+  height: 110%;
+  top: -5em !important;
+  > img {
+    &.wave-left {
+      animation: waveLeft 6s 0.1s infinite linear;
+      animation-direction: alternate;
+    }
+    &.wave-right {
+      animation: waveRight 8s 0.1s infinite linear;
     }
   }
+  &.floating-bg-right {    
+    left: unset !important;
+    right: -8%;
 
-}
-
-
-@media (min-width: 992px){
-
-  main {
-    > div {
-      width: 970px;
-      margin: auto;
-    }
   }
-
-}
-
-
-@media (min-width: 1200px){
-
-  main {
-    > div {
-        width: 1170px;
-        margin: auto;
-    }
+  &.floating-bg-left {
+    left: -10% !important;
   }
-
 }
