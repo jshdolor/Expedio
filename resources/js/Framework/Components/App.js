@@ -2,10 +2,8 @@ import Config from '~/Application/Config';
 import Page from '~/Framework/Components/Page';
 import NavBtn from '~/Framework/Components/NavButton';
 import Toolbar from '~/Framework/Components/Toolbar';
+
 import Hooks from '~/Framework/Helpers/hooks';
-import Parallax from 'parallax-js/dist/parallax.min.js';
-
-
 class App {
     
     constructor() {
@@ -26,14 +24,8 @@ class App {
         //last function
         this.removePreloader();
 
-        // parallax
-        var scene = document.getElementById('activate_scene');
-        var parallaxInstance = new Parallax(scene, {
-          relativeInput: true
-        });
-
     }
- 
+
     onResize() {
         $(window).resize(() => {
             this.getInitialDimensions();

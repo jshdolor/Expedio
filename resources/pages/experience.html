@@ -1,97 +1,89 @@
 <main id="expedio_experience" class="experience-container">
-  <div id="experience_scene" class="parallax-scene">
-      <div class="page experience-page" data-depth="0">
-        <section class="opening" >
-          <%- include headnav.html -%>
-          <div class="title">
-            <h1>Experience</h1>
-          </div>
-          <div class="bottom-content">
-            <h4>Experience is the new king</h4>
-          </div>
-        </section>
-        <section class="midway">
-          <h4>Our team at Expedio believes in the power of experience in communicating brand stories that truly connect to
-            the people.</h4>
-        </section>
-
-        <section class="acct-prod">
-          <element class="con" data-hook="open-modal" data-target='modal-dept-accts'>
-            <div class="title-con">
-              <h4>Accounts and Prodution</h4>
-            </div>
-            <div class="img-con">
-              <img class="" src="<%= __ASSETS_PATH__ %>images/img-container-landscape.svg">
-              <div class="img-dept"></div>
-            </div>
-            <div class="details-con">
-              <h5>Accounts</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud</p>
-              <p>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.</p>
-              <p>Lorem ipsum dolor sit amet</p>
-
-              <h5>Production</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur</p>
-              <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-            </div>
-          </element>
-        </section>
-
-        <section class="creatives">
-          <element class="con" data-hook="open-modal" data-target='modal-dept-creatives'>
-            <div class="title-con">
-              <h4>Creatives</h4>
-            </div>
-            <div class="img-con">
-              <img class="" src="<%= __ASSETS_PATH__ %>images/img-container-landscape.svg">
-              <div class="img-dept"></div>
-            </div>
-            <div class="details-con">
-              <h6>Creatives</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud</p>
-              <p>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.</p>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-          </element>
-        </section>
-
-        <section class="administration">
-          <element class="con">
-            <div class="title-con">
-              <h4>Admin</h4>
-            </div>
-            <div class="img-con">
-              <img class="" src="<%= __ASSETS_PATH__ %>images/img-container-landscape.svg">
-              <div class="img-dept"></div>
-            </div>
-            <div class="details-con">
-              <h6>Administration</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-              <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud</p>
-              <p>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.</p>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-          </element>
-        </section>
+  <div class="experience-page">
+    <!-- <div class="floating-line-art"></div> -->
+    <!-- <img src="<%= __ASSETS_PATH__ %>images/experience/floating-line-art.png" class="floating-img"> -->
+    <section class="opening">
+      <%- include headnav.html -%>
+      <div class="title">
+        <h1>Experience</h1>
       </div>
-
-      <div class="floating-bg floating-bg-right" data-depth="0.4">
-        <img class="wave-right" src="<%= __ASSETS_PATH__ %>images/experience/floating-line-art-right.png" class="floating-img">
+      <div class="bottom-content">
+        <h4>Experience is the new king</h4>
       </div>
+    </section>
+    <%- include partner_slides.html -%>
+    <section class="midway">
+      <h4>Our team at Expedio believes in the power of experience in communicating brand stories that truly connect to
+        the people.</h4>
+    </section>
 
-      <div class="floating-bg floating-bg-left" data-depth="0.8">
-        <img class="wave-left" src="<%= __ASSETS_PATH__ %>images/experience/floating-line-art-left.png" class="floating-img">
-      </div>
+    <section class="acct-prod">
+      <element class="con">
+        <div class="title-con">
+          <h4>Accounts and Prodution</h4>
+        </div>
+        <div class="img-con">
+          <img class="" src="<%= __ASSETS_PATH__ %>images/img-container-landscape.svg">
+          <div class="img-dept"></div>
+        </div>
+        <div class="details-con">
+          <h5>Accounts</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+          <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud</p>
+          <p>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Lorem ipsum dolor sit amet</p>
 
-    </div>
+          <h5>Production</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+          <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+        </div>
+      </element>
+    </section>
+
+    <section class="creatives">
+      <element class="con">
+        <div class="title-con">
+          <h4>Creatives</h4>
+        </div>
+        <div class="img-con">
+          <img class="" src="<%= __ASSETS_PATH__ %>images/img-container-landscape.svg">
+          <div class="img-dept"></div>
+        </div>
+        <div class="details-con">
+          <h6>Creatives</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+          <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud</p>
+          <p>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+      </element>
+    </section>
+
+    <section class="administration">
+      <element class="con">
+        <div class="title-con">
+          <h4>Admin</h4>
+        </div>
+        <div class="img-con">
+          <img class="" src="<%= __ASSETS_PATH__ %>images/img-container-landscape.svg">
+          <div class="img-dept"></div>
+        </div>
+        <div class="details-con">
+          <h6>Administration</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+          <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud</p>
+          <p>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.</p>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+      </element>
+    </section>
+  </div>
 </main>
