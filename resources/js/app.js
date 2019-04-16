@@ -3,7 +3,6 @@ import Config from './Application/Config';
 import $ from "jquery";
 import parallax from '~/Framework/Plugins/ParallaxScroll';
 
-
 let init = null;
 
 window.App = null;
