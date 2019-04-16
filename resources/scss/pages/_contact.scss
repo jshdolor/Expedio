@@ -1,6 +1,6 @@
 
 .contact-container {
-  // background-image: url('../assets/images/contact-us/FLOATING-LINE-ART.png');
+  background-image: url('../assets/images/contact-us/FLOATING-LINE-ART.png');
    .address {
       > *:first-child {
         text-align: center;
@@ -12,7 +12,7 @@
         text-align: center;
       }
     }
-  .contact-page {
+  > div {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -26,7 +26,7 @@
 
 @media only screen and (orientation: portrait) {
   .contact-container {
-    .contact-page {
+    > div {
       flex-direction: column;
       section {
         flex: 1;

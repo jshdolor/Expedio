@@ -1,16 +1,1 @@
 @import "../../node_modules/jquery-modal/jquery.modal.min.css";
-.modal {
-	padding:0;
-	// background: transparent;
-	// border: 0;
-	// box-shadow: none; 
-
-}
-	.modal-part:parent {
-			min-width: 75vw;  
-			max-height: calc(100vh - 4em);
-		}
-	
-	.modal-dept:parent {
-			min-width: calc(100vw);
-		}
