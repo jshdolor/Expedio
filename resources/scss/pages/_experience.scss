@@ -36,30 +36,202 @@
 //thumbnail [partners]
 .experience-page {
 	.partners {
-		.thumbnails {
-			padding: 0;
-			margin: 0;
-			list-style: none;
+		padding: 0;
+		margin: 0;
+		list-style: none;
 
-			display: -webkit-box;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: -webkit-flex;
-			display: flex;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
 
-			-webkit-flex-flow: row wrap;
-			justify-content: space-around;
-			> * {
-				flex: 1;
+		-webkit-flex-flow: row wrap;
 
-				img {
-					width: 95%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: space-around;
+		
+		> element {
+			width: 100%;
+			max-height: calc(100vh - 2rem);
+			@media only screen and (min-width: 768px) {
+				width: calc( 100% / 3 - calc(4rem / 3));
+				height: auto;
+			}
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+
+			background-color: rgba(255,255,255,1);
+			background-size: cover;
+			background-blend-mode: luminosity;
+  			transition: background-color 1s ease-out;
+  			border: 1px solid #ccc;
+			@extend .mb-1;
+
+
+			&:hover {
+				 background-color: rgba(255,255,255,0) !important;
+
+				.thumb-details {
+					bottom: 0;
+
 				}
 			}
+
+			&.partner-oman {
+    			background-image: url('../assets/images/experience/partners/oman.jpg');
+			}
+
+			&.partner-mike {
+    			background-image: url('../assets/images/experience/partners/mike.jpg');
+			}
+
+			&.partner-jelen {
+    			background-image: url('../assets/images/experience/partners/jelen.jpg');
+			}
 		}
+
+		img {
+			visibility: hidden;
+		}
+
+		.thumb-details {
+			transition: all 1s ease-in-out;
+			background-color: fade-out($color-primary, .25);
+			color: lighten($color-primary, 70%);
+			@extend .p-2;
+			@extend .pb-5;
+			position: absolute;
+			bottom: -100%;
+			max-height: 100%;
+			width: 100%;
+			> * {
+				margin: 0;
+			}
+		}
+		
 	}
 }
 
+.experience-page {
+	.depts {
+		@extend .partners;
+		
+	}
+}
+
+
+.experience-page {
+	.depts {
+		element {
+			&.depts-abelle{
+				background-image: url('../assets/images/experience/employee/abelle.jpg');
+			}
+			&.depts-allan{
+				background-image: url('../assets/images/experience/employee/allan.jpg');
+			}
+			&.depts-andrea{
+				background-image: url('../assets/images/experience/employee/andrea.jpg');
+			}
+			&.depts-anjo{
+				background-image: url('../assets/images/experience/employee/anjo.jpg');
+			}
+			&.depts-arlyn{
+				background-image: url('../assets/images/experience/employee/arlyn.jpg');
+			}
+			&.depts-ayie{
+				background-image: url('../assets/images/experience/employee/ayie.jpg');
+			}
+			&.depts-bryan{
+				background-image: url('../assets/images/experience/employee/bryan.jpg');
+			}
+			&.depts-camille{
+				background-image: url('../assets/images/experience/employee/camille.jpg');
+			}
+			&.depts-carlos{
+				background-image: url('../assets/images/experience/employee/carlos.jpg');
+			}
+			&.depts-cathy{
+				background-image: url('../assets/images/experience/employee/cathy.jpg');
+			}
+			&.depts-cylo{
+				background-image: url('../assets/images/experience/employee/cylo.jpg');
+			}
+			&.depts-dale{
+				background-image: url('../assets/images/experience/employee/dale.jpg');
+			}
+			&.depts-dm{
+				background-image: url('../assets/images/experience/employee/dm.jpg');
+			}
+			&.depts-emmie{
+				background-image: url('../assets/images/experience/employee/emmie.jpg');
+			}
+			&.depts-eric{
+				background-image: url('../assets/images/experience/employee/eric.jpg');
+			}
+			&.depts-gela{
+				background-image: url('../assets/images/experience/employee/gela.jpg');
+			}
+			&.depts-hart{
+				background-image: url('../assets/images/experience/employee/hart.jpg');
+			}
+			&.depts-hazel{
+				background-image: url('../assets/images/experience/employee/hazel.jpg');
+			}
+			&.depts-inna{
+				background-image: url('../assets/images/experience/employee/inna.jpg');
+			}
+			&.depts-jelen{
+				background-image: url('../assets/images/experience/employee/jelen.jpg');
+			}
+			&.depts-jeremy{
+				background-image: url('../assets/images/experience/employee/jeremy.jpg');
+			}
+			&.depts-jerry{
+				background-image: url('../assets/images/experience/employee/jerry.jpg');
+			}
+			&.depts-lea{
+				background-image: url('../assets/images/experience/employee/lea.jpg');
+			}
+			&.depts-lou{
+				background-image: url('../assets/images/experience/employee/lou.jpg');
+			}
+			&.depts-maene{
+				background-image: url('../assets/images/experience/employee/maene.jpg');
+			}
+			&.depts-marcie{
+				background-image: url('../assets/images/experience/employee/marcie.jpg');
+			}
+			&.depts-marnie{
+				background-image: url('../assets/images/experience/employee/marnie.jpg');
+			}
+			&.depts-mel{
+				background-image: url('../assets/images/experience/employee/mel.jpg');
+			}
+			&.depts-mike{
+				background-image: url('../assets/images/experience/employee/mike.jpg');
+			}
+			&.depts-nenen{
+				background-image: url('../assets/images/experience/employee/nenen.jpg');
+			}
+			&.depts-oman{
+				background-image: url('../assets/images/experience/employee/oman.jpg');
+			}
+			&.depts-phoebe{
+				background-image: url('../assets/images/experience/employee/phoebe.jpg');
+			}
+			&.depts-ray{
+				background-image: url('../assets/images/experience/employee/ray.jpg');
+			}
+		
+		}
+		
+		
+	}
+}
 
 
 
