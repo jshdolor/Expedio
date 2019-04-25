@@ -13,9 +13,25 @@
         <section class="testimonials">
             <h4>Testimonials</h4>
             <div class="space-testimony">
-                <img class="space-stars" src="<%= __ASSETS_PATH__ %>images/engage/stars.png">
-                <img class="space-astronaut" src="<%= __ASSETS_PATH__ %>images/engage/astronaut.png">
-                <img class="space-crater"src="<%= __ASSETS_PATH__ %>images/engage/crater.png">
+                <div id="scene">
+                    <div data-depth="0.0" class="space-stars">
+                        <img src="<%= __ASSETS_PATH__ %>images/engage/stars.png">
+                    </div>
+                    <div data-depth-x="0.9" data-depth-y="-0.05" class="space-crater">
+                        <img src="<%= __ASSETS_PATH__ %>images/engage/crater-landscape.png">
+                    </div>
+                    <div data-depth-x="0.2" data-depth-y="-0.3" class="space-balloons">
+                        <ul class="thought-balloons">
+                            <li class="balloon balloon-p1">“Awesome time at the #NBA3XPH2018 celebrity games (emoji) One of the longest and best running yearly events…”</li>
+                            <li class="balloon balloon-p2">“Had another great time at the #nba3xph2018 games. We were unable to defend our crown but at least we got to meet Tim Hardaway Sr!”</li>
+                            <li class="balloon balloon-p3">“Happy Mother’s Day to all Super Moms! #MothersDay2018 #eastwoodcity #MumForMoms #LazadaSuperMoms”</li>
+                           <li class="balloon balloon-p4">“Thank you @lazadaph for these Mums for Moms! #LazadaPh #MumsForMoms”</li>
+                        </ul>
+                    </div>
+                    <div data-depth-x="0.9" data-depth-y="0.7"class="space-astronaut">
+                        <img src="<%= __ASSETS_PATH__ %>images/engage/astronaut.png">
+                    </div>
+                </div>
             </div>
         </section>
     

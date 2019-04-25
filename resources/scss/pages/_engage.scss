@@ -2,45 +2,15 @@
   background-image: url('../assets/images/engage/FLOATING-LINE-ART.png');
   max-width: 100vw;
   overflow-x: hidden; 
-.engage-page {
-  overflow-x: visible;
-  .opening {
-    @include opening-section;
-  }
-  .midway {
-    @include midway-section;
-
-  }
   
-  .testimonials{
-    > * {
-      text-transform: uppercase;
+  .engage-page {
+    overflow-x: visible;
+    .opening {
+      @include opening-section;
     }
-    .space-testimony{
-      background : url('../assets/images/engage/blue-background.png');  
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      min-height: 100vh; 
-      position: relative;
-      img {
-        position: absolute;
-        &.space-stars {
-          height: 100%;
-          object-fit: cover;
-        }
-        &.space-astronaut {
-          width: auto;
-          max-height: 50vh;
-          transform: translate(10px, 50px); 
-        }
-        &.space-crater {
-          bottom: 0;
-        }
+    .midway {
+      @include midway-section;
 
-      }
-      
-    }
-      
     }
 
     .live-stream {
@@ -51,4 +21,139 @@
     }
   }
  
+}
+
+.engage-container {
+  .testimonials{
+    > *:first-child {
+      text-transform: uppercase;
+    }
+    .space-testimony{
+      background : url('../assets/images/engage/blue-background.png');  
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      min-height: 100vh; 
+      position: relative;   
+      > div {
+        .space-stars {
+          width: 100%;
+          height: 100%;
+          > img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+          }
+        }
+        .space-astronaut {
+          width: 100%;
+          text-align: center;
+          img {
+            margin-top: 5rem;
+            height: 100%;
+            width: auto;
+          }
+        }
+        .space-balloons {
+          width: 100%;
+          height: 100%;
+          ul {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-width: 100vw;
+            perspective: 1000px;
+            li {
+              list-style: none;
+              max-width: 20%;
+              background-color: #fff;
+              @extend .m-1;
+              @extend .px-2;
+              @extend .py-3;
+              position: absolute;
+              border: 1px solid #c8c8c8;
+              border-radius: 15px;
+              font-size: 0.75rem;
+              &::before {
+                content: "";
+                border-style: solid;
+                position: absolute;
+                border-color: #c8c8c8 transparent transparent transparent;
+                border-width: 12px 12px 0px 12px;
+                
+              }
+              &::after {
+                border-color: #fff transparent transparent transparent;
+                border-style: solid;
+                border-width: 10px 10px 0px 10px;
+                content: "";
+                position: absolute;
+              }
+              &.balloon-p1 {
+                &::before {
+                  bottom: -12px;
+                  right: 15px;
+                }
+                &::after {
+                  bottom: -10px;
+                  right: 17px;
+                }
+              }
+
+              &.balloon-p2 {
+                top: 2rem;
+                right: 5rem;
+                &::before {
+                  transform: rotate(90deg);
+                  top: 20px;
+                  left: -18px;
+                }
+                &::after {
+                  transform: rotate(90deg);
+                  top:21px;
+                  left: -15px;
+                }
+              }
+              &.balloon-p3 {
+                top: 30%;
+                left: 5rem;
+                &::before {
+                  transform: rotate(270deg);
+                  bottom: calc(35%);
+                  right: -18px;
+                }
+                &::after {
+                  transform: rotate(270deg);
+                  bottom: calc(35% + 1px);
+                  right: -15px;
+                }
+              }
+              &.balloon-p4 {
+                top: 20rem;
+                right: 15rem;
+                &::before {
+                  transform: rotate(180deg);
+                  top: -12px;
+                  left: calc(10%);
+                }
+                &::after {
+                  transform: rotate(180deg);
+                  top: -10px;
+                  left: calc(10% + 1px);
+                }
+              }
+            }
+          }
+        }
+        .space-crater {
+          width: calc(100vw + 20rem);
+          height: auto;
+          top: unset !important;
+          bottom: -2em;
+          left: -10rem !important;
+        }
+      }
+    }
+
+      
+  }
 }
