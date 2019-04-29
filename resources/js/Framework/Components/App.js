@@ -4,6 +4,9 @@ import NavBtn from '~/Framework/Components/NavButton';
 import Toolbar from '~/Framework/Components/Toolbar';
 
 import Hooks from '~/Framework/Helpers/hooks';
+
+import Parallax from 'parallax-js/dist/parallax.min.js';
+
 class App {
     
     constructor() {
@@ -31,6 +34,13 @@ class App {
                 'background-position-y' : -(wScroll / 10) + 'px'
             });
             
+        });
+
+        //engage parallax 
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene, {
+            hoverOnly: true,
+            relativeInput: true
         });
 
     }
