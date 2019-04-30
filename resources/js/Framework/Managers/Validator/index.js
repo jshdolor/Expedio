@@ -32,6 +32,10 @@ export default class Validator {
 
         return true;
     }
+
+    resetValidations() {
+        $('.error-notif-container').remove();
+    }
     
     handleInput(e) {
 
