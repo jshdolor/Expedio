@@ -1,8 +1,8 @@
 import 'slick-carousel';
 import Config from '~/Application/Config';
-import Rules from '~/Application/Config/Rules';
-import Validator from '~/Framework/Managers/Validator';
 import Modal from 'jquery-modal/jquery.modal.min.js';
+import Validator from '~/Framework/Managers/Validator';
+
 
 class Hooks {
 
@@ -18,11 +18,12 @@ class Hooks {
                 event: 'click',
                 fn: 'openModal'
             },
-            // {
-            //     selector: '[data-hook=form-validate]',
-            //     event: 'submit',
-            //     fn: 'attachValidation'
-            // },
+            //temporary
+            {
+                selector: '[data-form]',
+                event: 'submit',
+                fn: 'onSubmit'
+            },
             
         ]
 
@@ -32,6 +33,8 @@ class Hooks {
                 config: 'partnerSlide'
             }
         ];
+
+        this.validator = null;
 
 
     }
@@ -45,7 +48,8 @@ class Hooks {
             this.slider(elem.selector, elem.config);
         });
 
-        this.attachValidation();
+        this.initValidator();
+
     }
 
     movePage(e) {
@@ -82,17 +86,15 @@ class Hooks {
         $(el).slick(Config[config]);
     }
 
-    attachValidation() {
-        // e.preventDefault();
-        // let name = e.target.getAttribute('name'),
-        //     values = $(e.target).se;
-        let name = '', values = [];
+    initValidator() {
 
-        $('[data-hook=form-validate]').each((key,el) => {
-            name = $(el).attr('name');
-            values = $(el).serializeArray();
-        });
-        // console.log(Validator.init());
+        this.validator = new Validator('[data-form]');
+        
+    }
+
+    onSubmit(e) {
+        e.preventDefault();
+        
     }
 
 }
