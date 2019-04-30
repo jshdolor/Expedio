@@ -8,7 +8,6 @@ export default class Validator {
         this.rules = Rules[$(form).attr('name')];
         this.data = {};
 
-        // $('body').on('submit', form, this.onSubmit.bind(this));
         $('body').on('change', form + ' input', this.handleInput.bind(this));
         $('body').on('change', form + ' select', this.handleInput.bind(this));
         $('body').on('change', form + ' textarea', this.handleInput.bind(this));
@@ -28,7 +27,10 @@ export default class Validator {
 
         if(validateDetails) {
             this.showErrors(validateDetails);
+            return false;
         }
+
+        return true;
     }
     
     handleInput(e) {
@@ -66,7 +68,7 @@ export default class Validator {
     errorTemplate(errorMessage) {
         return `
             <div class="error-notif-container">
-                <i class="error-icon">!</i>
+                <i class="error-icon"></i>
                 <small class="error-message text-danger">${errorMessage}</small>
             </div>
         `;

@@ -23,6 +23,9 @@ export default {
         email : {
             presence: {
                 message: '^ Email is required'
+            },
+            email: {
+                message: '^ Email address is not valid'
             }
         }
     }
