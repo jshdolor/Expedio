@@ -8,8 +8,8 @@ class BaseEmail extends BaseRestController {
         parent::__construct();
         $this->load->library('email');
 
-        // $this->receiver = 'expediolive@expedio.agency';
-        $this->receiver = 'dolorjsh@gmail.com';
+        $this->receiver = 'activate@expedio.agency';
+        // $this->receiver = 'dolorjsh@gmail.com';
         $this->app_name = 'Expedio Website - http://expedio.agency';
         $this->subject = 'EXPEDIO';
 
