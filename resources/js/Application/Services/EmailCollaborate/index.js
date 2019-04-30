@@ -5,7 +5,7 @@ export default class EmailCollaborate {
 
     static handle(request) {
 
-        let endpoint = 'http://localhost/Expedio/api/email-collaborate';
+        let endpoint = '../api/email-collaborate';
 
         return RestClient.post(endpoint, request)
             .then(data => { 
