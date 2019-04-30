@@ -2,6 +2,7 @@ import Config from '~/Application/Config';
 import Page from '~/Framework/Components/Page';
 import NavBtn from '~/Framework/Components/NavButton';
 import Toolbar from '~/Framework/Components/Toolbar';
+import Form from '~/Framework/Components/Form';
 
 import Hooks from '~/Framework/Helpers/hooks';
 
@@ -23,6 +24,7 @@ class App {
         this.initNavigations();
         this.initHooks();
         this.initToolbar();
+        // this.initForms();
 
         //last function
         this.removePreloader();
@@ -89,6 +91,8 @@ class App {
     initToolbar() {
         this.toolbar = new Toolbar('.navbar-brand', '.toolbar');
     }
+
+    
 
     removePreloader() {
 
