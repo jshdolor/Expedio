@@ -8,8 +8,8 @@ export default class EmailCollaborate {
         let endpoint = '../api/email-collaborate';
 
         return RestClient.post(endpoint, request)
-            .then(data => { 
-                console.log(data)
+            .then(({data:{data:{email_sent}}}) => { 
+                return email_sent;
             })
             .catch(e => {
 
