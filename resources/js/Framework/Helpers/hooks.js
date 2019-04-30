@@ -3,6 +3,8 @@ import Config from '~/Application/Config';
 import Modal from 'jquery-modal/jquery.modal.min.js';
 import Validator from '~/Framework/Managers/Validator';
 
+import EmailCollaborate from '~/Application/Services/EmailCollaborate';
+import EmailCollaborateRequest from '~/Application/Services/EmailCollaborate/Requests';
 
 class Hooks {
 
@@ -18,12 +20,6 @@ class Hooks {
                 event: 'click',
                 fn: 'openModal'
             },
-            //temporary
-            {
-                selector: '[data-form]',
-                event: 'submit',
-                fn: 'onSubmit'
-            },
             
         ]
 
@@ -34,7 +30,7 @@ class Hooks {
             }
         ];
 
-        this.validator = null;
+        this.validator = [];
 
 
     }
@@ -88,13 +84,24 @@ class Hooks {
 
     initValidator() {
 
+        
         this.validator = new Validator('[data-form]');
+
+        $('body').on('submit', '[data-form]', this.onSubmit.bind(this));
         
     }
 
     onSubmit(e) {
         e.preventDefault();
-        
+        if(this.validator.check()) {
+            //has no errors 
+            let request = new EmailCollaborateRequest(this.validator.data.toValidatorData());
+
+            EmailCollaborate.handle(request.formData).then((res) =>{
+                console.log(res);
+
+            })
+        }
     }
 
 }

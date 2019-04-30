@@ -40,9 +40,7 @@ export default class Http {
 
     _prepareHeader() {
 
-        if (!isEmpty(token)) {
-            
-        }
+        
     }
 
     _prepareXhr(url, method, config) {
@@ -64,10 +62,6 @@ export default class Http {
     }
 
     _send() {
-
-        if(!isEmpty(this.overrides)) {
-            this.config = mergeDeep(this.config, this.overrides);
-        }
 
         return axios(this.config).then((response) => {
                 return response.data;

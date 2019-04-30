@@ -25,6 +25,27 @@ export default class EmailCollaborateRequest {
     get message() {
         return this._message;
     }
+
+    get formData() {
+        
+        let keys = Object.keys(this);
+        let formData = new window.FormData();
+        let value;
+        let trueKey;
+        if(keys.length > 0) {
+
+            keys.map((namespace) => {
+
+                trueKey = namespace.startsWith('_') > -1 ? namespace.substr(1) : namespace;
+                value = this[namespace];
+                formData.append(trueKey, value);
+
+            });
+
+        }
+
+        return formData;
+    }
     
 
 }
