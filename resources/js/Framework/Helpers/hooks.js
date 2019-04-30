@@ -98,8 +98,8 @@ class Hooks {
             let request = new EmailCollaborateRequest(this.validator.data.toValidatorData());
 
             EmailCollaborate.handle(request.formData).then((res) =>{
-                console.log(res);
-
+                $('[data-form]')[0].reset();
+                this.validator.resetValidations();
             })
         }
     }
