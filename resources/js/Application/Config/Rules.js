@@ -2,27 +2,27 @@ export default {
     collaborate: {
         name : {
             presence: {
-                message: 'Name is required.'
+                message: '^ Name is required.'
             }
         },
         nickName : {
             presence: {
-                message: 'Nick Name is required.'
+                message: '^ Nick Name is required.'
             }
         },
         subject : {
             presence: {
-                message: 'Subject is required.'
+                message: '^ Subject is required.'
             }
         },
         message : {
             presence: {
-                message: 'Message is required'
+                message: '^ Message is required'
             }
         },
         email : {
             presence: {
-                message: 'Email is required'
+                message: '^ Email is required'
             }
         }
     }
