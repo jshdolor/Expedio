@@ -2,6 +2,7 @@ import Config from '~/Application/Config';
 import Page from '~/Framework/Components/Page';
 import NavBtn from '~/Framework/Components/NavButton';
 import Toolbar from '~/Framework/Components/Toolbar';
+import ExpedioElement from '~/Framework/Components/ExpedioElement';
 import Form from '~/Framework/Components/Form';
 
 import Hooks from '~/Framework/Helpers/hooks';
@@ -45,6 +46,8 @@ class App {
             relativeInput: true
         });
 
+        this.initComponents();
+
     }
 
     onResize() {
@@ -58,6 +61,10 @@ class App {
         wWidth = $(window).width();
 
         $('[data-js="width"]').css('width', wWidth);
+        $('[data-js="height"]').css('height', wHeight);
+
+        $('[data-js="width|height"]').css('width', wWidth);
+        $('[data-js="width|height"]').css('height', wHeight);
     }
 
     initHooks() {
@@ -92,10 +99,12 @@ class App {
         this.toolbar = new Toolbar('.navbar-brand', '.toolbar');
     }
 
-    
-
     removePreloader() {
 
+    }
+
+    initComponents() {
+        new ExpedioElement();
     }
 
 }
