@@ -13,3 +13,28 @@
     cursor: pointer;
 }
 
+.triangle {
+    z-index: 21;
+}
+
+.expedio-element-container {
+    img {
+        position: absolute;
+        width: auto;
+
+        -webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
+        -webkit-transition: all 0.5s linear;
+        -o-transition: all 0.5s linear;
+        transition: all 0.5s linear;
+
+        &:hover{
+            -webkit-filter: drop-shadow(0px 0px 8px rgba(0, 231, 255, 0.8));
+
+        }
+    }
+
+    .hover-effect{
+        -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+    }
+}
