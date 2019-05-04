@@ -1,70 +1,37 @@
 <div class="container-fluid navigation-page" >
 
-		
-	<svg 
-		data-js='width|height'
-		class="expedio-element-container"
-		xmlns="http://www.w3.org/2000/svg" 
-		xmlns:xlink="http://www.w3.org/1999/xlink">  
+	<div class="expedio-element-container" data-js="width|height" >
 
-		<defs>
-        
-				<!-- a transparent grey drop-shadow that blends with the background colour -->
-				<filter id="shadow" width="1.5" height="1.5" x="-.25" y="-.25">
-					<feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
-					<feColorMatrix result="bluralpha" type="matrix" values=
-							"1 0 0 0   0
-							 0 1 0 0   0
-							 0 0 1 0   0
-							 0 0 0 0.4 0 "/>
-					<feOffset in="bluralpha" dx="3" dy="3" result="offsetBlur"/>
-					<feMerge>
-						<feMergeNode in="offsetBlur"/>
-						<feMergeNode in="SourceGraphic"/>
-					</feMerge>
-				</filter>
-				
-				<!-- a transparent grey glow with no offset -->
-				<filter id="black-glow">
-					<feColorMatrix type="matrix" values=
-								"0 0 0 0   0
-								 0 0 0 0   0
-								 0 0 0 0   0
-								 0 0 0 0.7 0"/>
-					<feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-					<feMerge>
-						<feMergeNode in="coloredBlur"/>
-						<feMergeNode in="SourceGraphic"/>
-					</feMerge>
-				</filter>
-				
-				<!-- a transparent glow that takes on the colour of the object it's applied to -->
-				<filter id="glow">
-					<feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-					<feMerge>
-						<feMergeNode in="coloredBlur"/>
-						<feMergeNode in="SourceGraphic"/>
-					</feMerge>
-				</filter>
-				
-			</defs>
-
-		<image xlink:href="<%= __ASSETS_PATH__ %>images/landing/eyes.png" 
-			expedio-id="eyes"
-			visibility="visible"
-			y="10" 
-			x="10" 
-			duration="4000" 
-			/>
-
-		<image xlink:href="<%= __ASSETS_PATH__ %>images/landing/cloud.png" 
-			expedio-id="cloud"
-			top="10" 
-			left="10" 
+		<img src="<%= __ASSETS_PATH__ %>images/landing/Rocket_1366x768.png" 
+			expedio-id="Rocket_1366x768"
 			duration="6000" 
+			cssData='{
+				"zIndex":21,
+				"height":"100%"
+			}'
 			/>
-	</svg>
 
+		<img src="<%= __ASSETS_PATH__ %>images/landing/Building_1366x768.png" 
+			expedio-id="Building_1366x768"
+			duration="6000" 
+			cssData='{
+				"zIndex":20,
+				"height":"100%"
+			}'
+			/>
+
+		<img src="<%= __ASSETS_PATH__ %>images/landing/Eye_1366x768.png" 
+			expedio-id="Eye_1366x768"
+			duration="4000" 
+			cssData='{
+				"zIndex":19,
+				"height": "100%"
+			}'
+			/>
+
+		
+
+	</div>
 
     <div id="nav-center" data-js='width'>
         <div class="triangle">

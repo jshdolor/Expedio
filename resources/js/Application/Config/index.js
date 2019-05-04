@@ -58,5 +58,31 @@ export default {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-    }
+    },
+    expedio_elements: [
+        {
+            id: 'building',
+            pos: {
+                bottom: 0,
+                left: 0
+            },
+            duration:4000
+        },
+        {
+            id: 'eyes',
+            pos: {
+                bottom: 0,
+                left: 0
+            },
+            duration:4000
+        },
+        {
+            id: 'building',
+            pos: {
+                bottom: 0,
+                left: 0
+            },
+            duration:4000
+        },
+    ]
 }
