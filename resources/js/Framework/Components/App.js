@@ -5,6 +5,11 @@ import Toolbar from '~/Framework/Components/Toolbar';
 import ExpedioElement from '~/Framework/Components/ExpedioElement';
 import Form from '~/Framework/Components/Form';
 
+
+import EngagePage from '~/Framework/Components/Page/Engage';
+import ExperiencePage from '~/Framework/Components/Page/Experience';
+import ActivatePage from '~/Framework/Components/Page/Activate';
+
 import Hooks from '~/Framework/Helpers/hooks';
 
 import Parallax from 'parallax-js/dist/parallax.min.js';
@@ -83,6 +88,10 @@ class App {
         
         pageManager.add('mainpage',$('#main-page'));
         pageManager.mainpage.show();
+
+        new ExperiencePage().init();
+        new EngagePage().init();
+        new ActivatePage().init();
 
         Config.pages.forEach(page => {
             this.pages.push(new Page(page.id, page.config ));
