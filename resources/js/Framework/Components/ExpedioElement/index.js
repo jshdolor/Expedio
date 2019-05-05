@@ -109,6 +109,14 @@ export default class ExpedioElement {
         }
     }
 
+    mouseenter() {
+        
+    }
+
+    mouseleave() {
+
+    }
+
     clickedIsNotTransparent(event) {
 
         let canvas = document.createElement("canvas").getContext("2d");
