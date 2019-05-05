@@ -1,4 +1,3 @@
-import Config from '~/Application/Config';
 import BasePage from '~/Framework/Components/Page/BasePage';
 
 class EngagePage extends BasePage {
@@ -15,8 +14,6 @@ class EngagePage extends BasePage {
         this.el = $(this.id);
 
         this.testimonial_container = '.testimonials';
-        
-        Object.assign(this.config, Config.engage_page);
 
     }
 

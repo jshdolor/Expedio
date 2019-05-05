@@ -67,7 +67,12 @@ export default {
             duration: 4000
         },
     ],
-    experience_page: {
+    experience: {
+        partners: [
+            { "name": "oman", fullName:"Oman Tanchingco", "position": "Chief Integrator" },
+            { "name": "jelen", fullName:"Jelen Pronstroller", "position": "CEO/ Managing Partner - Events" },
+            { "name": "mike", fullName:"Mike Gumaru", "position": "Managing Partner/ Operations Lead" },
+        ],
         departments: [{ "name": "allan", "position": "Office Messenger" },
             { "name": "andrea", "position": "Account Manager" },
             { "name": "anjo", "position": "Account Director" },
@@ -98,14 +103,14 @@ export default {
             { "name": "ray", "position": "Senior Art Director" }
         ]
     },
-    activate_page: {
+    activate: {
         major_projects: [
             {
                 img: "images/activate/collab/LAZADA.jpg"
             }
         ]
     },
-    engage_page: {
+    engage: {
         thought_balloons: [
             {
                 message: "“Awesome time at the #NBA3XPH2018 celebrity games (emoji) One of the longest and best running yearly events…”",
