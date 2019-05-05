@@ -1,4 +1,3 @@
-import Config from '~/Application/Config';
 import BasePage from '~/Framework/Components/Page/BasePage';
 
 class ActivatePage extends BasePage{
@@ -25,9 +24,9 @@ class ActivatePage extends BasePage{
     }
 
     addProjectImages() {
-        let carousel = $(this.major_proj_container).find('.carousel');
+        let carousel = this.$selector('.carousel');
 
-        Config.activate_page.major_projects.forEach((project) => {
+        this.config.major_projects.forEach((project) => {
             carousel.append(this.project_template(project));
         }) ;
     }

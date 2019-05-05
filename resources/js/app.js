@@ -11,8 +11,12 @@ window.jQuery = $;
 window.pageManager = parallax;
 
 String.prototype.toTitleCase = function() {
-    let firstChar = this.length > 0 ? this[0].toUpperCase(): '';
-    return firstChar + this.toLowerCase().substr(1);
+    return this.replace(
+        /\w\S*/g,
+        function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
 }
 
 window[Config.global_variable] = {}

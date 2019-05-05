@@ -25,8 +25,9 @@ class App {
         //navigation
         this.navBtns = [];
 
-        this.getInitialDimensions();
         this.initPages();
+        this.getInitialDimensions();
+
         this.initNavigations();
         this.initHooks();
         this.initToolbar();
