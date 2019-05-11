@@ -14,38 +14,40 @@ main {
 }
 
 @mixin opening-section {
-  min-height: calc(100vh - 2rem);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  > *:not(:first-child) {
-      flex: 1;
-  }
-  .title {
-    position: relative;
-    flex-grow: 2;
-  }
-  h1 {
+  min-height: 100vh;
+  position: relative;
+
+  .center-vr {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    @extend .mt-2;
+    text-align: center;
   }
-  h4 {
-    font-weight: normal;
+  .title {
+    * {
+      margin: 0;
+      text-transform: uppercase;
+    }
+    @extend .mb-1;
+  }
+  .bottom-content {
+    * {
+      margin: 0;
+    }
   }
 }
 
 @mixin midway-section {
   min-height: 100vh;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: relative;
+  width: 100%;
   > * {
-    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -155,4 +157,11 @@ main {
     background-image: url('../assets/images/experience/partners/jelen.jpg');
     background-size: cover;
   }
+}
+
+@mixin svg-shadow {
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
+  filter: url(#drop-shadow);
+  -webkit-filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3))
 }

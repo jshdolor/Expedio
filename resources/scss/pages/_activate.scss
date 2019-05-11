@@ -15,9 +15,13 @@
   .services {
     display: flex;
     flex-wrap: wrap;
+    min-height: 100vh;
+    align-content: center;
 
-    div {
-      min-height: 30vh;
+    > div {
+      @extend .px-1;
+      @extend .pt-2;
+      height: 25vh; 
       flex-basis: 50%;
       flex-grow: 1;
       
@@ -25,8 +29,18 @@
   }
 
   .major-projects {
-    > * {
+    @extend .py-2;
+    text-align: center;
+    > *:first-child {
       text-transform: uppercase;
+      margin: 0;
+    }
+    p {
+      margin: 0;   
+    }
+
+    div{
+      @extend .mt-3;
     }
   }
  
