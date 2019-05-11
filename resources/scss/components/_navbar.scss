@@ -1,6 +1,160 @@
 nav {
-	z-index: 5;
+	z-index: 10000;
+	overflow: visible;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	@extend .py-2;
+	.navbar-brand {
+		img {
+			width: auto; 
+			height: 48px;
+			&.navbar-logo {
+				@include svg-shadow;
+			}
+		} 
+		&:hover {
+		 	~ .navbar-slide {
+				top: 0;
+				transition-delay: 0s;
+			}
+		}
+	}
+	.navbar-slide {
+		background-color: #fff;
+		min-width: 100vw;
+    	margin-left: calc(-50vw + 50%);
+		@extend .py-2;
+		position: absolute;
+		top: -100%;
+		left: 0;
+		transition: top 1s;
+		transition-delay: 0.5s;
+		
+		&:hover {
+			top: 0;
+			transition-delay: 0s;
+
+		}
+	}
 }
-.navbar-header {
-    position: relative;
+
+nav {
+	.navbar-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+		> * {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+nav{
+	.navbar-menu {
+		text-align: center;
+		ul {	
+			padding-left: 0;
+			margin: 0;
+			li {
+				display: inline-block;
+				width: auto;
+				list-style: none;
+				font-size: 1rem;
+				@extend .p-1;
+				a {
+					text-decoration: none;
+					span {
+						color: $color-dark;
+						font-family: 'Gotham-Light', 'Gotham-Black', 'Brandon', sans-serif;
+						// font-weight: lighter;
+					}
+				}
+
+				* { 
+					vertical-align: middle; 
+				}
+				img { 
+					height: 1.5rem; 
+					width: auto;
+					&.icon-activate {
+						filter: sepia(1);
+					}
+				}
+				span { 
+					text-transform: uppercase; 
+				}
+			}
+		}
+	}
+	.navbar-media {
+		@extend .navbar-menu;
+		text-align: right;
+		li {
+			padding: 0 !important;
+		}
+		.logo-media {
+			min-height: 2rem;
+			width: auto;
+			@include svg-shadow;
+		}
+	}
+}
+
+
+nav {
+	a {
+		cursor: pointer;
+	}
+}
+
+
+
+@media (min-width: 768px){
+
+  nav {
+    .navbar-container {
+      width: 750px;
+      margin: auto;
+    }
+    .navbar-header {
+    	width: 750px;
+      margin: auto;
+    }
+    
+  }
+
+}
+
+
+@media (min-width: 992px){
+
+  nav {
+    .navbar-container {
+      width: 970px;
+      margin: auto;
+    }
+     .navbar-header {
+    	width: 970px;
+      margin: auto;
+    }
+  }
+
+}
+
+
+@media (min-width: 1200px){
+
+  nav {
+    .navbar-container {
+      width: 1170px;
+      margin: auto;
+    }
+     .navbar-header {
+    	width: 1170px;
+      margin: auto;
+    }
+  }
+
 }

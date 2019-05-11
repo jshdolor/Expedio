@@ -1,6 +1,15 @@
 // TYPOGRAPHY
 @font-face {
-  font-family: 'Gotham';
+  font-family: 'Gotham-Light';
+  src: url('../assets/font/Gotham-Light/Gotham-Light.eot'); /* IE9 Compat Modes */
+  src: url('../assets/font/Gotham-Light/Gotham-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/font/Gotham-Light/Gotham-Light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/font/Gotham-Light/Gotham-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/font/Gotham-Light/Gotham-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Gotham-Black';
   src: url('../assets/font/Gotham-Black/Gotham-Black.eot'); /* IE9 Compat Modes */
   src: url('../assets/font/Gotham-Black/Gotham-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('../assets/font/Gotham-Black/Gotham-Black.woff') format('woff'), /* Pretty Modern Browsers */
@@ -17,7 +26,16 @@
        url('../assets/font/Brandon/BrandonText-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
-$pf: Brandon;
+@font-face {
+  font-family: 'Brandon-Bold';
+  src: url('../assets/font/Brandon-Bold/BrandonText-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../assets/font/Brandon-Bold/BrandonText-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/font/Brandon-Bold/BrandonText-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/font/Brandon-Bold/BrandonText-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/font/Brandon-Bold/BrandonText-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+$pf: 'Brandon';
 
 // SPACING
 $spacer: 16px;

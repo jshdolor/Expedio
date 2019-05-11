@@ -5,21 +5,17 @@
       <%- include headnav.html -%>
       <img src="<%= __ASSETS_PATH__ %>images/contact-us/bldg.png">
       <div class="address">
-        <h4>6/F the Community Bldg.</h4>
-          <p>Metropoli Dr., Metropoli Residenza <br />
-          Brgy. Bagumbayan, (libis) Q.C<br />
-          1110 Philippines</p>
-          <p><b>Give us a Call :</b> (632) 7219761 / 7219758</p>
-          <p><b>Send us a Fax  :</b> (632) 4611935</p>
-          <button><img src="<%= __ASSETS_PATH__ %>images/contact-us/download.png" class="mr-1">Download our kit</button>
+        <p>6/F the Community Bldg.</p>
+        <p>Metropoli Dr., Metropoli Residenza Brgy. Bagumbayan, (libis) Q.C 1110 Philippines</p><br />
+        <p><b>Give us a Call :</b> (632) 7219761 / 7219758</p>
+        <p><b>Send us a Fax  :</b> (632) 4611935</p>
+        <button class="btn-img" style="background-image: url('<%= __ASSETS_PATH__ %>images/logo/dl-pl.svg');">Download our kit</button>
       </div>
     </section>
     <section>
       <div class="collab-text">
-        <h3>Collaborate with us!</h3>
-        <p>At Expedio, we start collaboration with by brewing ideas.<br />
-          Share us your ideas or concerns.<br />
-          We'd love to know your cup of tea - or coffee!</p>
+        <h4>Collaborate with us!</h4>
+        <p>At Expedio, we start collaboration with by brewing ideas. Share us your ideas or concerns. We'd love to know your cup of tea - or coffee!</p>
       </div>
       <!--contact form -->
       <form data-form="collaborate" name="collaborate" novalidate>
@@ -44,7 +40,7 @@
         <div class="form-group">
           <textarea name="message" placeholder="Please write your message here" rows="8"></textarea>
         </div>
-        <button type="submit"><img src="<%= __ASSETS_PATH__ %>images/contact-us/submit.png" class="mr-1">Send us your brew!</button>
+        <button type="submit" class="btn-img" style="background-image: url('<%= __ASSETS_PATH__ %>images/contact-us/submit.png');">Send us your brew!</button>
       </form>
       <button class="btn-secondary messenger">Chat with us <img src="<%= __ASSETS_PATH__ %>images/contact-us/messenger.png" class="ml-1"></button>
     </section>

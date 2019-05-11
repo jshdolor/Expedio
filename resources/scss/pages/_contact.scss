@@ -1,33 +1,65 @@
 
 .contact-container {
+  @extend .pt-5;
   background-image: url('../assets/images/contact-us/FLOATING-LINE-ART.png');
-   .address {
-      > *:first-child {
-        text-align: center;
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+  }
+ .address {
+    @extend .p-2;
+    max-width: 350px;
+    > *:not(button){
+      padding: 0;
+      margin: 0;  
+      text-align: left;
+      &:first-child {
+        font-family: Brandon-Bold;
+        font-size: large;
+        font-size: x-large;
       }
     }
-
-    .collab-text {
-      > *:first-child {
-        text-align: center;
+    p {
+      font-size: medium;
+    }
+    button {
+      @extend .my-1;
+    }
+  }
+  .collab-text {
+    > * {
+      margin-top: .5rem;
+      text-align: center;
+      &:first-child {
+        margin-bottom: 0;
       }
     }
+    // > * {
+    //     margin: 0;
+    //   &:first-child {
+    //     text-align: center;
+    //     @extend .mb-1;
+    //   }
+    // }
+  }
   > div {
     flex-direction: row;
     justify-content: space-between;
   }
   section {
-    flex-basis: (((100% / 5 ) * 2)- (10% / 5) * 2);
+    @extend .pt-1;
+    flex-basis: calc(50% - 2rem);  
+    // flex-basis: (((100% / 5 ) * 2)- (10% / 5) * 2);
   }
   section:first-child {
-    flex-basis: (((100% / 5 ) * 3 )- (10% / 5) * 3);
+    // flex-basis: (((100% / 5 ) * 3 )- (10% / 5) * 3);
   }
 } 
 
-@media only screen and (orientation: portrait) {
+@media only screen and (orientation: portrait) and (max-width: 768px) {
   .contact-container {
     > div {
-      flex-direction: column;
+      flex-direction: column-reverse;
+      flex
       section {
         flex: 1;
       }

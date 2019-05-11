@@ -1,14 +1,3 @@
-// nav 
-nav {
-  text-align: left;
-  @extend .py-2;
-  img {
-    width: auto;
-    height: 3em;
-  }  
-}
-
-
 // FORMS
 form {
   display: flex;
@@ -57,7 +46,7 @@ form {
   }
 
   button {
-    align-self: center;
+    @extend .my-1;
   }
   ::placeholder {
     color: $color-dark;
@@ -68,13 +57,15 @@ form {
 
 //CARDS
 .card {
+  text-align: center;
   .card-title {
-    font-weight: bold;
-    font-size: 1.37em;
-    margin-block-end: 0.5em;
+    text-transform: uppercase;
+    margin: 0;
+    @extend .pb-1;
   }
   .card-content {
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
+    > * {
+      margin: 0;
+    }
   }
 }

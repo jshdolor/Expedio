@@ -4,10 +4,6 @@
 	.opening {
 		@include opening-section;
 	}
-	.midway {
-		@include midway-section;
-
-	}
 
 }
 
@@ -36,6 +32,7 @@
 //thumbnail [partners]
 .experience-page {
 	.partners {
+		min-height: 100vh;
 		padding: 0;
 		margin: 0;
 		list-style: none;
@@ -51,7 +48,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		align-content: space-around;
+		align-content: center;
 		
 		> element {
 			width: 100%;
@@ -112,14 +109,35 @@
 				margin: 0;
 			}
 		}
+		.partners-intro {
+			width: 100%;
+			text-align: center;
+			text-transform: uppercase;
+			
+		}
 		
 	}
 }
 
 .experience-page {
 	.depts {
+		> .depts-intro {
+			@extend .px-2;
+			@extend .my-2;
+			width: 100%;
+			p {
+				max-width: 750px;
+				margin: auto;
+				text-align: center;
+			}
+		}
 		@extend .partners;
-		
+		> element {
+			@media only screen and (min-width: 768px) {
+				width: calc( 100% / 4 - calc(4rem / 4));
+				height: auto;
+			}
+		}
 	}
 }
 
