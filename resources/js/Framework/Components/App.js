@@ -36,14 +36,6 @@ class App {
         //last function
         this.removePreloader();
 
-        $('main').scroll(function(){
-            var wScroll = $(this).scrollTop();
-            
-            $(this).css({
-                'background-position-y' : -(wScroll / 10) + 'px'
-            });
-            
-        });
 
         //engage parallax 
         var scene = document.getElementById('scene');
@@ -54,6 +46,17 @@ class App {
 
         this.initComponents();
 
+        $(window).scroll(function(){
+            var wScroll = $(this).scrollTop();
+            var aHeight = $('.active').height();
+            var wHeight = $(this).height();
+
+            // $('.active').css({
+            //     // 'background-position-y' : (wScroll  / 10) + '%'
+            //     'background-position-y' : ((wScroll  * (aHeight + wHeight)) / 100) / 300  + '%'
+            // });
+            
+        });
     }
 
     onResize() {

@@ -2,15 +2,18 @@ button {
   @extend .px-3;
   @extend .py-1;
   background: #fff;
-  display: inline-flex;
-  align-items: center; 
-  border: 0;
-
-  img {
-    max-height: 3em;
-    width: auto;
+  border: none;
+  box-shadow:
+        0 0 0 1.25px fade-out($color-border, 0.25),
+        0 0 0 3px #ffffff;
+  cursor: pointer;
+  width: auto;
+  &.btn-img {
+    padding-left: 3rem;
+    background-size: 1.5rem auto;
+    background-repeat: no-repeat;
+    background-position: .75rem , 1.5rem ; 
   }
-
 }
 
 .btn-secondary {
