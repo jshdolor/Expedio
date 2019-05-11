@@ -1,9 +1,34 @@
 <nav>
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-            <img alt="Brand" src="<%= __ASSETS_PATH__ %>images/logo.svg" class="brand">
-        </a>
-        <%- include subnav.html -%>
-    </div>
-    
+	<div class="navbar-container">
+	  <a class="navbar-brand" href="#">
+	    <img alt="Brand" src="<%= __ASSETS_PATH__ %>images/expedio-logo.svg" class="navbar-logo">
+	  </a>
+		
+		<div class="navbar-slide">
+		  <div class="navbar-header">
+		    <div class="navbar-logo">
+	      	<a data-hook="move-page" class="navbar-brand" data-page='mainpage' data-direction="top"><img alt="Brand" src="<%= __ASSETS_PATH__ %>images/logo.svg" class="brand"></a>
+		    </div>
+		    <div class="navbar-menu">
+		    	<ul>
+		    		<li><a href="#"><img alt="expedio-activate" src="<%= __ASSETS_PATH__ %>images/expedio-logo-top-blk.svg" class="icon-activate"><span>Activate</span></a></li>
+		    		<li><a href="#"><img alt="expedio-experience" src="<%= __ASSETS_PATH__ %>images/expedio-logo-left-blk.svg" class="icon-experience"><span>Experience</span></a></li>
+		    		<li><a href="#"><img alt="expedio-engage" src="<%= __ASSETS_PATH__ %>images/expedio-logo-bottom-blk.svg" class="icon-engage"><span>Engage</span></a></li>
+		    	</ul>
+		    </div>
+		    <div class="navbar-media">
+		    	<ul>
+		    		<li><a href=""><img alt="link-facebook" src="<%= __ASSETS_PATH__ %>images/logo/fb.svg" class="logo-media"></a>	    			</li>
+		    		<li><a href=""><img alt="link-youtube" src="<%= __ASSETS_PATH__ %>images/logo/yt.svg" class="logo-media"></a></li>
+		    		<li><a data-hook="move-page" data-page="contact" data-direction="right"><img alt="link-mail" src="<%= __ASSETS_PATH__ %>images/logo/ml.svg" class="logo-media"></a></li>
+		    		<li><a href=""><img alt="link-downloads" src="<%= __ASSETS_PATH__ %>images/logo/dl.svg" class="logo-media"></a></li>
+		    	</ul>
+		    </div>
+
+		    <%- include subnav.html -%>
+		  </div>
+			
+		</div>
+
+  </div>
 </nav>
