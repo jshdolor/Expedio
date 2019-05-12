@@ -64,9 +64,28 @@ nav{
 				font-size: 1rem;
 				cursor: pointer;
 
-				a.active {
-					.nav-title {
-						color: #64B646;
+				a {
+					&.active {
+						.nav-title {
+							color: $color-primary;
+						}
+						svg {
+							fill: $color-primary;
+						}
+					}
+				}
+
+				&:nth-child(2) {
+					a {
+
+						&.active {
+							.nav-title {
+								color: $color-secondary;
+							}
+							svg {
+								fill: $color-secondary;
+							}
+						}
 					}
 				}
 
@@ -78,17 +97,17 @@ nav{
 						font-family: 'Gotham-Light', 'Gotham-Black', 'Brandon', sans-serif;
 						// font-weight: lighter;
 					}
+					&:hover {
+						@include svg-shadow;
+					}
 				}
 
 				* { 
 					vertical-align: middle; 
 				}
-				img { 
+				svg, img { 
 					height: 1.5rem; 
 					width: auto;
-					&.icon-activate {
-						filter: sepia(1);
-					}
 				}
 				span { 
 					text-transform: uppercase; 
@@ -105,7 +124,7 @@ nav{
 		.logo-media {
 			min-height: 2rem;
 			width: auto;
-			@include svg-shadow;
+			// @include svg-shadow;
 		}
 	}
 }

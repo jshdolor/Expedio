@@ -1,6 +1,6 @@
 button {
   @extend .px-3;
-  @extend .py-1;
+  @extend .py-2;
   background: #fff;
   border: none;
   box-shadow:
@@ -8,6 +8,7 @@ button {
         0 0 0 3px #ffffff;
   cursor: pointer;
   width: auto;
+  width: fit-content;
   &.btn-img {
     padding-left: 3rem;
     background-size: 1.5rem auto;
@@ -19,4 +20,12 @@ button {
 .btn-secondary {
   background-color: $color-secondary;
   color: lighten($color: $color-secondary, $amount: 90%);
+}
+
+.messenge {
+  position: fixed;
+  right: 0;
+  bottom: 1rem;
+  box-shadow: none;
+  border: none;
 }
