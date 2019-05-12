@@ -99,8 +99,8 @@ class MyFormData {
         
         this.data.forEach(field => {
 
-            if(field.value) {
-                vData[field.name] = field.value;
+            if(field.value.trim()) {
+                vData[field.name] = field.value.trim();
             }
 
         });
