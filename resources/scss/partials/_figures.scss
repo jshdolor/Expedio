@@ -46,6 +46,8 @@ form {
   }
 
   button {
+    margin-left: auto;
+    margin-right: auto;
     @extend .my-1;
   }
   ::placeholder {
