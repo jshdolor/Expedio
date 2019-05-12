@@ -62,6 +62,14 @@ nav{
 				width: auto;
 				list-style: none;
 				font-size: 1rem;
+				cursor: pointer;
+
+				a.active {
+					.nav-title {
+						color: #64B646;
+					}
+				}
+
 				@extend .p-1;
 				a {
 					text-decoration: none;

@@ -54,15 +54,19 @@ class Hooks {
         let direction = el.data('direction');
         let page = el.data('page');
 
-        if($('.'+page +'-container').hasClass('active')){
-            return;
+        if(pageManager.current.key === page) {
+            return true;
         }
 
         $('.expedio-page').removeClass('active');
 
-        pageManager[page][direction](()=>{
-            $('.'+page +'-container').addClass('active');
+        pageManager[page][direction](() => {
+            $(`.${page}-container`).addClass('active');
         });
+
+        $('.navbar-menu a').removeClass('active');
+        $(`.navbar-menu [data-page='${page}'] a`).addClass('active');
+
     }
 
     openModal(e) {
