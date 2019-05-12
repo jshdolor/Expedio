@@ -7,13 +7,33 @@
 		<div class="navbar-slide">
 		  <div class="navbar-header">
 		    <div class="navbar-logo">
-	      	<a data-hook="move-page" class="navbar-brand" data-page='mainpage' data-direction="top"><img alt="Brand" src="<%= __ASSETS_PATH__ %>images/logo.svg" class="brand"></a>
+	      	    <a data-hook="move-page" class="navbar-brand" data-page='mainpage' data-direction="top">
+                    <img alt="Brand" src="<%= __ASSETS_PATH__ %>images/logo.svg" class="brand">
+                </a>
 		    </div>
 		    <div class="navbar-menu">
 		    	<ul>
-		    		<li><a href="#"><img alt="expedio-activate" src="<%= __ASSETS_PATH__ %>images/expedio-logo-top-blk.svg" class="icon-activate"><span>Activate</span></a></li>
-		    		<li><a href="#"><img alt="expedio-experience" src="<%= __ASSETS_PATH__ %>images/expedio-logo-left-blk.svg" class="icon-experience"><span>Experience</span></a></li>
-		    		<li><a href="#"><img alt="expedio-engage" src="<%= __ASSETS_PATH__ %>images/expedio-logo-bottom-blk.svg" class="icon-engage"><span>Engage</span></a></li>
+                    <li 
+                        data-hook="move-page" 
+                        data-page="activate" 
+                        data-direction="top">
+                        <a href="#"><img alt="expedio-activate" src="<%= __ASSETS_PATH__ %>images/expedio-logo-top-blk.svg" class="icon-activate">
+                            <span class="nav-title">Activate</span>
+                        </a></li>
+                    <li 
+                        data-hook="move-page" 
+                        data-page="experience" 
+                        data-direction="left">
+                        <a href="#"><img alt="expedio-experience" src="<%= __ASSETS_PATH__ %>images/expedio-logo-left-blk.svg" class="icon-experience">
+                            <span class="nav-title">Experience</span>
+                        </a></li>
+                    <li 
+                        data-hook="move-page" 
+                        data-page="engage" 
+                        data-direction="bottom">
+                        <a href="#"><img alt="expedio-engage" src="<%= __ASSETS_PATH__ %>images/expedio-logo-bottom-blk.svg" class="icon-engage">
+                            <span class="nav-title">Engage</span>
+                        </a></li>
 		    	</ul>
 		    </div>
 		    <div class="navbar-media">

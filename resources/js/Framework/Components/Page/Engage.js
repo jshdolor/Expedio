@@ -18,6 +18,12 @@ class EngagePage extends BasePage {
     }
 
     onload() {
+        
+        if(this.loaded) {
+            return;
+        }
+        
+        this.loaded = true;
 
         this.attachThoughtBalloons();
         this.attachVideo();

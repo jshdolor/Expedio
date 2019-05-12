@@ -14,6 +14,8 @@ export default class ExpedioElement {
 
         this.currentEvent = null;
 
+        this.activeElement = null;
+
         this.init();
     }
 
@@ -48,6 +50,7 @@ export default class ExpedioElement {
                     top: $currentElem.attr('expedio-top'),
                 };
 
+                // $currentElem.on('mousemove', this.mousemove.bind(this));
                 $currentElem.on('mousedown', this.mousedown.bind(this));
 
                 this.expedio_elements.push(expedioElem);
@@ -74,7 +77,9 @@ export default class ExpedioElement {
             $(event.target).trigger("click");
 
             this.hiddenElements.forEach(hiddenElem => {
-                $(hiddenElem).show();
+                // $(hiddenElem).show();
+                $(hiddenElem).css('pointer-events','auto');
+
             })
             this.hiddenElements = [];
 
@@ -86,7 +91,8 @@ export default class ExpedioElement {
                 
                 this.hiddenElements.push($(document.elementFromPoint(this.currentEvent.clientX, this.currentEvent.clientY))[0]);
 
-                $(document.elementFromPoint(this.currentEvent.clientX, this.currentEvent.clientY)).hide();
+                // $(document.elementFromPoint(this.currentEvent.clientX, this.currentEvent.clientY)).hide();
+                $(document.elementFromPoint(this.currentEvent.clientX, this.currentEvent.clientY)).css('pointer-events','none');
                 
                 this.triggerMouseEvent(
                     $(document.elementFromPoint(this.currentEvent.clientX, this.currentEvent.clientY))[0],
@@ -96,7 +102,8 @@ export default class ExpedioElement {
                 if(this.expedio_elements.length === this.hiddenElements.length) {
 
                     this.hiddenElements.forEach(hiddenElem => {
-                        $(hiddenElem).show();
+                        $(hiddenElem).css('pointer-events','auto');
+                        // $(hiddenElem).show();
                     })
                     this.hiddenElements = [];
         
@@ -109,12 +116,19 @@ export default class ExpedioElement {
         }
     }
 
-    mouseenter() {
-        
-    }
+    mousemove(event) {
 
-    mouseleave() {
+        if(!this.currentEvent) {
+            this.currentEvent = event; 
+        }
 
+        if(this.clickedIsNotTransparent(event)) {
+
+            this.activeElement = event.target;
+
+            this.currentEvent = null;
+
+        } 
     }
 
     clickedIsNotTransparent(event) {
@@ -130,7 +144,10 @@ export default class ExpedioElement {
         // Draw image to canvas
         // and read Alpha channel value
         canvas.drawImage(event.target, 0, 0, w, h);
+
         alpha = canvas.getImageData(x, y, 1, 1).data[3]; // [0]R [1]G [2]B [3]A
+        canvas = undefined;
+
         return !!alpha;
 
     }
@@ -153,6 +170,8 @@ export default class ExpedioElement {
 
         animatedImg.onload = () => {
             $(this).hide();
+            // $(this).css('pointer-events','none');
+
         }
 
         $(this).after(animatedImg);
@@ -160,6 +179,7 @@ export default class ExpedioElement {
 
         setTimeout(() => {
             animatedImg.remove();
+            // $(this).css('pointer-events','none');
             $(this).show();
         }, duration);
 

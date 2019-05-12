@@ -1,5 +1,8 @@
 import BasePage from '~/Framework/Components/Page/BasePage';
 
+import PartnerBox from '~/Framework/Components/PartnerBox';
+import EmployeeBox from '~/Framework/Components/EmployeeBox';
+
 class ExperiencePage extends BasePage{
 
     constructor() {
@@ -22,38 +25,24 @@ class ExperiencePage extends BasePage{
     }
 
     onload() {
+
+        if(this.loaded) {
+            return true;
+        }
+
+        this.loaded = true;
+        
         let department_members = this.config.departments || [];
         let partners_members = this.config.partners || [];
 
         partners_members.forEach((member) => {
-            this.$selector(this.partners_container).append(this.partners_template(member));
+            new PartnerBox(member, this.$selector(this.partners_container)).attach();
         });
 
         department_members.forEach((member) => {
-            this.$selector(this.departments_container).append(this.departments_template(member));
+            new EmployeeBox(member, this.$selector(this.departments_container)).attach();
         });
 
-        this.loaded = true;
-    }
-
-    departments_template({name, position}) {
-        return `<element class="depts-${name}">
-            <img src="${asset_path}images/img-container-portrait.svg">
-            <div class="thumb-details">
-                <h5>${name.toTitleCase()}</h5>
-                <p><small>${position}</small></p>
-            </div>
-        </element>`;
-    }
-
-    partners_template({name, fullName, position}){
-        return `<element class="partner-${name}">
-            <img src="${asset_path}images/img-container-portrait.svg">
-            <div class="thumb-details">
-                <h5>${fullName.toTitleCase()}</h5>
-                <p><small>${position}</small></p>
-            </div>
-        </element>`;
     }
 
 }
