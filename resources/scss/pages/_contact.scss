@@ -55,6 +55,10 @@
   }
 } 
 
+.contact-page {
+  position: relative;
+}
+
 @media only screen and (orientation: portrait) and (max-width: 768px) {
   .contact-container {
     > div {

@@ -160,8 +160,9 @@ main {
 }
 
 @mixin svg-shadow {
-  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
   filter: url(#drop-shadow);
-  -webkit-filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3))
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  transition: all 1s;
 }
