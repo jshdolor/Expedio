@@ -113,17 +113,30 @@ class App {
     }
 
     removePreloader() {
-
+        $('.loader').remove();
     }
 
     initComponents() {
-        Config.expedio_elements.forEach(el => {
-            new ExpedioElement(el).init();
-        })
-
         expedio.currentEvent = null
         expedio.hiddenElements = [];
         expedio.expedio_elements = [];
+        expedio.expedio_elements_loaded = 0;
+
+        let isExpedioElementsLoaded = new Promise((resolve, reject) =>{
+            
+            Config.expedio_elements.forEach(el => {
+                new ExpedioElement(el).init();
+            })
+
+            if(expedio.expedio_elements_loaded === Config.expedio_elements.length * 2) {
+                resolve(true);
+            }
+
+        });
+
+        isExpedioElementsLoaded.then(() => {
+            this.removePreloader();
+        });
     }
 
 }

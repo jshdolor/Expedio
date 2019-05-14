@@ -1,7 +1,10 @@
 <!DOCTYPE html>       	  
 <html>                      
 <%- include ../resources/pages/header.html-%>      
-<body> 
+<body>
+    <div class="loader">
+        <img src="<%= __ASSETS_PATH__ %>/animations/preloader.svg">
+    </div> 
     <div class="whole-page" id="main-page"> 
         <!-- put nav here -->  
         <%- include ../resources/pages/navigation.html -%>
