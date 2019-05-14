@@ -13,6 +13,8 @@ class ExpedioGraphic {
         this.$el = null;
         this.animated = null;
         this.$animated = null;
+
+        this.custom = data.custom || [];
     }
 
     init() {
@@ -60,13 +62,22 @@ class ExpedioGraphic {
 
         this.$animated.hide();
         this.$animated.css('width','100%');
-        this.$animated.css('zIndex',this.zIndex);
+        this.$animated.css('zIndex', this.zIndex);
     }
 
     click(e) {
 
         this.$el.hide();
+        
+        this.$animated.attr('src', this.imgPath + '.png');
+        this.$animated.attr('src', this.imgPath + '.gif');
         this.$animated.show();
+
+        this.custom.forEach(c => {
+            setTimeout(() => {
+                this.$animated.css('zIndex', c.zIndex);
+            }, c.duration);
+        })
 
         setTimeout(() => {
 

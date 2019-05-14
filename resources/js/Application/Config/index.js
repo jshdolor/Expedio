@@ -105,7 +105,7 @@ export default {
         {
             name: "eye",
             zIndex: 18,
-            duration:3000
+            duration:5000
         },
         {
             name: "flower",
@@ -120,7 +120,17 @@ export default {
         {
             name: "rocket",
             zIndex: 2,
-            duration:3000
+            duration:9500,
+            custom: [
+                {
+                    duration:100,
+                    zIndex:22
+                },
+                {
+                    duration:8800,
+                    zIndex:2
+                }
+            ]
         },
         {
             name: "singer",
