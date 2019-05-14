@@ -43,64 +43,130 @@ export default {
     },
     expedio_elements: [
         {
-            id: 'building',
-            pos: {
-                bottom: 0,
-                left: 0
-            },
-            duration: 4000
+            name: "basketball",
+            zIndex: 2,
+            duration:3000
         },
         {
-            id: 'eyes',
-            pos: {
-                bottom: 0,
-                left: 0
-            },
-            duration: 4000
+            name: "car",
+            zIndex: 2,
+            duration:3000
         },
         {
-            id: 'building',
-            pos: {
-                bottom: 0,
-                left: 0
-            },
-            duration: 4000
+            name: "coconut",
+            zIndex: 2,
+            duration:3000
+        },
+        {
+            name: "dog",
+            zIndex: 16,
+            duration:3000
+        },
+        {
+            name: "fiesta",
+            zIndex: 13,
+            duration:3000
+        },
+        {
+            name: "flower1",
+            zIndex: 2,
+            duration:3000
+        },
+        {
+            name: "popsicle",
+            zIndex: 2,
+            duration:3000
+        },
+        {
+            name: "shoppingbag",
+            zIndex: 14,
+            duration:3000
+        },
+        {
+            name: "wattah",
+            zIndex: 15,
+            duration:3000
+        },
+        {
+            name: "bldg",
+            zIndex: 20,
+            duration:3000
+        },
+        {
+            name: "clouds",
+            zIndex: 18,
+            duration:3000
+        },
+        {
+            name: "cup",
+            zIndex: 2,
+            duration:3000
+        },
+        {
+            name: "eye",
+            zIndex: 19,
+            duration:3000
+        },
+        {
+            name: "flower",
+            zIndex: 2,
+            duration:3000
+        },
+        {
+            name: "magician",
+            zIndex: 2,
+            duration:3000
+        },
+        {
+            name: "rocket",
+            zIndex: 17,
+            duration:3000
+        },
+        {
+            name: "singer",
+            zIndex: 2,
+            duration:3000
+        },
+        {
+            name: "woman",
+            zIndex: 16,
+            duration:3000
         },
     ],
     experience: {
         partners: [
-            { "name": "oman", fullName:"Oman Tanchingco", "position": "Chief Integrator" },
-            { "name": "jelen", fullName:"Jelen Pronstroller", "position": "CEO/ Managing Partner - Events" },
-            { "name": "mike", fullName:"Mike Gumaru", "position": "Managing Partner/ Operations Lead" },
+            { "name": "oman", fullName: "Oman Tanchingco", "position": "Chief Integrator" },
+            { "name": "jelen", fullName: "Jelen Pronstroller", "position": "CEO/ Managing Partner - Events" },
+            { "name": "mike", fullName: "Mike Gumaru", "position": "Managing Partner/ Operations Lead" },
         ],
         departments: [{ "name": "allan", "position": "Office Messenger" },
-            { "name": "andrea", "position": "Account Manager" },
-            { "name": "anjo", "position": "Account Director" },
-            { "name": "arlyn", "position": "Billing and Collections Officer" },
-            { "name": "ayie", "position": "HR Manager" },
-            { "name": "bryan", "position": "Office Messenger" },
-            { "name": "camille", "position": "Copywriter" },
-            { "name": "carlos", "position": "Copywriter" },
-            { "name": "cylo", "position": "Finance Officer" },
-            { "name": "dale", "position": "Business Unit Director - Production" },
-            { "name": "dm", "position": "Senior Production Designer" },
-            { "name": "ernie", "position": "Office Messenger" },
-            { "name": "emmie", "position": "Utility Staff" },
-            { "name": "eric", "position": "Finance Officer" },
-            { "name": "gela", "position": "Account Manager" },
-            { "name": "hart", "position": "Utility Staff" },
-            { "name": "hazel", "position": "Account Manager" },
-            { "name": "inna", "position": "Senior Account Manager" },
-            { "name": "kath", "position": "HR Officer" },
-            { "name": "cathy", "position": "Admin Officer" },
-            { "name": "lea", "position": "Finance Manager" },
-            { "name": "maene", "position": "Production Manager" },
-            { "name": "marcie", "position": "Art Director" }, 
-            { "name": "marnie" },
-            { "name": "mel", "position": "Art Director" },
-            { "name": "phoebe", "position": "Production Manager" },
-            { "name": "ramil", "position": "Finance Assistant" },
-            { "name": "ray", "position": "Senior Art Director" }
+        { "name": "andrea", "position": "Account Manager" },
+        { "name": "anjo", "position": "Account Director" },
+        { "name": "arlyn", "position": "Billing and Collections Officer" },
+        { "name": "ayie", "position": "HR Manager" },
+        { "name": "bryan", "position": "Office Messenger" },
+        { "name": "camille", "position": "Copywriter" },
+        { "name": "carlos", "position": "Copywriter" },
+        { "name": "cylo", "position": "Finance Officer" },
+        { "name": "dale", "position": "Business Unit Director - Production" },
+        { "name": "dm", "position": "Senior Production Designer" },
+        { "name": "ernie", "position": "Office Messenger" },
+        { "name": "emmie", "position": "Utility Staff" },
+        { "name": "eric", "position": "Finance Officer" },
+        { "name": "gela", "position": "Account Manager" },
+        { "name": "hart", "position": "Utility Staff" },
+        { "name": "hazel", "position": "Account Manager" },
+        { "name": "inna", "position": "Senior Account Manager" },
+        { "name": "kath", "position": "HR Officer" },
+        { "name": "cathy", "position": "Admin Officer" },
+        { "name": "lea", "position": "Finance Manager" },
+        { "name": "maene", "position": "Production Manager" },
+        { "name": "marcie", "position": "Art Director" },
+        { "name": "marnie" },
+        { "name": "mel", "position": "Art Director" },
+        { "name": "phoebe", "position": "Production Manager" },
+        { "name": "ramil", "position": "Finance Assistant" },
+        { "name": "ray", "position": "Senior Art Director" }
         ]
     },
     activate: {
@@ -131,5 +197,5 @@ export default {
         ],
         live_stream_video: '<iframe src="https://www.youtube.com/embed/xcJtL7QggTI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     }
-    
+
 }

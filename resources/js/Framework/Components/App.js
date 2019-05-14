@@ -2,7 +2,7 @@ import Config from '~/Application/Config';
 import Page from '~/Framework/Components/Page';
 import NavBtn from '~/Framework/Components/NavButton';
 import Toolbar from '~/Framework/Components/Toolbar';
-import ExpedioElement from '~/Framework/Components/ExpedioElement';
+import ExpedioElement from '~/Framework/Components/ExpedioGraphic';
 import Form from '~/Framework/Components/Form';
 
 
@@ -117,7 +117,13 @@ class App {
     }
 
     initComponents() {
-        new ExpedioElement();
+        Config.expedio_elements.forEach(el => {
+            new ExpedioElement(el).init();
+        })
+
+        expedio.currentEvent = null
+        expedio.hiddenElements = [];
+        expedio.expedio_elements = [];
     }
 
 }
