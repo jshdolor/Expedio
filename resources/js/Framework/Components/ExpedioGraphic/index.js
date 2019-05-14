@@ -25,8 +25,14 @@ class ExpedioGraphic {
 
     attachImage() {
         let image = document.createElement("img");
+        
+        image.onload = () => {
+            expedio.expedio_elements_loaded ++;
+        }
+        
         image.setAttribute('src', this.imgPath + '.png');
 
+        
         this.el = image;
         this.$el = $(image);
 
@@ -41,6 +47,10 @@ class ExpedioGraphic {
     attachAnimatedVersion() {
 
         let animatedImg = document.createElement("img");
+        animatedImg.onload = () => {
+            expedio.expedio_elements_loaded ++;
+        }
+
         animatedImg.setAttribute('src', this.imgPath + '.gif');
 
         this.$el.after(animatedImg);
