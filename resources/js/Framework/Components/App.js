@@ -14,6 +14,9 @@ import Hooks from '~/Framework/Helpers/hooks';
 
 import Parallax from 'parallax-js/dist/parallax.min.js';
 
+import BrowserManager from '~/Framework/Managers/Browser';
+import SizeGiver from '~/Framework/Managers/SizeGiver';
+
 class App {
     
     constructor() {
@@ -122,10 +125,18 @@ class App {
         expedio.expedio_elements = [];
         expedio.expedio_elements_loaded = 0;
 
+        let bestVideoFormat = BrowserManager.getBestVideoFormat();
+
         let isExpedioElementsLoaded = new Promise((resolve, reject) =>{
             
             Config.expedio_elements.forEach(el => {
-                new ExpedioElement(el).init();
+
+                el.video = bestVideoFormat;
+                
+                new ExpedioElement(el,{
+                    size: SizeGiver.getBestSizePath()
+                }).init();
+
             })
 
             if(expedio.expedio_elements_loaded === Config.expedio_elements.length * 2) {

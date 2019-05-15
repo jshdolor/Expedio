@@ -1,14 +1,12 @@
 class ExpedioGraphic {
 
-    constructor(data, custom) {
+    constructor(data, parent, size) {
         this.name = data.name;
         this.duration = data.duration;
         this.zIndex = data.zIndex;
-        this.videoFormat = data.video;
 
-
-        this.parent = custom.parent ? custom.parent:'.expedio-element-container';
-        this.sizePath = custom.size ? custom.size: '1920x1080';
+        this.parent = parent ? parent:'.expedio-element-container';
+        this.sizePath = size ? size: '1920x1080';
         this.imgPath = asset_path + `images/landing/${this.sizePath}/${this.name}`;
 
         this.el = null;
@@ -43,38 +41,24 @@ class ExpedioGraphic {
 
         this.$el.css('width','100%');
         this.$el.css('zIndex',this.zIndex);
-        this.$el.attr('id', 'expedio_element_' + this.name);
+        this.$el.attr('id', this.name);
 
         $(this.parent).append(this.el);
     }
 
     attachAnimatedVersion() {
 
-        let animatedImg = document.createElement("video");
+        let animatedImg = document.createElement("img");
+        animatedImg.onload = () => {
+            expedio.expedio_elements_loaded ++;
+        }
 
-        let vidSrc = document.createElement("source");
-        $(vidSrc).css('width', '100%');
-        vidSrc.src = this.imgPath + this.videoFormat.extn;
-        vidSrc.type = this.videoFormat.type;
-        animatedImg.appendChild(vidSrc);
-
-        // animatedImg.onload = () => {
-        //     expedio.expedio_elements_loaded ++;
-        // }
-
-        // animatedImg.setAttribute('src', this.imgPath + '.gif');
+        animatedImg.setAttribute('src', this.imgPath + '.gif');
 
         this.$el.after(animatedImg);
 
         this.animated = animatedImg;
         this.$animated = $(animatedImg);
-
-        this.$animated.css({
-            position:'absolute',
-            top: 0,
-            left: 0
-        })
-        
 
         this.$animated.hide();
         this.$animated.css('width','100%');
@@ -85,17 +69,9 @@ class ExpedioGraphic {
 
         this.$el.hide();
         
-        // this.$animated.attr('src', this.imgPath + '.png');
-        // this.$animated.attr('src', this.imgPath + '.gif');
+        this.$animated.attr('src', this.imgPath + '.png');
+        this.$animated.attr('src', this.imgPath + '.gif');
         this.$animated.show();
-        this.$animated[0].currentTime = 0;
-        this.$animated[0].play();
-
-        this.$animated.on('ended', () => {
-            this.$el.show();
-            this.$animated.hide();
-        });
-
 
         this.custom.forEach(c => {
             setTimeout(() => {
@@ -103,12 +79,12 @@ class ExpedioGraphic {
             }, c.duration);
         })
 
-        // setTimeout(() => {
+        setTimeout(() => {
 
-        //     this.$el.show();
-        //     this.$animated.hide();
+            this.$el.show();
+            this.$animated.hide();
 
-        // }, this.duration);
+        }, this.duration);
     }
 
     mousedown(event) {
