@@ -144,6 +144,7 @@ class App {
                 }
             },500);
 
+
         });
 
         isExpedioElementsLoaded.then(() => {

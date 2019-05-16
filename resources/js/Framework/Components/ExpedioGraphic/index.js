@@ -6,7 +6,6 @@ class ExpedioGraphic {
         this.zIndex = data.zIndex;
         this.videoFormat = data.video;
 
-
         this.parent = custom.parent || '.expedio-element-container';
         this.sizePath = custom.size || '1920x1080';
         this.imgPath = asset_path + `images/landing/${this.sizePath}/${this.name}`;
@@ -52,7 +51,6 @@ class ExpedioGraphic {
         let animatedImg = document.createElement("video");
 
         let vidSrc = document.createElement("source");
-
         vidSrc.src = this.imgPath + this.videoFormat.extn;
         vidSrc.type = this.videoFormat.type;
         animatedImg.appendChild(vidSrc);
