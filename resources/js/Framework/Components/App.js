@@ -36,10 +36,6 @@ class App {
         this.initToolbar();
         // this.initForms();
 
-        //last function
-        this.removePreloader();
-
-
         //engage parallax 
         var scene = document.getElementById('scene');
         var parallaxInstance = new Parallax(scene, {
@@ -116,7 +112,9 @@ class App {
     }
 
     removePreloader() {
-        $('.loader').remove();
+        $('.loader').fadeOut(500, function() {
+            $(this).remove();
+        });
     }
 
     initComponents() {
@@ -125,23 +123,26 @@ class App {
         expedio.expedio_elements = [];
         expedio.expedio_elements_loaded = 0;
 
-        let bestVideoFormat = BrowserManager.getBestVideoFormat();
+        let bestVideoFormat = BrowserManager.getBestVideoFormat(),
+            bestSize = SizeGiver.getBestSizePath();
 
         let isExpedioElementsLoaded = new Promise((resolve, reject) =>{
             
             Config.expedio_elements.forEach(el => {
-
+                expedio.expedio_elements.push(el);
                 el.video = bestVideoFormat;
-                
                 new ExpedioElement(el,{
-                    size: SizeGiver.getBestSizePath()
+                    size: bestSize
                 }).init();
 
             })
 
-            if(expedio.expedio_elements_loaded === Config.expedio_elements.length * 2) {
-                resolve(true);
-            }
+            let checkInterval = setInterval(() => {
+                if(expedio.expedio_elements_loaded === Config.expedio_elements.length * 2) {
+                    clearInterval(checkInterval)
+                    resolve(true);
+                }
+            },500);
 
         });
 

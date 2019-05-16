@@ -15,7 +15,7 @@ $triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !d
 	max-height: 100%;
 }
 .triangle {
-	position: absolute;
+	position: fixed;
 	width: calc(100% / 2);
 	max-width: 150px;
 	top: 50%;

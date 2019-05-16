@@ -22,17 +22,13 @@ class SizeGiver {
 
     static getBestSize() {
         
-        let partialBestWidth = [];
+        for(let i = 0; i < this.commonSizes().length; i++) {
+            if(this.commonSizes()[i].width >= this.screenSize().width) {
+                return this.commonSizes()[i];
+            }
+        }
 
-        this.commonSizes().forEach( (size) => {
-
-            partialBestWidth.push(size.width - this.screenSize().width);
-
-        }) ;
-        
-        let index = partialBestWidth.indexOf(Math.min.apply(Math, partialBestWidth) );
-
-        return this.commonSizes()[index];
+        return this.commonSizes()[this.commonSizes().length - 1];
 
     }
 

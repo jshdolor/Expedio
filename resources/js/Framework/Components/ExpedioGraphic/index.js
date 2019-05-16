@@ -7,8 +7,8 @@ class ExpedioGraphic {
         this.videoFormat = data.video;
 
 
-        this.parent = custom.parent ? custom.parent:'.expedio-element-container';
-        this.sizePath = custom.size ? custom.size: '1920x1080';
+        this.parent = custom.parent || '.expedio-element-container';
+        this.sizePath = custom.size || '1920x1080';
         this.imgPath = asset_path + `images/landing/${this.sizePath}/${this.name}`;
 
         this.el = null;
@@ -41,7 +41,6 @@ class ExpedioGraphic {
         this.$el = $(image);
 
 
-        this.$el.css('width','100%');
         this.$el.css('zIndex',this.zIndex);
         this.$el.attr('id', 'expedio_element_' + this.name);
 
@@ -53,31 +52,23 @@ class ExpedioGraphic {
         let animatedImg = document.createElement("video");
 
         let vidSrc = document.createElement("source");
-        $(vidSrc).css('width', '100%');
+
         vidSrc.src = this.imgPath + this.videoFormat.extn;
         vidSrc.type = this.videoFormat.type;
         animatedImg.appendChild(vidSrc);
 
-        // animatedImg.onload = () => {
-        //     expedio.expedio_elements_loaded ++;
-        // }
-
-        // animatedImg.setAttribute('src', this.imgPath + '.gif');
+        animatedImg.oncanplay = () => {
+            expedio.expedio_elements_loaded ++;
+        }
 
         this.$el.after(animatedImg);
 
         this.animated = animatedImg;
         this.$animated = $(animatedImg);
 
-        this.$animated.css({
-            position:'absolute',
-            top: 0,
-            left: 0
-        })
-        
+        this.$animated.addClass('expedio-animated');
 
         this.$animated.hide();
-        this.$animated.css('width','100%');
         this.$animated.css('zIndex', this.zIndex);
     }
 
@@ -85,15 +76,15 @@ class ExpedioGraphic {
 
         this.$el.hide();
         
-        // this.$animated.attr('src', this.imgPath + '.png');
-        // this.$animated.attr('src', this.imgPath + '.gif');
         this.$animated.show();
         this.$animated[0].currentTime = 0;
         this.$animated[0].play();
 
         this.$animated.on('ended', () => {
+            
             this.$el.show();
             this.$animated.hide();
+
         });
 
 
@@ -102,13 +93,7 @@ class ExpedioGraphic {
                 this.$animated.css('zIndex', c.zIndex);
             }, c.duration);
         })
-
-        // setTimeout(() => {
-
-        //     this.$el.show();
-        //     this.$animated.hide();
-
-        // }, this.duration);
+        
     }
 
     mousedown(event) {
@@ -136,6 +121,19 @@ class ExpedioGraphic {
 
         } else {
 
+            if(expedio.hiddenElements.length === expedio.expedio_elements.length)
+            {
+                expedio.hiddenElements.forEach(hiddenElem => {
+                    $(hiddenElem).css('pointer-events','auto');
+                })
+                expedio.hiddenElements = [];
+    
+                expedio.currentEvent = null;
+
+                return;
+
+            }
+            
             if ($(document.elementFromPoint(expedio.currentEvent.clientX, expedio.currentEvent.clientY))[0].tagName === 'IMG') {
                 
                 expedio.hiddenElements.push($(document.elementFromPoint(expedio.currentEvent.clientX, expedio.currentEvent.clientY))[0]);

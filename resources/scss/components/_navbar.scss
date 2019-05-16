@@ -1,4 +1,10 @@
 nav {
+
+    .navbar-brand.anchor-home {
+        //adjusted to look like the exact expedio logo
+        margin-left: 5px;
+    }
+
 	z-index: 10000;
 	overflow: visible;
 	width: 100%;
@@ -122,7 +128,7 @@ nav{
 			padding: 0 !important;
 		}
 		.logo-media {
-			min-height: 2rem;
+			min-height: 3rem;
 			width: auto;
 			// @include svg-shadow;
 		}

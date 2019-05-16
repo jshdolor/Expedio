@@ -28,24 +28,24 @@ class BrowserManager {
     static getVideoFormat(browser) {
         let videoBrowserMap = {
             msie:{
-                type:'e',
-                extn: 'e'
+                type:'video/mp4',
+                extn: '.mov'
             },
             chrome:{
                 type:'video/webm',
                 extn: '.webm'
             },
             firefox:{
-                type:'e',
-                extn: 'e'
+                type:'video/webm',
+                extn: '.webm'
             },
             safari:{
-                type:'r',
-                extn: 'r'
+                type:'video/mp4',
+                extn: '.mov'
             },
             opera:{
-                type:'a',
-                extn: 'a'
+                type:'video/webm',
+                extn: '.webm'
             },
         }
 
@@ -61,4 +61,3 @@ class BrowserManager {
 }
 
 export default BrowserManager;
-
