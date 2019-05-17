@@ -62,6 +62,12 @@ class Hooks {
 
         pageManager[page][direction](() => {
             $(`.${page}-container`).addClass('active');
+
+            if(pageManager.current.key !== "mainpage") {
+                $('[data-js=toolbar]').show();
+            } else {
+                $('[data-js=toolbar]').hide();
+            }
         });
 
         $('.navbar-menu a').removeClass('active');

@@ -1,7 +1,6 @@
 import Config from '~/Application/Config';
 import Page from '~/Framework/Components/Page';
 import NavBtn from '~/Framework/Components/NavButton';
-import Toolbar from '~/Framework/Components/Toolbar';
 import ExpedioElement from '~/Framework/Components/ExpedioGraphic';
 import Form from '~/Framework/Components/Form';
 
@@ -33,7 +32,6 @@ class App {
 
         this.initNavigations();
         this.initHooks();
-        this.initToolbar();
         // this.initForms();
 
         //engage parallax 
@@ -97,18 +95,9 @@ class App {
         new ActivatePage().init();
 
         Config.pages.forEach(page => {
-            this.pages.push(new Page(page.id, page.config ));
+            this.pages.push(new Page(page.id, page.config));
         });
 
-        // pageManager.preload = function(){
-        //     pageManager.background = $(".experience-container.expedio-page.active");
-        //     pageManager.scaling = 0.4; //background moves 40% with the pages
-        // };
-
-    }
-
-    initToolbar() {
-        this.toolbar = new Toolbar('.navbar-brand', '.toolbar');
     }
 
     removePreloader() {

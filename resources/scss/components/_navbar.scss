@@ -1,5 +1,5 @@
 nav {
-
+	display:none;
     .navbar-brand.anchor-home {
         //adjusted to look like the exact expedio logo
         margin-left: 5px;
@@ -13,11 +13,16 @@ nav {
 	left: 0;
 	@extend .py-2;
 	.navbar-brand {
-		img {
+		img,svg {
 			width: auto; 
 			height: 48px;
 			&.navbar-logo {
 				@include svg-shadow;
+			}
+
+			&.toolbar-logo{
+				position: absolute;
+				z-index: 10;
 			}
 		} 
 		&:hover {
@@ -30,18 +35,18 @@ nav {
 	.navbar-slide {
 		// background-color: #fff;
 		min-width: 100vw;
-    	margin-left: calc(-50vw + 50%);
+		margin-left: calc(-50vw + 50%);
 		@extend .py-2;
 		position: absolute;
-		top: -100%;
+		top: -200%;
 		left: 0;
+		z-index: 9;
 		transition: top 1s;
 		transition-delay: 0.5s;
 		
 		&:hover {
 			top: 0;
 			transition-delay: 0s;
-
 		}
 	}
 }

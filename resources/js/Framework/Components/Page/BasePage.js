@@ -15,6 +15,10 @@ export default class BasePage {
         
     }
 
+    onload() {
+        
+    }
+
     $selector(element) {
         return $(`${this.id} ${element}`);
     }
