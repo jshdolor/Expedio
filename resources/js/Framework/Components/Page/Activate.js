@@ -26,6 +26,7 @@ class ActivatePage extends BasePage{
         this.addProjectImages();
 
         //initialize slick/carousel
+        this.loaded = true;
     }
 
     addProjectImages() {
