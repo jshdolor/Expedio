@@ -72,6 +72,15 @@ class ExpedioGraphic {
 
     click(e) {
 
+        
+        $('.expedio-element-container video').each((key, el)=> {
+            el.pause();
+            $(el).hide();
+            el.currentTime = 0;
+        })
+        
+        $('[id^=expedio_element_]').show();
+
         this.$el.hide();
         
         this.$animated.show();
