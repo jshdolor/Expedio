@@ -10,7 +10,6 @@ import ContactPage from '~/Framework/Components/Page/Contact';
 
 import Hooks from '~/Framework/Helpers/hooks';
 
-import Parallax from 'parallax-js/dist/parallax.min.js';
 
 
 class App {
@@ -18,37 +17,24 @@ class App {
     constructor() {
 
         //pages 
-        this.mainPage = null;
         this.pages = [];
 
-        //navigation
-        this.navBtns = [];
-
         this.getInitialDimensions();
-
-        this.initNavigations();
         this.initHooks();
-        // this.initForms();
-
-        //engage parallax 
-        var scene = document.getElementById('scene');
-        var parallaxInstance = new Parallax(scene, {
-            hoverOnly: true,
-            relativeInput: true
-        });
 
         this.initPages();
 
-        $(window).scroll(function(){
-            var wScroll = $(this).scrollTop();
-            var aHeight = $('.active').height();
-            var wHeight = $(this).height();
+        $(document).on('scroll', function() {
 
-            // $('.active').css({
-            //     // 'background-position-y' : (wScroll  / 10) + '%'
-            //     'background-position-y' : ((wScroll  * (aHeight + wHeight)) / 100) / 300  + '%'
-            // });
-            
+            let wScroll = $(this).scrollTop(),
+                docHeight = $(this).height(),
+                //scroll position / document height multiplied by delay
+                elBackgrounPos = (wScroll / docHeight) * 800 + "px";
+
+            $('main.active').css({
+                'background-position-y': elBackgrounPos
+            });
+
         });
     }
 
@@ -73,12 +59,6 @@ class App {
         Hooks.init();
     }
 
-    initNavigations() {
-        Config.navButtons.forEach(btn => {
-            this.navBtns.push(new NavBtn(btn.selector, btn.config));
-        });
-    }
-
     initPages() {
 
         this.pages = [
@@ -91,6 +71,7 @@ class App {
 
         this.pages.forEach(page => page.init());
 
+        //make homepage active & make homepage the current on pageManager
         this.pages[0].showPage();
 
     }

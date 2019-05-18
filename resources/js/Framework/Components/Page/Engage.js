@@ -1,5 +1,8 @@
 import BasePage from '~/Framework/Components/Page/BasePage';
 
+import Parallax from 'parallax-js/dist/parallax.min.js';
+
+
 class EngagePage extends BasePage {
 
     constructor(cb) {
@@ -26,7 +29,17 @@ class EngagePage extends BasePage {
 
         this.attachThoughtBalloons();
         this.attachVideo();
-        
+        this.makeCommentsParallax();
+    }
+
+    makeCommentsParallax() {
+        //engage parallax 
+        let scene = document.getElementById('scene');
+
+        new Parallax(scene, {
+            hoverOnly: true,
+            relativeInput: true
+        });
     }
 
     attachThoughtBalloons() {
