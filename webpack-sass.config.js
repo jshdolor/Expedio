@@ -4,6 +4,9 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+var WebpackNotifierPlugin = require('webpack-notifier');
+
+
 const folderPath = 'dist/src/css';
 
 module.exports = {
@@ -68,6 +71,11 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: path.resolve(__dirname, 'resources/assets'), to: path.resolve(__dirname, 'dist/src/assets') }
         ]),
+
+        new WebpackNotifierPlugin({
+            title: 'Expedio SASS - Built!',
+            alwaysNotify: true
+        })
     ],
     optimization: {
         minimizer: [

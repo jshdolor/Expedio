@@ -8,6 +8,8 @@ const htmlFolderPath = 'dist';
 const isDev = process.env.NODE_ENV === 'development';
 const minifyHTML = !isDev;
 
+var WebpackNotifierPlugin = require('webpack-notifier');
+
 module.exports = {
     entry: './resources/app.js',
     output: {
@@ -78,6 +80,10 @@ module.exports = {
                 to: path.resolve(__dirname, htmlFolderPath+'/src/assets')
             } 
         ]), 
+        new WebpackNotifierPlugin({
+            title: 'Expedio JS - Built!',
+            alwaysNotify: true
+        })
     ],
     resolve: {
         modules: [
