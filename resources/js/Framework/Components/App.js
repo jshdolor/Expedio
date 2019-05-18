@@ -1,7 +1,3 @@
-import Config from '~/Application/Config';
-import NavBtn from '~/Framework/Components/NavButton';
-
-
 import HomePage from '~/Framework/Components/Page/Home';
 import EngagePage from '~/Framework/Components/Page/Engage';
 import ExperiencePage from '~/Framework/Components/Page/Experience';
@@ -9,8 +5,6 @@ import ActivatePage from '~/Framework/Components/Page/Activate';
 import ContactPage from '~/Framework/Components/Page/Contact';
 
 import Hooks from '~/Framework/Helpers/hooks';
-
-
 
 class App {
     
