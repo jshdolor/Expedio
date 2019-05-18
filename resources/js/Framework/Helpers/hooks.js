@@ -1,10 +1,6 @@
 import 'slick-carousel';
 import Config from '~/Application/Config';
 import Modal from 'jquery-modal/jquery.modal.min.js';
-import Validator from '~/Framework/Managers/Validator';
-
-import EmailCollaborate from '~/Application/Services/EmailCollaborate';
-import EmailCollaborateRequest from '~/Application/Services/EmailCollaborate/Requests';
 
 class Hooks {
 
@@ -30,8 +26,6 @@ class Hooks {
             }
         ];
 
-        this.validator = [];
-
 
     }
 
@@ -43,8 +37,6 @@ class Hooks {
         this.initSlider.forEach(elem => {
             this.slider(elem.selector, elem.config);
         });
-
-        this.initValidator();
 
     }
 
@@ -90,36 +82,6 @@ class Hooks {
 
     slider(el, config) {
         $(el).slick(Config[config]);
-    }
-
-    initValidator() {
-
-        
-        this.validator = new Validator('[data-form]');
-
-        $('body').on('submit', '[data-form]', this.onSubmit.bind(this));
-        
-    }
-
-    onSubmit(e) {
-        e.preventDefault();
-        if(this.validator.check()) {
-            //has no errors 
-            let request = new EmailCollaborateRequest(this.validator.data.toValidatorData());
-
-            EmailCollaborate.handle(request.formData)
-                .then((res) =>{
-                    
-                    if(res) {
-                        $('[data-form]')[0].reset();
-                        this.validator.resetValidations();
-
-                        $('[data-modal=sent-modal]').modal();
-
-                    }
-                    
-                })
-        }
     }
 
 }
