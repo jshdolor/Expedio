@@ -11,7 +11,6 @@ class ActivatePage extends BasePage{
         
         this.name = 'activate';
         this.el = $(this.id);
-        this.loaded = false;
 
         this.major_proj_container = '.major-projects';
     }

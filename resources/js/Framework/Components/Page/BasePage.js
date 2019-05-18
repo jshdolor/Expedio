@@ -2,8 +2,9 @@ import Config from '~/Application/Config';
 
 export default class BasePage {
 
-    constructor() {
-
+    constructor(cb) {
+        this.loaded = false;
+        this.cb = cb || null;
     }
 
     init() {
@@ -15,8 +16,16 @@ export default class BasePage {
         
     }
 
+    showPage() {
+        pageManager[this.name].show();
+    }
+
     onload() {
-        
+
+    }
+
+    loadComponents() {
+
     }
 
     $selector(element) {

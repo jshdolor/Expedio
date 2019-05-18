@@ -5,8 +5,9 @@ import EmployeeBox from '~/Framework/Components/EmployeeBox';
 
 class ExperiencePage extends BasePage{
 
-    constructor() {
-        super();
+    constructor(cb) {
+        super(cb);
+
         this.id =  '#expedio_experience'
         this.config = {
             position : 'left'
@@ -16,9 +17,6 @@ class ExperiencePage extends BasePage{
 
         this.departments_container = '.depts';
         this.partners_container = '.partners';
-
-
-        this.loaded = false;
 
         this.el = $(this.id);
 

@@ -2,15 +2,16 @@ import BasePage from '~/Framework/Components/Page/BasePage';
 
 class ContactPage extends BasePage {
 
-    constructor() {
-        super();
+    constructor(cb) {
+        super(cb);
+
         this.id = '#expedio_contact';
         this.el = $(this.id);
         this.config = {
             position : 'right'
         };
 
-        this.loaded = false;
+        this.name = 'contact';
     }
 
     onload() {

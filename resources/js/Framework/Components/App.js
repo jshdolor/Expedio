@@ -1,20 +1,17 @@
 import Config from '~/Application/Config';
-import Page from '~/Framework/Components/Page';
 import NavBtn from '~/Framework/Components/NavButton';
-import ExpedioElement from '~/Framework/Components/ExpedioGraphic';
-import Form from '~/Framework/Components/Form';
 
 
+import HomePage from '~/Framework/Components/Page/Home';
 import EngagePage from '~/Framework/Components/Page/Engage';
 import ExperiencePage from '~/Framework/Components/Page/Experience';
 import ActivatePage from '~/Framework/Components/Page/Activate';
+import ContactPage from '~/Framework/Components/Page/Contact';
 
 import Hooks from '~/Framework/Helpers/hooks';
 
 import Parallax from 'parallax-js/dist/parallax.min.js';
 
-import BrowserManager from '~/Framework/Managers/Browser';
-import SizeGiver from '~/Framework/Managers/SizeGiver';
 
 class App {
     
@@ -27,7 +24,6 @@ class App {
         //navigation
         this.navBtns = [];
 
-        this.initPages();
         this.getInitialDimensions();
 
         this.initNavigations();
@@ -41,7 +37,7 @@ class App {
             relativeInput: true
         });
 
-        this.initComponents();
+        this.initPages();
 
         $(window).scroll(function(){
             var wScroll = $(this).scrollTop();
@@ -85,18 +81,17 @@ class App {
 
     initPages() {
 
-        this.mainPage = $('#main-page');
-        
-        pageManager.add('mainpage',$('#main-page'));
-        pageManager.mainpage.show();
+        this.pages = [
+            new HomePage(this.removePreloader),
+            new ExperiencePage(),
+            new EngagePage(),
+            new ActivatePage(),
+            new ContactPage()
+        ];
 
-        new ExperiencePage().init();
-        new EngagePage().init();
-        new ActivatePage().init();
+        this.pages.forEach(page => page.init());
 
-        Config.pages.forEach(page => {
-            this.pages.push(new Page(page.id, page.config));
-        });
+        this.pages[0].showPage();
 
     }
 
@@ -106,40 +101,7 @@ class App {
         });
     }
 
-    initComponents() {
-        expedio.currentEvent = null
-        expedio.hiddenElements = [];
-        expedio.expedio_elements = [];
-        expedio.expedio_elements_loaded = 0;
-
-        let bestVideoFormat = BrowserManager.getBestVideoFormat(),
-            bestSize = SizeGiver.getBestSizePath();
-
-        let isExpedioElementsLoaded = new Promise((resolve, reject) =>{
-            
-            Config.expedio_elements.forEach(el => {
-                expedio.expedio_elements.push(el);
-                el.video = bestVideoFormat;
-                new ExpedioElement(el,{
-                    size: bestSize
-                }).init();
-
-            })
-
-            let checkInterval = setInterval(() => {
-                if(expedio.expedio_elements_loaded === Config.expedio_elements.length * 2) {
-                    clearInterval(checkInterval)
-                    resolve(true);
-                }
-            },500);
-
-
-        });
-
-        isExpedioElementsLoaded.then(() => {
-            this.removePreloader();
-        });
-    }
+    
 
 }
 

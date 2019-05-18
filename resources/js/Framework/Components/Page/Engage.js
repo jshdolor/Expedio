@@ -2,15 +2,14 @@ import BasePage from '~/Framework/Components/Page/BasePage';
 
 class EngagePage extends BasePage {
 
-    constructor() {
-        super();
+    constructor(cb) {
+        super(cb);
         this.id =  '#expedio_engage'
         this.config = {
             position : 'bottom'
         };
 
         this.name = 'engage';
-        this.loaded = false;
         this.el = $(this.id);
 
         this.testimonial_container = '.testimonials';
