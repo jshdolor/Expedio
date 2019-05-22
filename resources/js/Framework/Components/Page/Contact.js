@@ -22,6 +22,8 @@ class ContactPage extends BasePage {
         this.fbContainer = '.fb-container';
         this.fbChatBtn = '#fbChatBtn';
 
+        this.fbIsShown = false;
+
     }
 
     onload() {
@@ -68,7 +70,24 @@ class ContactPage extends BasePage {
     initMessenger() {
 
         $(this.fbChatBtn).on('click', () => {
-            $('.fb_dialog').click();
+            try{
+                if(this.fbIsShown) {
+
+                    FB.CustomerChat.hideDialog();
+
+                } else {
+                    
+                    FB.CustomerChat.showDialog()
+
+                }
+
+                $('.fb_dialog').hide();
+
+                this.fbIsShown = !this.fbIsShown;
+
+            } catch(e) {
+                console.log(e);
+            }
         })
 
     }
