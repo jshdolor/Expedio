@@ -14,8 +14,11 @@
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-        document.querySelector('.fb_dialog').style.display = 'none';
-    }(document, 'script', 'facebook-jssdk'));</script>
+
+        FB.CustomerChat.hideDialog();
+    }(document, 'script', 'facebook-jssdk'));
+
+</script>
 
 <!-- Your customer chat code -->
 <div class="fb-customerchat" attribution=setup_tool page_id="1130388927137177" theme_color="#64B646"></div>
