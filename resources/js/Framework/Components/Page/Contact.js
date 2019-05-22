@@ -69,7 +69,25 @@ class ContactPage extends BasePage {
 
     initMessenger() {
 
+        FB.Event.subscribe('customerchat.load', () => {
+            FB.CustomerChat.hideDialog();
+            this.fbIsShown = false;
+        });
+
+        FB.Event.subscribe('customerchat.dialogShow', () => {
+            
+            this.fbIsShown = true;
+
+        });
+
+        FB.Event.subscribe('customerchat.dialogHide', () => {
+            
+            this.fbIsShown = false;
+            
+        });
+
         $(this.fbChatBtn).on('click', () => {
+            
             try{
                 if(this.fbIsShown) {
 
@@ -80,8 +98,6 @@ class ContactPage extends BasePage {
                     FB.CustomerChat.showDialog()
 
                 }
-
-                this.fbIsShown = !this.fbIsShown;
 
             } catch(e) {
                 console.log(e);
