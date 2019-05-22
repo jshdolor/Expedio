@@ -18,6 +18,8 @@ class HomePage extends BasePage {
         this.name = 'mainpage';
         this.el = $(this.id);
 
+        this.activateMessage = '.activate-message';
+
     }
 
     onload() {
@@ -28,6 +30,7 @@ class HomePage extends BasePage {
         this.loaded = true;
 
         this.initComponents();
+
     }
 
     initComponents() {

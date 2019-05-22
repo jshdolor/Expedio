@@ -196,3 +196,33 @@ nav {
   }
 
 }
+
+@media (min-width: 1366px){
+
+  nav {
+    .navbar-container {
+      width: 1200px;
+      margin: auto;
+    }
+     .navbar-header {
+    	width: 1200px;
+      margin: auto;
+    }
+  }
+
+}
+
+@media (min-width: 1920px){
+
+  nav {
+    .navbar-container {
+      width: 1400px;
+      margin: auto;
+    }
+     .navbar-header {
+    	width: 1400px;
+      margin: auto;
+    }
+  }
+
+}

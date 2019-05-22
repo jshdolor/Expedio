@@ -6,6 +6,10 @@
             xfbml: true,
             version: 'v3.3'
         });
+
+        FB.Event.subscribe('customerchat.load', () => {
+            FB.CustomerChat.hideDialog();
+        });
     };
 
     (function (d, s, id) {
@@ -15,10 +19,6 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
-    FB.Event.subscribe('customerchat.load', () => {
-        FB.CustomerChat.hideDialog();
-    });
 
 </script>
 

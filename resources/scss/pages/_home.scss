@@ -44,6 +44,63 @@
     max-height: 100vh;
     overflow: auto;
     padding:0;
+
+    #nav-center {
+
+        position: relative;
+
+        .activate-message {
+            position: fixed;
+            z-index: 999;
+            top: 47%;
+            left: 54%;
+            font-size: 2vw;
+            -webkit-text-stroke-width: 0.8px;
+            -webkit-text-stroke-color: white;
+            pointer-events: none;
+            color:#000;
+            -webkit-animation: flickerAnimation 4s infinite;
+            -moz-animation: flickerAnimation 4s infinite;
+            -o-animation: flickerAnimation 4s infinite;
+            animation: flickerAnimation 4s infinite;
+            
+        }
+
+        @keyframes flickerAnimation {
+            0%   { opacity:1; }
+            50%  { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes flickerAnimation{
+            0%   { opacity:1; }
+            50%  { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes flickerAnimation{
+            0%   { opacity:1; }
+            50%  { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes flickerAnimation{
+            0%   { opacity:1; }
+            50%  { opacity:0; }
+            100% { opacity:1; }
+        }
+          
+        // @media (min-width: 1046px){
+        //     .activate-message {
+        //         font-size: 2.5em;
+        //     }
+        // }
+
+        // @media (min-width: 1366px){
+        //     .activate-message {
+        //         font-size: 2.5em;
+        //     }
+        // }
+    }
+
+    
 }
 
 

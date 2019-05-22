@@ -83,20 +83,16 @@ class ContactPage extends BasePage {
 
         $(this.fbChatBtn).on('click', () => {
 
-            try{
-                if(this.fbIsShown) {
+            if(this.fbIsShown) {
 
-                    FB.CustomerChat.hideDialog();
+                FB.CustomerChat.hideDialog();
 
-                } else {
-                    
-                    FB.CustomerChat.showDialog()
+            } else {
+                
+                FB.CustomerChat.showDialog()
 
-                }
-
-            } catch(e) {
-                console.log(e);
             }
+           
         })
 
     }
