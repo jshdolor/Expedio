@@ -81,8 +81,6 @@ class ContactPage extends BasePage {
 
                 }
 
-                $('.fb_dialog').hide();
-
                 this.fbIsShown = !this.fbIsShown;
 
             } catch(e) {
