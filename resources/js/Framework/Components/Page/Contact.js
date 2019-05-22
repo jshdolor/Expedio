@@ -18,6 +18,9 @@ class ContactPage extends BasePage {
 
         this.name = 'contact';
         this.validator = [];
+        
+        this.fbContainer = '.fb-container';
+        this.fbChatBtn = '#fbChatBtn';
 
     }
 
@@ -29,6 +32,7 @@ class ContactPage extends BasePage {
         this.loaded = true;
 
         this.initValidator();
+        this.initMessenger();
     }
 
     initValidator() {
@@ -59,6 +63,38 @@ class ContactPage extends BasePage {
                     
                 })
         }
+    }
+
+    initMessenger() {
+        //Load Facebook SDK for JavaScript
+        $(this.fbContainer).append('<div id="fb-root"></div>');
+
+        window.fbAsyncInit = function() {
+            FB.init({
+            xfbml            : true,
+            version          : 'v3.3'
+            });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        $(this.fbContainer).append(`
+            <div 
+                class="fb-customerchat" 
+                attribution=setup_tool 
+                page_id="1130388927137177" 
+                theme_color="#64B646"></div>`);
+
+        $(this.fbChatBtn).on('click', () => {
+            $('.fb_dialog').click();
+        })
+
     }
 
 }
