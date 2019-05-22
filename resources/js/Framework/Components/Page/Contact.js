@@ -67,7 +67,7 @@ class ContactPage extends BasePage {
 
     initMessenger() {
         //Load Facebook SDK for JavaScript
-        $(this.fbContainer).append('<div id="fb-root"></div>');
+        $('body').append('<div id="fb-root"></div>');
 
         window.fbAsyncInit = function() {
             FB.init({
@@ -84,7 +84,7 @@ class ContactPage extends BasePage {
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
 
-        $(this.fbContainer).append(`
+        $('body').append(`
             <div 
                 class="fb-customerchat" 
                 attribution=setup_tool 
