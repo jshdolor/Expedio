@@ -16,6 +16,10 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+    FB.Event.subscribe('customerchat.load', () => {
+        FB.CustomerChat.hideDialog();
+    });
+
 </script>
 
 <!-- Your customer chat code -->

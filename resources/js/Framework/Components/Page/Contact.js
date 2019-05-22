@@ -69,11 +69,6 @@ class ContactPage extends BasePage {
 
     initMessenger() {
 
-        FB.Event.subscribe('customerchat.load', () => {
-            FB.CustomerChat.hideDialog();
-            this.fbIsShown = false;
-        });
-
         FB.Event.subscribe('customerchat.dialogShow', () => {
             
             this.fbIsShown = true;
@@ -87,7 +82,7 @@ class ContactPage extends BasePage {
         });
 
         $(this.fbChatBtn).on('click', () => {
-            
+
             try{
                 if(this.fbIsShown) {
 
