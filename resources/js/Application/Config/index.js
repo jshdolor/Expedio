@@ -97,7 +97,7 @@ export default {
             custom: [
                 {
                     duration:100,
-                    zIndex:29
+                    zIndex:31
                 },
                 {
                     duration:8800,
@@ -111,6 +111,52 @@ export default {
         {
             "name":"woman","zIndex":"22"
         }
+    ],
+    expedio_mobile_elements: [
+        {
+            name: 'basketball',
+            zIndex: 20
+        },
+        {
+            name: 'bldg',
+            zIndex: 17
+        },
+        {
+            name: 'car',
+            zIndex: 12
+        },
+        {
+            name: 'coconut',
+            zIndex: 15
+        },
+        {
+            name: 'cup',
+            zIndex: 18
+        },
+        {
+            name: 'eye',
+            zIndex: 14
+        },
+        {
+            name: 'flower',
+            zIndex: 16
+        },
+        {
+            name: 'magician',
+            zIndex: 15
+        },
+        // {
+        //     name: 'rocket',
+        //     zIndex: 0
+        // },
+        {
+            name: 'singer',
+            zIndex: 13
+        },
+        {
+            name: 'woman',
+            zIndex: 21
+        },
     ],
     experience: {
         partners: [

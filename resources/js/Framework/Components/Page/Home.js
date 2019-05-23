@@ -5,6 +5,9 @@ import Config from '~/Application/Config';
 import BrowserManager from '~/Framework/Managers/Browser';
 import SizeGiver from '~/Framework/Managers/SizeGiver';
 
+import {isMobile} from  '~/Framework/Helpers';
+
+
 class HomePage extends BasePage {
 
     constructor(cb) {
@@ -43,22 +46,45 @@ class HomePage extends BasePage {
             bestSize = SizeGiver.getBestSizePath();
 
         let isExpedioElementsLoaded = new Promise((resolve, reject) =>{
+
+            if(isMobile()) {
+
+                Config.expedio_mobile_elements.forEach(el => {
+                    expedio.expedio_elements.push(el);
+                    el.video = bestVideoFormat;
+                    new ExpedioElement(el,{
+                        size: bestSize
+                    }).init();
+    
+                })
+    
+                let checkInterval = setInterval(() => {
+                    if(expedio.expedio_elements_loaded === Config.expedio_mobile_elements.length * 2) {
+                        clearInterval(checkInterval)
+                        resolve(true);
+                    }
+                },500);
+
+            } else {
+
+                Config.expedio_elements.forEach(el => {
+                    expedio.expedio_elements.push(el);
+                    el.video = bestVideoFormat;
+                    new ExpedioElement(el,{
+                        size: bestSize
+                    }).init();
+    
+                })
+    
+                let checkInterval = setInterval(() => {
+                    if(expedio.expedio_elements_loaded === Config.expedio_elements.length * 2) {
+                        clearInterval(checkInterval)
+                        resolve(true);
+                    }
+                },500);
+
+            }
             
-            Config.expedio_elements.forEach(el => {
-                expedio.expedio_elements.push(el);
-                el.video = bestVideoFormat;
-                new ExpedioElement(el,{
-                    size: bestSize
-                }).init();
-
-            })
-
-            let checkInterval = setInterval(() => {
-                if(expedio.expedio_elements_loaded === Config.expedio_elements.length * 2) {
-                    clearInterval(checkInterval)
-                    resolve(true);
-                }
-            },500);
 
 
         });
@@ -68,6 +94,18 @@ class HomePage extends BasePage {
                 this.cb();
             }
         });
+
+        $('.bottom-expedio').on('mousedown', () => {
+            $('.expedio-element-container video').each((key, el)=> {
+                el.pause();
+                $(el).hide();
+                el.currentTime = 0;
+            })
+            
+            $('[id^=expedio_element_]').show();
+            // $('[id^=expedio_element_]').css('pointer-events','auto');
+
+        })
     }
 
 }

@@ -87,10 +87,13 @@ class ExpedioGraphic {
         this.$animated[0].currentTime = 0;
         this.$animated[0].play();
 
+        // $('[id^=expedio_element_]').css('pointer-events','none');
+
         this.$animated.on('ended', () => {
             
             this.$el.show();
             this.$animated.hide();
+            // $('[id^=expedio_element_]').css('pointer-events','auto');
 
         });
 

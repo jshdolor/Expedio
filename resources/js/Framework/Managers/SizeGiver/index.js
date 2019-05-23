@@ -1,6 +1,17 @@
+import {isMobile} from  '~/Framework/Helpers';
+
 class SizeGiver {
 
-    static commonSizes() {
+    static mobileSizes() {
+        return [
+            {
+                width: 360,
+                height: 760
+            }
+        ];
+    }
+
+    static webSizes() {
         return [
             {
                 width: 1366,
@@ -13,6 +24,12 @@ class SizeGiver {
         ]
     }
 
+    static commonSizes() {
+
+        return isMobile()? this.mobileSizes(): this.webSizes();
+
+    }
+
     static screenSize() {
         return {
             width: window.screen.width,
@@ -22,8 +39,6 @@ class SizeGiver {
 
     static getBestSize() {
         
-        return this.commonSizes()[this.commonSizes().length - 1];
-
         for(let i = 0; i < this.commonSizes().length; i++) {
             if(this.commonSizes()[i].width >= this.screenSize().width) {
                 return this.commonSizes()[i];

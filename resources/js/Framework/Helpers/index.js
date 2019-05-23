@@ -152,6 +152,10 @@ let setWindowVar = (key, value)  => {
     window[Config.global_variable][key] = value;
 };
 
+let isMobile = () => {
+    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+}
+
 export {
     isUndefined,
     each,
@@ -167,5 +171,6 @@ export {
     getUrlSearchParams,
     objFetchByKey,
     debounce,
-    setWindowVar
+    setWindowVar,
+    isMobile
 };
