@@ -21,6 +21,7 @@ $triangle-down-size : 0 0, $triangle-size1 0, $triangle-size2 $triangle-size2 !d
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	z-index: 40;
 }
 
 @media (min-width: 1366px){

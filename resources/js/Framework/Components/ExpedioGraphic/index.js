@@ -82,7 +82,7 @@ class ExpedioGraphic {
         $('[id^=expedio_element_]').show();
 
         this.$el.hide();
-        
+
         this.$animated.show();
         this.$animated[0].currentTime = 0;
         this.$animated[0].play();

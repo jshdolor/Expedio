@@ -43,88 +43,61 @@ export default {
     },
     expedio_elements: [
         {
-            name: "basketball",
-            zIndex: 15,
-            duration:3000
+            "name":"basketball",
+            "zIndex":"28"
         },
         {
-            name: "car",
-            zIndex: 5,
-            duration:3000
+            "name":"car",
+            "zIndex":"25"
         },
         {
-            name: "coconut",
-            zIndex: 4,
-            duration:3000
+            "name":"coconut",
+            "zIndex":"0"
         },
         {
-            name: "dog",
-            zIndex: 14,
-            duration:3000
+            "name":"dog",
+            "zIndex":"29"
         },
         {
-            name: "fiesta",
-            zIndex: 6,
-            duration:3000
+            "name":"fiesta",
+            "zIndex":"0"
         },
         {
-            name: "flower1",
-            zIndex: 15,
-            duration:3000
+            "name":"popsicle",
+            "zIndex":"0"
         },
         {
-            name: "popsicle",
-            zIndex: 3,
-            duration:3000
+            "name":"shoppingbag",
+            "zIndex":"25"
         },
         {
-            name: "shoppingbag",
-            zIndex: 7,
-            duration:3000
+            "name":"wattah",
+            "zIndex":"26"
         },
         {
-            name: "wattah",
-            zIndex: 12,
-            duration:3000
+            "name":"bldg","zIndex":"30"
         },
         {
-            name: "bldg",
-            zIndex: 19,
-            duration:3000
+            "name":"cloud","zIndex":"21"
         },
         {
-            name: "clouds",
-            zIndex: 13,
-            duration:3000
+            "name":"cup","zIndex":"27"
         },
         {
-            name: "cup",
-            zIndex: 17,
-            duration:3000
+            "name":"eye","zIndex":"5"
         },
         {
-            name: "eye",
-            zIndex: 18,
-            duration:5000
+            "name":"flower","zIndex":"26"
         },
         {
-            name: "flower",
-            zIndex: 10,
-            duration:3000
+            "name":"magician","zIndex":"20"
         },
         {
-            name: "magician",
-            zIndex: 11,
-            duration:3000
-        },
-        {
-            name: "rocket",
-            zIndex: 2,
-            duration:9500,
+            "name":"rocket","zIndex":"2",
             custom: [
                 {
                     duration:100,
-                    zIndex:22
+                    zIndex:29
                 },
                 {
                     duration:8800,
@@ -133,15 +106,11 @@ export default {
             ]
         },
         {
-            name: "singer",
-            zIndex: 8,
-            duration:3000
+            "name":"singer","zIndex":"0"
         },
         {
-            name: "woman",
-            zIndex: 16,
-            duration:3000
-        },
+            "name":"woman","zIndex":"22"
+        }
     ],
     experience: {
         partners: [

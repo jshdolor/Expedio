@@ -22,6 +22,8 @@ class SizeGiver {
 
     static getBestSize() {
         
+        return this.commonSizes()[this.commonSizes().length - 1];
+
         for(let i = 0; i < this.commonSizes().length; i++) {
             if(this.commonSizes()[i].width >= this.screenSize().width) {
                 return this.commonSizes()[i];
