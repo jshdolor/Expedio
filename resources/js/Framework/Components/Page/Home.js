@@ -101,14 +101,26 @@ class HomePage extends BasePage {
         });
 
         $('.bottom-expedio').on('mousedown', () => {
-            $('.expedio-element-container video').each((key, el)=> {
-                el.pause();
-                $(el).hide();
-                el.currentTime = 0;
-            })
-            
-            $('[id^=expedio_element_]').show();
-            // $('[id^=expedio_element_]').css('pointer-events','auto');
+
+            if(isMobile()) {
+
+                if(window.animationTimer) {
+                    clearTimeout(window.animationTimer);
+                }
+                $('[id^=expedio_element_]').show();
+                $('[id^=expedio_gif_]').hide();
+
+            } else {
+
+                $('.expedio-element-container video').each((key, el)=> {
+                    el.pause();
+                    $(el).hide();
+                    el.currentTime = 0;
+                });
+
+                $('[id^=expedio_element_]').show();
+
+            }
 
         })
     }

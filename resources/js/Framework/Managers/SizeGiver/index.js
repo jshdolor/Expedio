@@ -5,8 +5,8 @@ class SizeGiver {
     static mobileSizes() {
         return [
             {
-                width: 360,
-                height: 760
+                width: 412,
+                height: 732
             }
         ];
     }

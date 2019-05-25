@@ -24,6 +24,7 @@ class MobileExpedioGraphic extends BaseExpedioGraphic {
         this.$animated.attr('id', 'expedio_gif_'+this.name);
 
         this.$animated.hide();
+        this.$animated.css('pointer-events','none');
         this.$animated.css('width','100%');
         this.$animated.css('zIndex', this.zIndex);
     }

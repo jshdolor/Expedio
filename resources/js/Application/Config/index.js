@@ -114,11 +114,6 @@ export default {
     ],
     expedio_mobile_elements: [
         {
-            name: 'basketball',
-            zIndex: 20,
-            duration: 4000,
-        },
-        {
             name: 'bldg',
             zIndex: 17,
             duration: 4000,
@@ -129,8 +124,13 @@ export default {
             duration: 4000,
         },
         {
+            name: 'cloud',
+            zIndex: 11,
+            duration: 4000,
+        },
+        {
             name: 'coconut',
-            zIndex: 15,
+            zIndex: 17,
             duration: 4000,
         },
         {
@@ -139,28 +139,23 @@ export default {
             duration: 4000,
         },
         {
-            name: 'eye',
+            name: 'dog',
             zIndex: 14,
             duration: 4000,
         },
         {
             name: 'flower',
-            zIndex: 16,
+            zIndex: 17,
             duration: 4000,
         },
         {
-            name: 'magician',
-            zIndex: 15,
+            name: 'rocket',
+            zIndex: 20,
             duration: 4000,
         },
-        // {
-        //     name: 'rocket',
-        //     zIndex: 0,
-        // ``duration: 4000,
-        // },
         {
-            name: 'singer',
-            zIndex: 13,
+            name: 'shoppingbag',
+            zIndex: 17,
             duration: 4000,
         },
         {
