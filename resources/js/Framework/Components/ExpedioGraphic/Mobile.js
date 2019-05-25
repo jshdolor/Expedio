@@ -14,7 +14,9 @@ class MobileExpedioGraphic extends BaseExpedioGraphic {
             expedio.expedio_elements_loaded ++;
         }
         
-        animatedImg.setAttribute('src', this.imgPath + '.gif');
+        this.toDataURL(this.imgPath+'.gif', (r) => {
+            animatedImg.setAttribute('src', r);
+        })
 
         this.$el.after(animatedImg);
 
@@ -25,16 +27,33 @@ class MobileExpedioGraphic extends BaseExpedioGraphic {
 
         this.$animated.hide();
         this.$animated.css('pointer-events','none');
-        this.$animated.css('width','100%');
         this.$animated.css('zIndex', this.zIndex);
     }
+
+    toDataURL(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                callback(reader.result);
+            }
+            reader.readAsDataURL(xhr.response);
+        };
+        xhr.open('GET', url);
+        xhr.responseType = 'blob';
+        xhr.send();
+    }
+
 
     click(e) {
 
         this.$el.hide();
-        
-        this.$animated.attr('src', this.imgPath + '.png');
-        this.$animated.attr('src', this.imgPath + '.gif');
+
+        let src = this.animated.src;
+
+        this.$animated.attr('src', '');
+        this.$animated.attr('src', src);
+
         this.$animated.show();
 
         this.custom.forEach(c => {
