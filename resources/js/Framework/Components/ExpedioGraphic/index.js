@@ -30,9 +30,14 @@ class ExpedioGraphic {
         let image = document.createElement("img");
         
         image.onload = () => {
+
             expedio.expedio_elements_loaded ++;
+
+            expedio.elements.push(image);
+
         }
         
+
         image.setAttribute('src', this.imgPath + '.png');
 
         
@@ -53,11 +58,15 @@ class ExpedioGraphic {
         let vidSrc = document.createElement("source");
         vidSrc.src = this.imgPath + this.videoFormat.extn;
         vidSrc.type = this.videoFormat.type;
+        vidSrc.setAttribute('muted', '');
+        vidSrc.setAttribute('playsinline', '');
+        vidSrc.setAttribute('preload', '');
+
         animatedImg.appendChild(vidSrc);
 
-        animatedImg.oncanplay = () => {
+        animatedImg.addEventListener('loadstart',  function() {
             expedio.expedio_elements_loaded ++;
-        }
+        });
 
         this.$el.after(animatedImg);
 
