@@ -54,11 +54,12 @@
         position: relative;
 
         .activate-message {
+            margin: 0;
+            width: 50vw;
             position: fixed;
             z-index: 999;
             top: 47%;
             left: 54%;
-            font-size: 2vw;
             -webkit-text-stroke-width: 0.8px;
             -webkit-text-stroke-color: white;
             pointer-events: none;

@@ -23,7 +23,7 @@ class App {
             let wScroll = $(this).scrollTop(),
                 docHeight = $(this).height(),
                 //scroll position / document height multiplied by delay
-                elBackgrounPos = (wScroll / docHeight) * 800 + "px";
+                elBackgrounPos =  "-" + (wScroll / docHeight) * 1500  + "px";
 
             $('main.active').css({
                 'background-position-y': elBackgrounPos

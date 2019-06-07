@@ -73,6 +73,7 @@ $margin: 1rem;
 }
 
 body, html {
+  background-color: $color-main-bg;
   @extend .m-0;
 }
 
