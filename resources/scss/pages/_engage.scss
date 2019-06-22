@@ -156,3 +156,59 @@
       
   }
 }
+
+@media handheld, (max-width: 768px), (orientation: portrait) {
+  .engage-container {
+    .testimonials {
+      .space-testimony {
+        > div {
+          .space-astronaut {
+            max-height: 50vh;
+            width: auto;
+            > img {
+              margin-top: 25vh; 
+            }
+          }
+          .space-balloons {
+           ul li {
+              max-width: 29vw;
+              &.balloon-p2 {
+                top: 0.5rem;
+                right: 2rem;
+                max-width: 35vw; 
+              }
+              &.balloon-p3 {
+                top: unset;
+                bottom: 5vh;
+                max-width: 50vw; 
+              }
+              &.balloon-p4 {
+                top: unset;
+                bottom: 25vh;
+                right: 4rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (orientation: landscape) {
+   .engage-container {
+    .testimonials {
+      .space-testimony {
+        > div {
+          .space-astronaut {
+            max-height: 50vh;
+            > img {
+              margin-top: 5vh; 
+            }
+          }
+        }
+      }
+    }
+  }
+}
