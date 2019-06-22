@@ -5,6 +5,7 @@ import ActivatePage from '~/Framework/Components/Page/Activate';
 import ContactPage from '~/Framework/Components/Page/Contact';
 
 import Hooks from '~/Framework/Helpers/hooks';
+import Router from '~/Framework/Managers/Route';
 
 class App {
     
@@ -54,7 +55,7 @@ class App {
     }
 
     initPages() {
-
+        let me = this;
         this.pages = [
             new HomePage(this.removePreloader),
             new ExperiencePage(),
@@ -72,9 +73,15 @@ class App {
 
     removePreloader() {
         $('.loader').fadeOut(500, function() {
+
+            Router.activate();
             $(this).remove();
+            
         });
+
+        
     }
+
 
     
 

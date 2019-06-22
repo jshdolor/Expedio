@@ -1,10 +1,12 @@
 import Config from '~/Application/Config';
+import Router from '~/Framework/Managers/Route';
 
 export default class BasePage {
 
     constructor(cb) {
         this.loaded = false;
         this.cb = cb || null;
+        this.showToolbar = true;
     }
 
     init() {
@@ -13,7 +15,8 @@ export default class BasePage {
 
         pageManager.add(this.name, this.el);
         pageManager[this.name].onload = this.onload.bind(this);
-        
+
+        pageManager[this.name].showToolbar = this.showToolbar;
     }
 
     showPage() {
@@ -21,7 +24,11 @@ export default class BasePage {
     }
 
     onload() {
+        
+    }
 
+    beforeShow() {
+        Router.setHash(this.name);
     }
 
     loadComponents() {

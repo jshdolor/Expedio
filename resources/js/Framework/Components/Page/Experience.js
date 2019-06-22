@@ -24,6 +24,8 @@ class ExperiencePage extends BasePage{
 
     onload() {
 
+        this.beforeShow();
+
         if(this.loaded) {
             return true;
         }

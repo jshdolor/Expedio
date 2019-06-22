@@ -18,6 +18,8 @@ class ActivatePage extends BasePage{
 
     onload() {
 
+        this.beforeShow();
+
         if(this.loaded) {
             return;
         }

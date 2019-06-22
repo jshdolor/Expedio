@@ -24,7 +24,7 @@ class HomePage extends BasePage {
         this.el = $(this.id);
 
         this.activateMessage = '.activate-message';
-
+        this.showToolbar = false;
     }
 
     onload() {
