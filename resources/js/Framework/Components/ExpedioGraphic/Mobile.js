@@ -1,4 +1,6 @@
 import BaseExpedioGraphic from './';
+import {toDataURL} from '~/Framework/Helpers';
+
 
 class MobileExpedioGraphic extends BaseExpedioGraphic {
 
@@ -14,7 +16,7 @@ class MobileExpedioGraphic extends BaseExpedioGraphic {
             expedio.expedio_elements_loaded ++;
         }
         
-        this.toDataURL(this.imgPath+'.gif', (r) => {
+        toDataURL(this.imgPath+'.gif', (r) => {
             animatedImg.setAttribute('src', r);
         })
 
@@ -29,21 +31,6 @@ class MobileExpedioGraphic extends BaseExpedioGraphic {
         this.$animated.css('pointer-events','none');
         this.$animated.css('zIndex', this.zIndex);
     }
-
-    toDataURL(url, callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            var reader = new FileReader();
-            reader.onloadend = function () {
-                callback(reader.result);
-            }
-            reader.readAsDataURL(xhr.response);
-        };
-        xhr.open('GET', url);
-        xhr.responseType = 'blob';
-        xhr.send();
-    }
-
 
     click(e) {
 

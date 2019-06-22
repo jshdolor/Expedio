@@ -156,6 +156,20 @@ let isMobile = () => {
     return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 }
 
+let toDataURL = (url, callback) => {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        var reader = new FileReader();
+        reader.onloadend = function () {
+            callback(reader.result);
+        }
+        reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+}
+
 export {
     isUndefined,
     each,
@@ -172,5 +186,6 @@ export {
     objFetchByKey,
     debounce,
     setWindowVar,
-    isMobile
+    isMobile,
+    toDataURL
 };

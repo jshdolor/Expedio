@@ -2,7 +2,11 @@
    
   <div class="contact-page">
     <section>
-      <img src="<%= __ASSETS_PATH__ %>images/contact-us/bldg.png">
+      <div id="bldgContainer">
+          <img id="bldg" src="<%= __ASSETS_PATH__ %>images/contact-us/bldg.png">
+          <img id="bldgAnimated" src="<%= __ASSETS_PATH__ %>images/contact-us/bldg.gif">
+      </div>
+      
       <div class="address">
         <p>6/F The Community Building</p>
         <p>Metropoli Dr., Metropoli Residenza Brgy. Bagumbayan, (Libis) Q.C 1110 Philippines</p>
@@ -39,7 +43,7 @@
         <div class="form-group">
           <textarea name="message" placeholder="Please write your message here" rows="8"></textarea>
         </div>
-        <button type="submit" class="btn-img" style="background-image: url('<%= __ASSETS_PATH__ %>images/contact-us/submit.png');">Send us your brew!</button>
+        <button id="submitBtn" type="submit" class="btn-img">Send us your brew!</button>
       </form>
 
       <button id="fbChatBtn" class="btn-secondary messenge btn-img" style="background-image: url('<%= __ASSETS_PATH__ %>images/logo/ms.svg');">Chat with us</button>
