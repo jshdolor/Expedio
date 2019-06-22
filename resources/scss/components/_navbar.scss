@@ -4,7 +4,8 @@
 
 nav {
 	display: none;
-	position: absolute;
+	// position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;	
@@ -87,11 +88,11 @@ nav {
 
 					
 						&.active {
-						  background: #fff;
-						  border: none;
-						  box-shadow:
-						        0 0 0 1.25px fade-out($color-border, 0.25),
-						        0 0 0 3px #ffffff;
+						  // background: #fff;
+						  // border: none;
+						  // box-shadow:
+						  //       0 0 0 1.25px fade-out($color-border, 0.25),
+						  //       0 0 0 3px #ffffff;
 						  cursor: pointer;
 						  width: auto;
 						  width: fit-content;
@@ -110,8 +111,8 @@ nav {
 
 								svg {
 									fill: $color-secondary;
-									animation: spin-shape 1.5s;
-									transition: fill 1.5s;
+									// animation: spin-shape 1.5s;
+									// transition: fill 1.5s;
 									
 								}
 							}
@@ -154,12 +155,24 @@ nav {
 	}
 }
 
+@media (max-width: 768px), (orientation: portrait) {
+	nav {
+		.navbar-container {
+			.navbar-slide {
+				opacity: 0;
+				transition: opacity 1s ease-in-out;
+				transition-delay: 0s;
+			}
+		}
+	}
+}
+
 @media (max-width: 754px) {
 	nav{
 		.navbar-container {
 			flex-wrap: wrap;
 			> a {
-				margin: auto;
+				// margin: auto;
 			}
 			> .navbar-slide {
 				flex-basis: 100%;
