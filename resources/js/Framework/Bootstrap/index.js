@@ -5,6 +5,8 @@ class Bootstrap {
 
         window.wHeight = 0;
         window.wWidth = 0;
+
+        window.firstLoad = true;
     }
 
     init() {

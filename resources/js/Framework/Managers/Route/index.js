@@ -40,7 +40,11 @@ class RouteManager {
             return true;
         }
 
-        window.location.hash = hash;
+        this.url().hash = hash;
+    }
+
+    static removeHash() {
+        history.pushState("", document.title, window.location.pathname);
     }
 }
 

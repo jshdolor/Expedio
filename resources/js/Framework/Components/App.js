@@ -76,10 +76,9 @@ class App {
 
             Router.activate();
             $(this).remove();
+            window.firstLoad = false;
             
         });
-
-        
     }
 
 

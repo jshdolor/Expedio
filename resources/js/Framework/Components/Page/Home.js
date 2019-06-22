@@ -9,6 +9,7 @@ import {isMobile} from  '~/Framework/Helpers';
 import ExpedioElement from '~/Framework/Components/ExpedioGraphic';
 import MobileExpedioElement from '~/Framework/Components/ExpedioGraphic/Mobile';
 
+import Router from '~/Framework/Managers/Route';
 
 class HomePage extends BasePage {
 
@@ -28,6 +29,11 @@ class HomePage extends BasePage {
     }
 
     onload() {
+        
+        if(!window.firstLoad) {
+            Router.removeHash();
+        }
+
         if(this.loaded) {
             return;
         }
