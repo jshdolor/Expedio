@@ -20,6 +20,10 @@
     img {
         position: absolute;
         width: auto;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
         
     .expedio-animated {
@@ -54,11 +58,11 @@
         position: relative;
 
         .activate-message {
-            margin: 0;
-            width: 50vw;
+            font-size: 2.5em;
             position: fixed;
             z-index: 999;
-            top: 47%;
+            max-width: 400px;
+            top: 38%;
             left: 54%;
             -webkit-text-stroke-width: 0.8px;
             -webkit-text-stroke-color: white;
