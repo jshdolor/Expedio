@@ -58,12 +58,12 @@
         position: relative;
 
         .activate-message {
-            font-size: 2.5em;
+            font-size: 2em;
             position: fixed;
             z-index: 999;
             max-width: 400px;
-            top: 38%;
-            left: 54%;
+            top: 40%;
+            left: 55%;
             -webkit-text-stroke-width: 0.8px;
             -webkit-text-stroke-color: white;
             pointer-events: none;
@@ -74,6 +74,15 @@
             animation: flickerAnimation 4s infinite;
             
         }
+
+        @media only screen and (max-width: 768px) {
+            .activate-message {
+                font-size: 1em;
+                top: 43%;
+                left: 60%;
+                -webkit-text-stroke-width: 0;
+            }
+          }
 
         @keyframes flickerAnimation {
             0%   { opacity:1; }
