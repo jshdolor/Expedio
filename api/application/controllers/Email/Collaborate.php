@@ -31,7 +31,7 @@ class Collaborate extends BaseEmail {
                     
                     if($this->email_config['send_receipt']) {
 
-                        $receipt_msg = 'Hi, ' + $this->post('nickName') + '!<br>';
+                        $receipt_msg = 'Hi, ' . $this->post('nickName') . '!<br>';
                         $receipt_msg .= "You sent a brew to Expedio and we want you to know that it has been delivered. We'll get back to you sooner.";
                         $receipt_msg .= "<br><br>";
                         $receipt_msg .= $this->getPosts(true);
