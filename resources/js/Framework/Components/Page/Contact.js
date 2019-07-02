@@ -46,7 +46,7 @@ class ContactPage extends BasePage {
 
         this.initValidator();
         this.initMessenger();
-        this.initGraphics();
+        // this.initGraphics();
     }
 
     initValidator() {

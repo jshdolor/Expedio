@@ -2,6 +2,8 @@ import 'slick-carousel';
 import Config from '~/Application/Config';
 import Modal from 'jquery-modal/jquery.modal.min.js';
 
+import {isMobile} from  '~/Framework/Helpers';
+
 class Hooks {
 
     constructor() {
@@ -41,6 +43,15 @@ class Hooks {
     }
 
     movePage(e) {
+
+        if(isMobile()) {
+            let toolbar = window.toolbar;
+            if(!toolbar.menuHidden) {
+                toolbar.hideMenu();
+                toolbar.menuHidden = true;
+            }
+        }
+
         let el = $(e.target);
         el = el.data('direction') ? el:$(this);
         let direction = el.data('direction');

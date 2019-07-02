@@ -1,6 +1,12 @@
 
 .contact-container {
 
+  @media only screen and (max-width: 768px) {
+    form {
+      margin-bottom: 110px;
+    }
+  }
+
     padding-top: 100px;
     @extend .pt-5;
     background-image: url('../assets/images/contact-us/FLOATING-LINE-ART.png');

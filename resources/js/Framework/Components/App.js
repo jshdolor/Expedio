@@ -7,6 +7,9 @@ import ContactPage from '~/Framework/Components/Page/Contact';
 import Hooks from '~/Framework/Helpers/hooks';
 import Router from '~/Framework/Managers/Route';
 
+//
+import Toolbar from '~/Framework/Components/Toolbar';
+
 class App {
     
     constructor() {
@@ -79,6 +82,9 @@ class App {
             window.firstLoad = false;
             
         });
+
+        window.toolbar = new Toolbar();
+        window.toolbar.init();
     }
 
 
