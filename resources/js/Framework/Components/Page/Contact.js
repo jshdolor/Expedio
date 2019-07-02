@@ -75,14 +75,14 @@ class ContactPage extends BasePage {
 
     onSubmit(e) {
         e.preventDefault();
-
-        $(this.submitBtn).css('backgroundImage', `url("${asset_path}images/contact-us/sending.gif")`);
         
         $(`${this.form} button, ${this.form} input, ${this.form} select, ${this.form} textfield`).prop('disabled');  
 
         if(this.validator.check()) {
             //has no errors 
             let request = new EmailCollaborateRequest(this.validator.data.toValidatorData());
+
+            $(this.submitBtn).css('backgroundImage', `url("${asset_path}images/contact-us/sending.gif")`);
 
             EmailCollaborate.handle(request.formData)
                 .then((res) =>{
