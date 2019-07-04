@@ -26,7 +26,7 @@ class Toolbar {
 
     mobile() {
 
-        $('.navbar-logo').find('[data-hook]').each((key, elem) => {
+        $('.navbar-logo').find('path[data-hook]').each((key, elem) => {
             $(elem).removeAttr('data-hook');
         });
 

@@ -30,6 +30,8 @@ class HomePage extends BasePage {
 
     onload() {
         
+        $('#fbChatBtn').hide();
+
         if(!window.firstLoad) {
             Router.removeHash();
         }

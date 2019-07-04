@@ -28,6 +28,11 @@ export default class BasePage {
     }
 
     beforeShow() {
+        if(this.name === 'mainpage') {
+            $('#fbChatBtn').hide();
+        } else {
+            $('#fbChatBtn').show();
+        }
         Router.setHash(this.name);
     }
 
