@@ -120,7 +120,7 @@ export default {
         { "name": "eye", "zIndex": 18 }, 
         { "name": "magician", "zIndex": 20 }, 
         { "name": "flower2", "zIndex": 22 }, 
-        { "name": "wattah", "zIndex": 24 }, 
+        { "name": "wattah", "zIndex": 24, "duration": 4000 }, 
         { "name": "flower", "zIndex": 26, "duration": 4000 }, 
         { "name": "bldg", "zIndex": 28, "duration": 4000 }, 
         { "name": "cup", "zIndex": 30 }, 
