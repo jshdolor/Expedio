@@ -8,6 +8,21 @@ class MobileExpedioGraphic extends BaseExpedioGraphic {
         super(data, custom);
     }
 
+    init() {
+
+        this.attachImage();
+        
+        //non animated for mobile
+        if(this.duration) {
+            this.attachAnimatedVersion();
+        } else {
+            this.animated = false;
+        }
+
+        this.$el.on('mousedown', this.mousedown.bind(this));
+
+    }
+
     attachAnimatedVersion() {
 
         let animatedImg = document.createElement("img");
@@ -34,6 +49,10 @@ class MobileExpedioGraphic extends BaseExpedioGraphic {
 
     click(e) {
 
+        if(!this.animated) {
+            return;
+        }
+
         this.$el.hide();
 
         let src = this.animated.src;
@@ -58,6 +77,7 @@ class MobileExpedioGraphic extends BaseExpedioGraphic {
     }
 
     mousedown(event) {
+
         if(window.animationTimer) {
             clearTimeout(window.animationTimer);
         }

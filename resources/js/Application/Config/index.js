@@ -43,126 +43,90 @@ export default {
     },
     expedio_elements: [
         {
-            "name":"basketball",
-            "zIndex":"28"
+            "name": "basketball",
+            "zIndex": "28"
         },
         {
-            "name":"car",
-            "zIndex":"25"
+            "name": "car",
+            "zIndex": "25"
         },
         {
-            "name":"coconut",
-            "zIndex":"0"
+            "name": "coconut",
+            "zIndex": "0"
         },
         {
-            "name":"dog",
-            "zIndex":"29"
+            "name": "dog",
+            "zIndex": "29"
         },
         {
-            "name":"fiesta",
-            "zIndex":"0"
+            "name": "fiesta",
+            "zIndex": "0"
         },
         {
-            "name":"popsicle",
-            "zIndex":"0"
+            "name": "popsicle",
+            "zIndex": "0"
         },
         {
-            "name":"shoppingbag",
-            "zIndex":"25"
+            "name": "shoppingbag",
+            "zIndex": "25"
         },
         {
-            "name":"wattah",
-            "zIndex":"26"
+            "name": "wattah",
+            "zIndex": "26"
         },
         {
-            "name":"bldg","zIndex":"30"
+            "name": "bldg", "zIndex": "30"
         },
         {
-            "name":"cloud","zIndex":"21"
+            "name": "cloud", "zIndex": "21"
         },
         {
-            "name":"cup","zIndex":"27"
+            "name": "cup", "zIndex": "27"
         },
         {
-            "name":"eye","zIndex":"5"
+            "name": "eye", "zIndex": "5"
         },
         {
-            "name":"flower","zIndex":"26"
+            "name": "flower", "zIndex": "26"
         },
         {
-            "name":"magician","zIndex":"20"
+            "name": "magician", "zIndex": "20"
         },
         {
-            "name":"rocket","zIndex":"2",
+            "name": "rocket", "zIndex": "2",
             custom: [
                 {
-                    duration:100,
-                    zIndex:31
+                    duration: 100,
+                    zIndex: 31
                 },
                 {
-                    duration:8800,
-                    zIndex:2
+                    duration: 8800,
+                    zIndex: 2
                 }
             ]
         },
         {
-            "name":"singer","zIndex":"0"
+            "name": "singer", "zIndex": "0"
         },
         {
-            "name":"woman","zIndex":"22"
+            "name": "woman", "zIndex": "22"
         }
     ],
     expedio_mobile_elements: [
-        {
-            name: 'bldg',
-            zIndex: 17,
-            duration: 4000,
-        },
-        {
-            name: 'car',
-            zIndex: 12,
-            duration: 4000,
-        },
-        {
-            name: 'cloud',
-            zIndex: 11,
-            duration: 4000,
-        },
-        {
-            name: 'coconut',
-            zIndex: 17,
-            duration: 4000,
-        },
-        {
-            name: 'cup',
-            zIndex: 18,
-            duration: 4000,
-        },
-        {
-            name: 'dog',
-            zIndex: 14,
-            duration: 4000,
-        },
-        {
-            name: 'flower',
-            zIndex: 17,
-            duration: 4000,
-        },
-        {
-            name: 'rocket',
-            zIndex: 20,
-            duration: 4000,
-        },
-        {
-            name: 'shoppingbag',
-            zIndex: 17,
-            duration: 4000,
-        },
-        {
-            name: 'woman',
-            zIndex: 21,
-            duration: 4000,
-        },
+        { "name": "coconut", "zIndex": 10, "duration": 4000 }, 
+        { "name": "rocket", "zIndex": 12 }, 
+        { "name": "singer", "zIndex": 14 }, 
+        { "name": "car", "zIndex": 16 }, 
+        { "name": "eye", "zIndex": 18 }, 
+        { "name": "magician", "zIndex": 20 }, 
+        { "name": "flower2", "zIndex": 22 }, 
+        { "name": "wattah", "zIndex": 24 }, 
+        { "name": "flower", "zIndex": 26, "duration": 4000 }, 
+        { "name": "bldg", "zIndex": 28, "duration": 4000 }, 
+        { "name": "cup", "zIndex": 30 }, 
+        { "name": "basketball", "zIndex": 32, "duration": 4000 }, 
+        { "name": "woman", "zIndex": 34, "duration": 4000 }, 
+        { "name": "cloud", "zIndex": 8 }
     ],
     experience: {
         partners: [
@@ -191,7 +155,7 @@ export default {
         { "name": "lea", "position": "Finance Manager" },
         { "name": "maene", "position": "Production Manager" },
         { "name": "marcie", "position": "Art Director" },
-        { "name": "marnie", "position": "Senior Admin Officer"},
+        { "name": "marnie", "position": "Senior Admin Officer" },
         { "name": "mel", "position": "Art Director" },
         { "name": "phoebe", "position": "Production Manager" },
         { "name": "ramil", "position": "Finance Assistant" },

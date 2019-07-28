@@ -5,14 +5,30 @@ class SizeGiver {
     static mobileSizes() {
         return [
             {
+                width: 360,
+                height: 740
+            },
+            {
                 width: 412,
                 height: 732
+            },
+            {
+                width: 720,
+                height: 1280
+            },
+            {
+                width: 1080,
+                height: 1920
             }
         ];
     }
 
     static webSizes() {
         return [
+            {
+                width: 1280,
+                height: 800
+            },
             {
                 width: 1366,
                 height: 768

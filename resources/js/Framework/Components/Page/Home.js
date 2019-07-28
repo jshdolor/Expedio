@@ -69,10 +69,12 @@ class HomePage extends BasePage {
                     }).init();
     
                 })
-    
-                let checkInterval = setInterval(() => {
+                
+                let assetsToLoad = Config.expedio_mobile_elements.length + 
+                    Config.expedio_mobile_elements.filter(mobileEx => mobileEx.duration).length;
 
-                    if(expedio.expedio_elements_loaded === Config.expedio_mobile_elements.length * 2) {
+                let checkInterval = setInterval(() => {
+                    if(expedio.expedio_elements_loaded === assetsToLoad) {
                         clearInterval(checkInterval)
                         resolve(true);
                     }
