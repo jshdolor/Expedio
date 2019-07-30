@@ -22,63 +22,100 @@
  
 }
 
+@keyframes multi-bg {
+  0% {
+    background-position:  0px 0px,
+                          center 35vh;
+  }
+  25% {
+    background-position:  0px 0px,
+                          center 25vh;
+  }
+  50% {
+    background-position:  0px 0px,
+                          center 35vh;
+  }
+  75% {
+    background-position:  0px 0px,
+                          center 20vh;
+  }
+  100% {
+    background-position:  0px 0px,
+                          center 35vh;
+  }
+}
+
 .engage-container {
   .testimonials{
     > *:first-child {
       text-transform: uppercase;
     }
     .space-testimony{
-      background : url('../assets/images/engage/blue-background.png');  
+      // background : url('../assets/images/engage/blue-background.png');  
+      background-color: #075991;
+      background-image: url('../assets/images/engage/stars.png'),
+                        url('../assets/images/engage/astronaut.png');  
+      background-size: cover, 50vh;
+      background-position-y: inherit, bottom; 
+      animation: multi-bg linear 10s infinite;
+      animation-timing-function: ease-in-out;
+      background-repeat: repeat, no-repeat;
       width: 100vw;
       margin-left: calc(-50vw + 50%);
-      min-height: 100vh; 
-      position: relative;   
+      height: 100vh;
+      max-height: 100vh; 
+      position: relative;  
+      overflow-x: scroll;
+      overflow-y: hidden;
       > div {
-        .space-stars {
-          width: 100%;
-          height: 100%;
-          > img {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-          }
+        position: absolute;
+        &.space-stars{
+          width: 100vw;
+          height: 100vh;
+          // position: fixed;
         }
-        .space-astronaut {
-          width: 100%;
-          text-align: center;
-          img {
-            margin-top: 5rem;
-            height: 100%;
-            width: auto;
-          }
-        }
-        .space-balloons {
-          width: 100%;
-          height: 100%;
+        // &.space-astronaut{
+        //   margin-left: 50%;
+        //   transform: translateX(-50%);
+        //   bottom: 5vh;
+        // }
+        &.space-balloons{
+          background-image: url('../assets/images/engage/crater-landscape.png');
+          background-repeat: repeat-x;
+          background-position: bottom;
+          background-size: auto 10vh;
+          height: 100vh;  
           ul {
             position: relative;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             min-width: 100vw;
             perspective: 1000px;
+            display: flex;
             li {
               list-style: none;
-              max-width: 20%;
+              width: max-content;
+              max-width: 375px;
+              height: inherit;
+              max-height: max-content;
               background-color: #fff;
               @extend .m-1;
               @extend .px-2;
               @extend .py-3;
-              position: absolute;
               border: 1px solid #c8c8c8;
               border-radius: 15px;
-              font-size: 0.75rem;
+              font-size: 0.85rem;
+              font-weight: bold;
+              position: relative; 
+              opacity: 0.9;
               &::before {
                 content: "";
                 border-style: solid;
                 position: absolute;
                 border-color: #c8c8c8 transparent transparent transparent;
                 border-width: 12px 12px 0px 12px;
-                
+                bottom: -12px;
+                left: 50%;
               }
               &::after {
                 border-color: #fff transparent transparent transparent;
@@ -86,69 +123,52 @@
                 border-width: 10px 10px 0px 10px;
                 content: "";
                 position: absolute;
-              }
-              &.balloon-p1 {
-                &::before {
-                  bottom: -12px;
-                  right: 15px;
-                }
-                &::after {
-                  bottom: -10px;
-                  right: 17px;
-                }
+                bottom: -10px;
+                left: calc(50% + 1.5px);
               }
 
+              > * {
+                margin: 0;
+                font-weight: bold;
+              }
               &.balloon-p2 {
-                top: 2rem;
-                right: 5rem;
-                &::before {
-                  transform: rotate(90deg);
-                  top: 20px;
-                  left: -18px;
-                }
-                &::after {
-                  transform: rotate(90deg);
-                  top:21px;
-                  left: -15px;
-                }
+                margin-top: 20vh;
               }
               &.balloon-p3 {
-                top: 30%;
-                left: 5rem;
-                &::before {
-                  transform: rotate(270deg);
-                  bottom: calc(35%);
-                  right: -18px;
-                }
-                &::after {
-                  transform: rotate(270deg);
-                  bottom: calc(35% + 1px);
-                  right: -15px;
-                }
+                margin-top: 10vh;
               }
               &.balloon-p4 {
-                top: 20rem;
-                right: 15rem;
-                &::before {
-                  transform: rotate(180deg);
-                  top: -12px;
-                  left: calc(10%);
-                }
-                &::after {
-                  transform: rotate(180deg);
-                  top: -10px;
-                  left: calc(10% + 1px);
-                }
+                margin-top: 40vh;
               }
+              &.balloon-p5 {
+                margin-top: 17vh;
+              }
+
+              &:nth-child(even) {
+                margin-left: 20vw;
+              }
+              &:nth-child(3n-0) {
+                margin-left: 5vw;
+              }
+
+              &:nth-child(7n-0) {
+                margin-left: 15vw;
+              }
+              
             }
           }
+
         }
-        .space-crater {
-          width: calc(100vw + 20rem);
-          height: auto;
-          top: unset !important;
-          bottom: -2em;
-          left: -10rem !important;
+        &.space-crater{
+          // background : url('../assets/images/engage/crater-landscape.png');  
+          // height: 10vh;
+          // width: 100%;
+          // display: block;
+          // bottom: 0;
+          // left: 0;
+          // background-repeat: repeat-x;
+          // background-size: cover;
+          // animation: crater 5s linear infinite;
         }
       }
     }
@@ -157,36 +177,34 @@
   }
 }
 
+@keyframes crater {
+  100% {
+    transform: translateX(-3400px);
+  }
+}
+
 @media handheld, (max-width: 768px), (orientation: portrait) {
   .engage-container {
     .testimonials {
       .space-testimony {
         > div {
-          .space-astronaut {
+          &.space-astronaut {
             max-height: 50vh;
             width: auto;
             > img {
               margin-top: 25vh; 
             }
           }
-          .space-balloons {
+          &.space-balloons {
            ul li {
-              max-width: 29vw;
-              &.balloon-p2 {
-                top: 0.5rem;
-                right: 2rem;
-                max-width: 35vw; 
+              max-width: 70vw;
+              &:nth-child(even) {
+                margin-left: 50vw;
               }
-              &.balloon-p3 {
-                top: unset;
-                bottom: 5vh;
-                max-width: 50vw; 
+              &:nth-child(3n-0) {
+                margin-left: 20vw;
               }
-              &.balloon-p4 {
-                top: unset;
-                bottom: 25vh;
-                right: 4rem;
-              }
+
             }
           }
         }

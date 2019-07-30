@@ -62,6 +62,8 @@
 			cursor: pointer;
 
 			background-color: rgba(255,255,255,1);
+			filter: grayscale(100%);
+    		-webkit-filter: grayscale(100%);
 			background-size: cover;
 			background-blend-mode: luminosity;
   			transition: background-color 1s ease-out;
@@ -71,7 +73,8 @@
 
 			&:hover {
 				 background-color: rgba(255,255,255,0) !important;
-
+				 filter: none;
+    			-webkit-filter: grayscale(0);
 				.thumb-details {
 					bottom: 0;
 
