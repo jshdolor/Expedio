@@ -21,14 +21,17 @@ class RouteManager {
     static activate() {
         let currentPage = this.pageUrlMap(this.url().hash);
 
-        try{
-            if(pageManager[currentPage].showToolbar) {
-                $('[data-js=toolbar]').show();
+        setTimeout(() => {
+            try{
+                if(pageManager[currentPage].showToolbar) {
+                    $('[data-js=toolbar]').show();
+                }
+                pageManager[currentPage].show();
+            } catch(e) {
+                console.log('router error');
             }
-            pageManager[currentPage].show();
-        } catch(e) {
-            console.log('router error');
-        }
+        }, 400);
+        
     }
 
     static url() {
