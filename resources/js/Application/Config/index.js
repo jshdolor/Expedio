@@ -112,20 +112,21 @@ export default {
             "name": "woman", "zIndex": "22"
         }
     ],
+
     expedio_mobile_elements: [
-        { "name": "coconut", "zIndex": 10, "duration": 4000 }, 
+        { "name": "coconut", "zIndex": 10, "duration": 3000 }, 
         { "name": "rocket", "zIndex": 12 }, 
         { "name": "singer", "zIndex": 14 }, 
         { "name": "car", "zIndex": 16 }, 
         { "name": "eye", "zIndex": 18 }, 
-        { "name": "magician", "zIndex": 20 }, 
+        { "name": "magician", "zIndex": 20, duration: 3140 }, 
         { "name": "flower2", "zIndex": 22 }, 
         { "name": "wattah", "zIndex": 24, "duration": 4000 }, 
-        { "name": "flower", "zIndex": 26, "duration": 4000 }, 
-        { "name": "bldg", "zIndex": 28, "duration": 4000 }, 
+        { "name": "flower", "zIndex": 26, "duration": 6000 }, 
+        { "name": "bldg", "zIndex": 28, "duration": 4100 }, 
         { "name": "cup", "zIndex": 30 }, 
-        { "name": "basketball", "zIndex": 32, "duration": 4000 }, 
-        { "name": "woman", "zIndex": 34, "duration": 4000 }, 
+        { "name": "basketball", "zIndex": 32, "duration": 7100 }, 
+        { "name": "woman", "zIndex": 34, "duration": 6130 }, 
         { "name": "cloud", "zIndex": 8 }
     ],
     experience: {
