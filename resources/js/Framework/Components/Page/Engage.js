@@ -31,17 +31,30 @@ class EngagePage extends BasePage {
 
         this.attachThoughtBalloons();
         this.attachVideo();
-        this.makeCommentsParallax();
+        this.scrollAstronaut();
     }
 
-    makeCommentsParallax() {
-        //engage parallax 
-        let scene = document.getElementById('scene');
+    scrollAstronaut() {
 
-        new Parallax(scene, {
-            hoverOnly: true,
-            relativeInput: true
-        });
+        let width = 0; 
+        let maxScrollPos = 0;
+
+        setInterval(() => {
+            
+            maxScrollPos = Math.abs($('.space-balloons').width() - $(".space-testimony").width());
+            width = $(".space-testimony").scrollLeft();
+
+            if(width >= Math.floor(maxScrollPos)) {
+                width = 0;
+            } else {
+                // width += $(".space-testimony").width() / 2;
+                width += 5;
+            }
+
+            // $(".space-testimony").animate({scrollLeft: width});
+            $(".space-testimony").scrollLeft(width);
+
+        }, 100);
     }
 
     attachThoughtBalloons() {
