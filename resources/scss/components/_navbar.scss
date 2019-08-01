@@ -57,13 +57,33 @@ nav {
 
 nav {
 		.navbar-menu {
+			
+			@media only screen and (max-width: 768px) {
+				width: 100%;
+			}
+
 			ul {
-				padding: 0;
 				margin: 0; 
+				padding: 0;
+				@media only screen and (max-width: 768px) {
+					width: 135px;
+					margin-left: auto;
+					margin-right: auto;
+					text-align: left;
+				}
+
+
 				li {
 					display: inline-block;
 					list-style: none;
 					@extend .p-2;
+					@media only screen and (max-width: 768px) {
+						padding: 0;
+						display: block;
+						padding-top: 0.5rem;
+						padding-bottom: 0.5rem;
+					}
+
 					a {
 						text-decoration: none;
 						color: $color-dark;
@@ -151,8 +171,18 @@ nav {
 	nav{
 		.navbar-header {
 			justify-content: space-around;
+
+				
 		}	
 	}
+}
+@media only screen and (max-width: 768px) {
+	nav{
+		.navbar-header {
+
+				padding-top: 20px;
+		}
+	}	
 }
 
 @media (max-width: 768px), (orientation: portrait) {

@@ -26,6 +26,7 @@ class RouteManager {
                 if(pageManager[currentPage].showToolbar) {
                     $('[data-js=toolbar]').show();
                 }
+                $(`.navbar-menu li[data-page=${currentPage}] a`).addClass('active');
                 pageManager[currentPage].show();
             } catch(e) {
                 console.log('router error');

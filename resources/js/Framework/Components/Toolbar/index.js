@@ -10,6 +10,9 @@ class Toolbar {
         this.logo = $('.navbar-brand.navbar-icon');
 
         this.menuHidden = true;
+
+        this.$mobileLogoShow = $('.mobile-nav-show');
+        this.$mobileLogoHide = $('.mobile-nav-hide');
     }
 
     init() {
@@ -20,6 +23,8 @@ class Toolbar {
         } else {
 
             this.desktop();
+
+            $('.mobile-nav-hide').hide();
         }
         
     }
@@ -40,17 +45,24 @@ class Toolbar {
                 this.hideMenu();
             }
 
+        });
+
+        this.$mobileLogoHide.click(() => {
+            this.hideMenu();
+            this.menuHidden = true;
         })
     }
 
     hideMenu() {
         this.container.removeClass('active');
         this.menu.stop(true, true).fadeOut(200);
+        this.$mobileLogoShow.show();
     }
 
     showMenu() {
         this.container.addClass('active');
         this.menu.stop(true, true).fadeIn(400);
+        this.$mobileLogoShow.hide();
     }
 
     desktop() {
