@@ -50,6 +50,18 @@ class Toolbar {
         this.$mobileLogoHide.click(() => {
             this.hideMenu();
             this.menuHidden = true;
+        });
+
+        $('.main-logo-btn').click(() => {
+            if(this.menuHidden) {
+                this.showMenu();
+            } else {
+                try {
+                    pageManager.mainpage.top()
+                } catch(e) {
+                    console.trace(e);
+                }
+            }
         })
     }
 

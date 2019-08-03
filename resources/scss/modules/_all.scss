@@ -99,10 +99,15 @@ body, html {
 .fb_dialog {
   display: none !important;
 }
-
+.desktop-hide {
+  display: none;
+}
 @media only screen and (max-width: 768px) {
   .mobile-hide {
     display: none;
+  }
+  .desktop-hide {
+    display: inline-block;
   }
 }
 

@@ -23,6 +23,13 @@ nav {
 				height: 48px;
 				width: auto;
 			}
+
+			@media only screen and (max-width: 768px) {
+			
+				margin-left: auto;
+				margin-right: auto;
+				text-decoration: none;
+			}
 		}
 
 		.navbar-slide {
@@ -175,14 +182,6 @@ nav {
 				
 		}	
 	}
-}
-@media only screen and (max-width: 768px) {
-	nav{
-		.navbar-header {
-
-				padding-top: 20px;
-		}
-	}	
 }
 
 @media (max-width: 768px), (orientation: portrait) {
