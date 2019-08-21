@@ -22,6 +22,10 @@ class App {
 
         this.initPages();
 
+        this.fbContainer = '.fb-container';
+        this.fbChatBtn = '#fbChatBtn';
+        this.fbIsShown = false;
+
         $(document).on('scroll', function() {
 
             let wScroll = $(this).scrollTop(),

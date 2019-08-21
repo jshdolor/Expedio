@@ -32,6 +32,12 @@ class ContactPage extends BasePage {
         this.bldgImg = 'img#bldg';
         this.bldgContainer = '#bldgContainer';
         this.bldgAnimated = 'img#bldgAnimated';
+
+
+        this.fbAccountLoggedin = false;
+        this.fbChatInit = false;
+        this.initMessenger();
+
     }
 
     onload() {
@@ -45,7 +51,6 @@ class ContactPage extends BasePage {
         this.loaded = true;
 
         this.initValidator();
-        this.initMessenger();
         // this.initGraphics();
     }
 
@@ -117,30 +122,49 @@ class ContactPage extends BasePage {
     initMessenger() {
 
         FB.Event.subscribe('customerchat.dialogShow', () => {
-            
             this.fbIsShown = true;
-
+            this.fbAccountLoggedin = true;
         });
 
         FB.Event.subscribe('customerchat.dialogHide', () => {
-            
             this.fbIsShown = false;
-            
         });
 
-        $(this.fbChatBtn).on('click', () => {
+        $(this.fbChatBtn).on('click', (e) => {
 
-            if(this.fbIsShown) {
+            let action = this.fbIsShown ? 'hideDialog' : 'showDialog';
+            FB.CustomerChat[action]();
 
-                FB.CustomerChat.hideDialog();
-
-            } else {
-                
-                FB.CustomerChat.showDialog()
-
+            if(this.fbChatInit) {
+                return ;
             }
+
+            //workaround - fb does not allow http protocol sites to access login status
+            setTimeout(() => {
+                if(!this.fbAccountLoggedin) {
+
+                    let noFbText = '';
+                    let count = 0;
+                    setInterval(()=> {
+                        if(count % 2 === 0) {
+                            noFbText = 'FB Account Not Logged In';
+                        } else {
+                            noFbText = 'Log In then refresh this page';
+                        }
+
+                        $(this.fbChatBtn).html(`Chat with us <small style="color:yellow"><br>${noFbText}</small>`);
+                        count++;
+                    },1500);
+    
+                } else {
+                    $(this.fbChatBtn).html('Chat with us');
+                }
+
+                this.fbChatInit = true;
+            }, 800);
+            
            
-        })
+        });
 
     }
 
