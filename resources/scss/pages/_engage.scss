@@ -96,7 +96,7 @@
               list-style: none;
               width: max-content;
               max-width: 375px;
-              height: inherit;
+              height: max-content;
               max-height: max-content;
               background-color: #fff;
               @extend .m-1;
